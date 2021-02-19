@@ -2,7 +2,8 @@
 \section{سری و تبدیل فوریه}
 \subsection*{مقدمه}
 در فصل ۱ هدف حل برخی از معادلات دیفرانسیل پاره ای است. برای این منظور سری و تبدیل فوریه به عنوان یک ابزار مهم استفاده می شوند. به همین دلیل، در این بخش ابتدا چند تعریف اساسی و مهم را در زمینه ی معادلات دیفرانسیل پاره ای ارائه می کنیم و سپس با سری و تبدیل فوریه آشنا می شویم. بعدا در بخش های ۲ و ۳ خواهیم دید که سری و تبدیل فوریه چگونه در حل برخی معادلات دیفرانسیل پاره ای به کار می روند.\\
-تعریف ۱ : اگر 
+\begin{definition}
+ اگر 
 $u:\R^n \to \R$
 تابعی از متغیر های مستقل
 $x_n,...,x_1$
@@ -15,6 +16,7 @@ $x_i$
  نسبت به
  $x_i$
  ها را یک معادله دیفرانسیل با مشتقات جزئی یا معادلات دیفرانسیل پاره ای می نامیم.\\
+\end{definition}
  به عنوان نمونه
 
  \begin{equation}
@@ -31,7 +33,11 @@ u_x+u_{xxy}=0
 \end{equation}
 
 معادلات دیفرانسیل با مشتقات جزئی هستند.\\
-تعریف ۲: مرتبه معادله دیفرانسیل پاره ای عبارت از بزرگترین مرتبه مشتق جزئی ظاهر شده در آن است. به عنوان نمونه معادله دیفرانسیل پاره ای (۴) یک معادله ی مرتبه ۳ است.\\
+
+\begin{definition}
+ مرتبه معادله دیفرانسیل پاره ای عبارت از بزرگترین مرتبه مشتق جزئی ظاهر شده در آن است.
+\end{definition}
+  به عنوان نمونه معادله دیفرانسیل پاره ای (۴) یک معادله ی مرتبه ۳ است.\\
 مرتبه نسبت به هر متغیر مستقل به طور مجزا نیز تعریف می شود. مثلا معادله ی 
 $(4)$
  نسبت به 
@@ -39,15 +45,22 @@ $x$
 مرتبه ۲ و نسبت به 
 $y$
 مرتبه ۱ است.\\
-تعریف ۳ : معادله دیفرانسیل پاره ای را همگن می گوییم اگر جمله ای که فقط وابسته به متغیر های متسقل است، نداشته باشد(برابر با صفر باشد).\\
+
+\begin{definition}
+معادله دیفرانسیل پاره ای را همگن می گوییم اگر جمله ای که فقط وابسته به متغیر های مستقل است، نداشته باشد(برابر با صفر باشد).\\
+\end{definition}
 معادله
 $(1)$
   ناهمگن و معادلات
 $(4),(3),(2)$
  همگن هستند.\\
- تعریف ۴ : یک معادله دیفرانسیل پاره ای را خطی می گوییم اگر ضریب
+ 
+\begin{definition}
+ یک معادله دیفرانسیل پاره ای را خطی می گوییم اگر ضریب
  $u$
- و مشتقات جزئی آن فقط تابعی از متغیر های مستقل باشند. معادلات
+ و مشتقات جزئی آن فقط تابعی از متغیر های مستقل باشند.
+\end{definition}
+  معادلات
  $(2)$
  و
  $(4)$
@@ -60,11 +73,15 @@ $(4),(3),(2)$
  و
  $uu_x$
  غیر خطی هستند.\\
- در درس ریاضی مهندسی چند نمونه از معادلات خطی (ضریب ثابت) را بررسی می کنیم.\\
+\\
+ در درس ریاضی مهندسی چند نمونه از معادلات خطی (ضریب ثابت) را بررسی می کنیم.
+ 
  این معادلات عبارتند از :
  \begin{enumerate}
  	\item 
+ 	\textbf{
  	معادله حرارت : 
+ }
  	$u_t=\alpha u_{xx}$
  	\item
  	معادله موج (مدل سازی نوسان در یک طناب) : 
@@ -76,6 +93,7 @@ $(4),(3),(2)$
  	معادله ی تیر :
  	$u_{tt}=au_{xxxx}$
  \end{enumerate}
+
 نکته : هر مساله ی 
 PDE
 برای داشتن جواب یکتا، نسبت به متغیر به تعداد مرتبه آن شرط اولیه نیاز دارد.\\
@@ -89,23 +107,21 @@ $x$
 \subsubsection{انتقال حرارت در یک میله ی فلزی}
 todo : pic\\
 داریم
-\[(\left.KA\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.KA\frac{\partial u}{\partial x}\right|_{x})\Delta t=
-	mc_p\Big(u(x,t+\Delta t)-u(x,t)\Big)\]
+\[(\left.KA\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.KA\frac{\partial u}{\partial x}\right|_{x}) \cdot \Delta t=
+	mc_p \cdot \Big(u(x,t+\Delta t)-u(x,t)\Big)\]
 و
-\[m=\rho \Delta v=\rho A\Delta x\]
+\[m=\rho \cdot \Delta v=\rho \cdot  A \cdot \Delta x\]
 پس
-\begin{align*}
-\begin{cases}
-\left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.\frac{\partial u}{\partial x}\right|_{x} = \frac{\partial^2 u}{\partial x^2} \Delta x\\
-u(x,t+\Delta t)-u(x,t)=\frac{\partial u}{\partial t}\Delta t
+\begin{alignat*}{1}
+&\begin{cases}
+\left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.\frac{\partial u}{\partial x}\right|_{x} = \frac{\partial^2 u}{\partial x^2}  \cdot \Delta x\\
+u(x,t+\Delta t)-u(x,t)=\frac{\partial u}{\partial t} \cdot \Delta t
 \end{cases} 
-& \Rightarrow 
-\\
-KA\frac{\partial^2 u}{\partial x^2}\Delta x\Delta t=m\rho A\frac{\partial u}{\partial t}\Delta t\Delta x
-& \Rightarrow
-\\
-\frac{\partial u}{\partial t}=\frac{k}{m\rho}\frac{\partial^2 u}{\partial x^2}
-\end{align*}
+\\& \Rightarrow 
+K A \cdot \frac{\partial^2 u}{\partial x^2}  \Delta x \Delta t=m\rho A\frac{\partial u}{\partial t}\Delta t\Delta x
+\\& \Rightarrow
+\frac{\partial u}{\partial t}=\frac{k}{m\rho} \cdot \frac{\partial^2 u}{\partial x^2}
+\end{alignat*}
 
 پس اگر تعریف کنیم
 $\alpha := \frac{k}{m\rho}$
@@ -221,7 +237,10 @@ $f$
   \begin{equation}
  b_k=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)sin(kx)dx}
  \end{equation}
- اثبات - برای محاسبه ضریب
+ 
+ 
+ \begin{proof}
+  برای محاسبه ضریب
  $a_0$
  ، کافی است از طرفین 
  $(5)$
@@ -306,7 +325,11 @@ $f$
  ،
  $b_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)sin(jx)dx}$
  است.\\
- مثال- سیگنال مثلثی
+ \end{proof}
+ 
+\begin{example}
+ 
+ سیگنال مثلثی
 \begin{align*}
  &f(x)=
  \begin{cases}
@@ -317,7 +340,9 @@ $f$
  &f(x+2\pi)=f(x)
 \end{align*}
 
- حل-\\
+\hrulefill
+
+حل- 
  \begin{equation*}
  \begin{aligned}
  a_0 {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)dx}\\
@@ -389,6 +414,10 @@ $f$
 $b_k=0$
 است. پس\\
 \[f(x)=\frac{\pi}{2}+\sum_{n=1}^{\infty}{\frac{4}{n(2n-1)^2}}cos(2n-1)x\]
+
+\end{example}
+\hrulefill
+
 *توجه : نمودار 
 $f(x)$
 در مثال ۱ بصورت 
@@ -417,7 +446,11 @@ $f$
 در
 $x_0$
 به میانگین حد چپ و راست همگراست.\\
-مثال۱ : سری فوریه ی تابع
+
+\hrulefill
+
+\begin{example}
+سری فوریه ی تابع
 $f(x))$
 با ضابطه ی زیر را بدست آورید.
 \begin{align*}
@@ -429,6 +462,8 @@ $f(x))$
 \end{cases}
 & f(x+2\pi)=f(x)
 \end{align*}
+\hrulefill
+\\
 حل-
 \begin{equation*}
 \begin{aligned}
@@ -437,3 +472,6 @@ $f(x))$
 &\ b_k=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)sin(kx)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi sin(kx) dx}=\frac{1-(-1)^k}{k}\\
 \end{aligned}
 \end{equation*}
+
+\end{example}
+\hrulefill
