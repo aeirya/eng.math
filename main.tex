@@ -89,17 +89,27 @@ $x$
 \subsubsection{انتقال حرارت در یک میله ی فلزی}
 todo : pic\\
 داریم
-\[(\left.KA\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.KA\frac{\partial u}{\partial x}\right|_{x})\Delta t=mc_p(u(x,t+\Delta t)-u(x,t))\]
+\[(\left.KA\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.KA\frac{\partial u}{\partial x}\right|_{x})\Delta t=
+	mc_p\Big(u(x,t+\Delta t)-u(x,t)\Big)\]
 و
 \[m=\rho \Delta v=\rho A\Delta x\]
-پس\\
-\[\begin{cases}
+پس
+\begin{align*}
+\begin{cases}
 \left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.\frac{\partial u}{\partial x}\right|_{x} = \frac{\partial^2 u}{\partial x^2} \Delta x\\
 u(x,t+\Delta t)-u(x,t)=\frac{\partial u}{\partial t}\Delta t
-\end{cases}\Rightarrow KA\frac{\partial^2 u}{\partial x^2}\Delta x\Delta t=m\rho A\frac{\partial u}{\partial t}\Delta t\Delta x\Rightarrow \frac{\partial u}{\partial t}=\frac{k}{m\rho}\frac{\partial^2 u}{\partial x^2}\]
+\end{cases} 
+& \Rightarrow 
+\\
+KA\frac{\partial^2 u}{\partial x^2}\Delta x\Delta t=m\rho A\frac{\partial u}{\partial t}\Delta t\Delta x
+& \Rightarrow
+\\
+\frac{\partial u}{\partial t}=\frac{k}{m\rho}\frac{\partial^2 u}{\partial x^2}
+\end{align*}
+
 پس اگر تعریف کنیم
 $\alpha := \frac{k}{m\rho}$
-متوجه می ش ویم که\\
+متوجه می شویم که\\
 \[u_t=\alpha u_{xx}\]
 \[u(0,t)=u(L,t)=0\]
 \[u(x,0)=f(x)\]
@@ -108,7 +118,7 @@ todo : pic
 \[\frac{\partial u}{\partial t}=\alpha(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2})\]
 \subsubsection{
 	معادله لاپلاس، انتقال حرارت پایا
-	 (steady state)
+	 \lr{(steady state)}
 }
 \begin{equation*}
 	\begin{aligned}
@@ -155,7 +165,7 @@ Hooke
  حال با توجه به رابطه قبلی داریم
  \begin{equation*}
  \begin{aligned}
- k(u(x+{}&\ 2\Delta x,t)- 2u(x+\Delta x,t)+u(x,t))=m\frac{\partial^2 u}{\partial t^2}\\
+ k\Big(u(x+{}&\ 2\Delta x,t)- 2u(x+\Delta x,t)+u(x,t)\Big)=m\frac{\partial^2 u}{\partial t^2}\\
  &\  \Rightarrow  u_{tt}=\frac{k}{m}u_{xx}(\Delta x)^2\\
  &\  \Rightarrow u_{tt}=\frac{k(\Delta x)^2}{m}u_{xx}\\ 
  &\ \Rightarrow u_{tt}=\frac{nK\frac{L^2}{K^2}}{\frac{M}{n}}u_{xx}\\
@@ -164,8 +174,9 @@ Hooke
  \end{equation*}
 تعریف می کنیم
 $c^2 = \frac{KL^2}{M}$
-.\\
+.
 پس داریم
+
 \begin{equation*}
 \begin{aligned}
 {}&\ u_{tt}=c^2u_{xx} \\
@@ -264,18 +275,20 @@ $f$
  \int_{-\pi}^\pi{sin(kx)cos(jx)dx}=0
  \]
  و همچنین داریم
- \[
- \int_{-\pi}^\pi{cos(kx)cox(jx)dx}=
+\begin{align*}
+ \int_{-\pi}^\pi{cos(kx)cox(jx)dx}&=
 \begin{cases}
-\int_{-\pi}^\pi{\frac{1}{2}[cos((k+j)x)+cos((k-j)x)]}  if k\ne j\\
-\int_{-\pi}^\pi{\frac{1+cos(2jx)}{2}dx}   if k=j\\
+\int_{-\pi}^\pi{\frac{1}{2}\Big[cos\big((k+j)x\big)+cos\big((k-j)x\big)\Big]} &\mbox{if } k\ne j\\
+\int_{-\pi}^\pi{\frac{1+cos(2jx)}{2}dx}   
+	&\mbox{if } k=j\\
 \end{cases}
-=\begin{cases}
-0 if k\ne j
 \\
-\pi if k=j
+&=\begin{cases}
+0 &\mbox{if } k\ne j
+\\
+\pi &\mbox{if } k=j
 \end{cases}
- \]
+\end{align*}
  و بنابراین متوجه می شویم که برای هر 
  $j\in\N$
  داریم
@@ -287,22 +300,23 @@ $f$
  در
  $sin(jx)$
  و انتگرال گیری در بازه
- $[-\pi,\pi]]$
+ $[-\pi,\pi]$
  می توان نشان داد که برای هر 
  $j\in\N$
  ،
  $b_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)sin(jx)dx}$
  است.\\
  مثال- سیگنال مثلثی
- \[
- f(x)=
+\begin{align*}
+ &f(x)=
  \begin{cases}
- \pi-x if 0\le x\le \pi
+ \pi-x &\mbox{if  } { 0\le x\le \pi}
  \\
- \pi+x if -\pi\le x \le 0
+ \pi+x &\mbox{if  }  {-\pi\le x \le 0}
  \end{cases}
- , f(x+2\pi)=f(x)
- \]
+ &f(x+2\pi)=f(x)
+\end{align*}
+
  حل-\\
  \begin{equation*}
  \begin{aligned}
@@ -315,7 +329,8 @@ $f$
  \right)\\
  &\ = \frac{1}{\pi}\left(
  \frac{\pi^2}{2}-0+0+\frac{\pi^2}{2}
- \right)= \pi\\
+ \right)= \pi
+ \\\\
   a_k {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)cos(kx)dx}\\
  &\ = \frac{1}{\pi}\left(
  \int_{-\pi}^{0}{(\pi+x)cos(kx) dx} +\int_{0}^{\pi}{(\pi-x)cos(kx)dx}
@@ -329,20 +344,24 @@ $f$
  \end{equation*}
 
  که در آن 
- \[
- \int_{-\pi}^{0}{xcos(kx)dx}=\left.{\frac{xsin(kx)}{k}}\right |_{-\pi}^{0}-\int_{-\pi}^{0}{\frac{sin(kx)}{k}dx}=\frac{1-(-1)^k}{k^2}
- \]
-  \[
- \int_{0}^{\pi}{xcos(kx)dx}=\left.{\frac{xsin(kx)}{k}}\right |_{0}^{\pi}-\int_{0}^{\pi}{\frac{sin(kx)}{k}dx}=\frac{(-1)^k-1}{k^2}
- \]
- \[
- \int_{-\pi}^{\pi}{cos(kx)dx}=0
- \]
+ \begin{alignat*}{3}
+ \int_{-\pi}^{0}{xcos(kx)dx}
+ = & \left.{\frac{xsin(kx)}{k}}\right |_{-\pi}^{0} & -\int_{-\pi}^{0}{\frac{sin(kx)}{k}dx}
+ &= \frac{1-(-1)^k}{k^2}
+\\
+ \int_{0}^{\pi}{xcos(kx)dx}
+ = & \left.{\frac{xsin(kx)}{k}}\right |_{0}^{\pi} & -\int_{0}^{\pi}{\frac{sin(kx)}{k}dx}
+ &=\frac{(-1)^k-1}{k^2}
+ \\
+ \int_{-\pi}^{\pi}{cos(kx)dx}=& 0
+ \end{alignat*}
+
  بنابراین
  \[
- a_k=\frac{1}{\pi}\frac{2}{k^2}\left(1-(-1)^k\right)=\begin{cases}
- 0 if k=2n\\
- \frac{4}{\pi(2n-1)^2} if k=2n-1
+ a_k=\frac{1}{\pi}\frac{2}{k^2}\left(1-(-1)^k\right)=
+ \begin{cases}
+ 0 &\mbox{if } k=2n\\
+ \frac{4}{\pi(2n-1)^2} &\mbox{if } k=2n-1
  \end{cases}
  \]
  و
@@ -356,13 +375,16 @@ $f$
 	\end{aligned}
 \end{equation*}
 که
-\begin{equation*}
-\begin{aligned}
-{} &\ \int_{-\pi}^{0}{xsin(kx)dx}=\left.{-\frac{xcos(kx)}{k}}\right |_{-\pi}^{0} +\int_{-\pi}^{0}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
-&\ \int_{0}^{\pi}{xsin(kx)dx}=\left.{-\frac{xcos(kx)}{k}}\right |_{0}^{\pi} +\int_{0}^{\pi}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
+\begin{alignat*}{2}
+{} &\ \int_{-\pi}^{0}{xsin(kx)dx}
+	=&\left.{-\frac{xcos(kx)}{k}}\right |_{-\pi}^{0} 
+	&+\int_{-\pi}^{0}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
+&\ \int_{0}^{\pi}{xsin(kx)dx}
+	=&\left.{-\frac{xcos(kx)}{k}}\right |_{0}^{\pi} 
+	&+\int_{0}^{\pi}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
 &\ \int_{-\pi}^{\pi}{sin(kx)dx}=0
-\end{aligned}
-\end{equation*}
+\end{alignat*}
+
 پس 
 $b_k=0$
 است. پس\\
@@ -398,15 +420,15 @@ $x_0$
 مثال۱ : سری فوریه ی تابع
 $f(x))$
 با ضابطه ی زیر را بدست آورید.
- \[
-f(x)=
+\begin{align*}
+&f(x)=
 \begin{cases}
-0 if 0\le x\le \pi
+0 &\mbox{if } 0\le x\le \pi
 \\
-\pi if -\pi\le x \le 0
+\pi &\mbox{if } -\pi\le x \le 0
 \end{cases}
-, f(x+2\pi)=f(x)
-\]
+& f(x+2\pi)=f(x)
+\end{align*}
 حل-
 \begin{equation*}
 \begin{aligned}
