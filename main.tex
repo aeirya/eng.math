@@ -1127,7 +1127,7 @@ F^{-1}\{F\{f(x)\}\}=\frac{1} {\sqrt{2\pi}}\int_{-{\infty}}^{{\infty}}F\{f(x)\} \
 \[
 f(x)=F^{-1}\{F\{f(x)\}\}
 \]
-مثال- تبدیل فوریه ی کسینوسی و سینوسی تابع 
+مثال- تبدیل فوریه‌‌ی کسینوسی و سینوسی تابع 
 $f(x)$
 با ضابطه زیر را محاسبه کنید.
 \[
@@ -1238,8 +1238,8 @@ $\alpha XT$
 \begin{equation}
 	\frac{1}{\alpha} \frac{T'}{T} = \frac{X''}{X} = C \rightarrow 
 	\begin{cases}
-		\item \frac{1}{\alpha}\frac{T'}{T} = C &(3)\\
-		\item \frac{X''}{X} = C &(2)
+		\frac{1}{\alpha}\frac{T'}{T} = C \;&(3)\\
+		\frac{X''}{X} = C \;&(2)
 	\end{cases}
 \end{equation}
 
@@ -1254,8 +1254,8 @@ $\alpha XT$
 
 \begin{equation}
 	\begin{cases}
-		\item \frac{X''}{X} = C \\
-		\item X(0) = X(L) = 0
+		\frac{X''}{X} = C \\
+		X(0) = X(L) = 0
 	\end{cases}
 \end{equation}
 
@@ -1265,29 +1265,47 @@ $\alpha XT$
 	\item
 	فرض کنیم c مثبت باشد 
 	
-	\begin{align*}
-		&c = \lambda^2 > 0 (\lambda \neq 0) \\
-		&X'' - \lambda^2 X = 0 \rightarrow 
+	\[
+		c = \lambda^2 > 0 (\lambda \neq 0) 
+	\]
+	\[
+		X'' - \lambda^2 X = 0 \rightarrow 
 		X(x) = ae^{\lambda x} + b e ^ {-\lambda x} = 
 		\tilde{a} cosh(\lambda x) 
 		+ \tilde{b} sinh(\lambda x)
-		\\
-		&X(0) = 0 \rightarrow \tilde(a) = 0
-		\\
-	 	&X(L) = 0 \rightarrow sinh(\lambda L) = 0 \rightarrow \lambda L  = 0 \rightarrow \lambda \neq 0  &\text{(contradiction)}
-	 	\\
-	 	\rightarrow 
+	\]
+	\[
+		X(0) = 0 \rightarrow \tilde{a} = 0
+	\]
+	\[
+	 	X(L) = 0 \rightarrow
+	 	\begin{cases}
+	 		sinh(\lambda L) = 0 \rightarrow \lambda L  = 0 \rightarrow \lambda \neq 0  &\text{(تناقض)}
+	 		\\ 
 	 	\tilde{b} = 0 \rightarrow
 	 	X(x) = 0 \rightarrow
 	 	u(x, t) = 0
-	 	& \text{(contradiction)}
-	\end{align*}
+	 	 &\text{(تناقض)}	
+	 	\end{cases}
+	\]
 	
-	بنابراین c  مثبت جوابی متناظر با ظرط‌های مرزی تولید نمی‌کند.
+	بنابراین c  مثبت جوابی متناظر با شرط‌های مرزی تولید نمی‌کند.
 	\\
 	\item
 	فرض کنیم
 $c = 0$
+
+\begin{align*}
+	\frac{X''}{X} = 0 \rightarrow
+	\begin{rcases}
+		&X(x) = ax+b
+	\\
+	&X(0) = X(L) = 0
+	\end{rcases}
+	\rightarrow a = b = 0 
+	\rightarrow X(x) = 0 \rightarrow
+	u(x,t) = 0 \text{(تناقض)}	
+\end{align*}
 
 \\
 \item 
@@ -1295,12 +1313,198 @@ $c = 0$
 $c<0$
 داریم 
 
-lalala
-	
+
+\[
+c = 0\lambda^2 (\lambda \neq 0)
+\]
+\[
+\frac{X''}{X} = -\lambda^2 \rightarrow
+X'' + \lambda^2 X = 0 
+\rightarrow X(x) = a \cdot cos \lambda x + b sin \lambda x
+\]
+\[
+X(0) = 0 \rightarrow a = 0
+\]
+\[
+X(L) = 0 \rightarrow
+\begin{cases}
+	b = 0 \rightarrow X(x) = 0
+	\rightarrow u(x,t) = 0 
+	\text{‌(تناقض)}
+	\\
+	sin\lambda L = 0 \rightarrow
+	\lambda L = n \pi \rightarrow
+	\lambda = n \pi / L
+	\
+\end{cases}
+\]
+\[
+X_n(x) = sin \frac{n\pi}{L}x
+\]
+
+بنابراین توابع 
+$
+X_n(x) = sin \frac {n \pi }{L}x
+(n = 1,2,\cdots)
+$
+با 
+$c = - (\frac{n\pi}{L})^2$
+در روابط 
+$
+\begin{cases}
+	\frac{X''}{X} = c
+	\\
+	X(0) = X(L) = 0
+\end{cases}
+$
+صدق می‌کنند.
+
+حال برای محابسه تابع 
+T(t)
+از تساوی (3) داریم
+
+\begin{equation*}
+	\frac{1}{\alpha} \frac{T'}{T} = c = -(\frac{n\pi}{L})
+	\rightarrow T' + \alpha(\frac{n\pi}{L})^2 T = 0 
+	\rightarrow T_n(t) = A_n e ^ {-\alpha (\frac{n\pi}{L})^2 t}
+\end{equation*}
+
+تا این‌جا نتایج زیر را داریم 
+
+1)
+توابع
+$X_n(x) = sin \frac {n \pi }{L}x$
+در معادله 
+$\frac{X''}{X} = -(\frac {n \pi }{L})^2$
+و شرط‌های مرزی
+$X(0) = X(L) = 0$
+صدق می‌کنند.
+
+2)
+توابع 
+$T_n(t) = A_n e ^ {-\alpha (\frac{n\pi}{L})^2 t}
+ $
+در معادله 
+$
+\frac{1}{\alpha} \frac{T'}{T} = -(\frac {n \pi }{L})^2
+$
+صدق می‌کنند
+(به ازای 
+$A_n$
+دلخواه)
+
+برای تکمیل حل مساله٫ کافی است ضرایب 
+$A_n$
+را طوری تعیین کنیم که شرط اولیه 
+$u(x,0) = f(x)$
+نیز برقرار شود
+.
+
+برای این منظور٫
+ابتدا توجه می‌کنیم که توابع 
+$u_n(x,t) = X_n(x) T_n(t)$
+دارای خاصیت‌های زیر است
+:
+
+1)
+$u_n$
+در معادله 
+PDE 
+\;
+$u_t = \alpha u_{xx}$
+صدق می‌کند
+زیرا 
+$x_n$
+در 
+$\frac{X''}{X} = c$
+و 
+$T_n$
+در 
+$\frac{1}{\alpha} \frac {T'}{T} = c$
+صدق می‌کنند.
+
+2)
+$u_n$
+در شرط‌های مرزی 
+$u(0,t) = u(L,t) = 0$
+صدق می‌کند.
+
+همچنین تابع 
+$u(x,t) = \sum_{n=1}^{\infty} u_n(x,t) = \sum_{n=1}^{\infty} A_n e ^ {-\alpha (\frac{n\pi}{L})^2t} sin \frac{n\pi}{L}x$
+
+1)
+در معادل 
+$u_t = \alpha u_{xx}$
+صدق می‌کند٫ چرا که
+$u_t = \sum(u_n)_t = \sum \alpha (u_n)_{xx} = \alpha (\sum u_n)_{xx} = \alpha u_{xx}$
+2)
+در شرط‌های مرزی 
+$u(0,t) = u(L,t) = 0$
+صدق می‌کند٫ زیرا
+\\
+$u(0,t) = \sum u_n (0,t) = 0$
+\\
+$u(L,t) = \sum u_n (L,t) = 0$
+
+پس برای تکمشیل حل٫ کافی است ضرایب 
+$A_n$
+را در 
+$u(x,t)$
+طوری تعیین کنیم که شرط اولیه 
+$u(x,0) = f(x)$
+نیز برقرار باشد٫ یعنی
+
+\begin{equation}
+u(x,0) = f(x) = \sum_{n=1}^{\infty} A_n \cdot 1 \cdot sin \frac {n\pi}{L}x &
+\end{equation}
+
+تساوی (۴) سری فوریه سینوسی برای 
+$f(x)$
+در بازه 
+$lalala [0:L]$
+است و 
+$A_n$
+ضرایب این سری;
+در نتیجه برای محاسبه ضرایب 
+$A_n$
+از نتایج بخش قبل داریم
+\[
+A_n = \frac{2}{L} \int_0^L f(x) sin\frac{n\pi}{L}x\cdot dx
+\] 
 \end{enumerate}
 
 \end{problem} 
 
+
+\section{الگوریتم روش جداسازی 
+(برمبنای مساله حرارت)}
+\textbf{
+گام ۱)
+}
+جایگذاری 
+$u$
+به صورت 
+$u(x,t) = X(x) T(t)$
+در PDE و تفکیک جملات وابسته به x و t
+
+\textbf{
+گام ۲)
+}
+تعیین علامت مقدار ثابت
+و حل معادله $X$
+(معادله‌ای که شرط‌های همگن دارد)٫  و محاسبه توابع $X_n$
+
+\textbf{
+گام ۳)
+}
+حل معادله $T$ و محاسبه توابع $T_n$
+
+\textbf{
+گام ۴)
+}
+تعریف 
+$u(x,t) = \sum X_n T_n$
+و محاسبه ضریب (ضرایب) مجهول با استفاده از شرط‌های اولیه و سری فوریه.
 
 \begin{problem}
 	مساله موج در یک طناب با دو سر ثابت را در نظر می‌گیریم
@@ -1329,8 +1533,8 @@ PDE
 \begin{equation*}
 	\Rightarrow 
 	\begin{cases}
-		\item \frac{X''}{X} = \alpha \\
-		\item \frac{1}{c^2} \frac{T''}{T} = \alpha
+		\frac{X''}{X} = \alpha \\
+		\frac{1}{c^2} \frac{T''}{T} = \alpha
 	\end{cases}
 \end{equation*}
 
@@ -1339,8 +1543,27 @@ $\alpha$
 و حل معادله 
 $X$
 
-lalala
-
+\[
+\frac{X''}{X} = \alpha
+\]
+\[
+u(0,t) = u(L,t) = 0 \rightarrow
+X(0) = X(L) = 0 \rightarrow 
+\begin{cases}
+	\alpha > 0 \text{(تناقض)}
+	\\
+	\alpha = 0 \text{(تناقض)}
+	\\
+	\\
+	\alpha < 0 \rightarrow
+	\begin{cases}
+	X_n (x) = sin \frac{n\pi}{L}x \\
+	\alpha = -(\frac{n\pi}{L})^2
+	\end{cases}
+	
+\end{cases}
+\]
+\\
 
 گام ۳)
 حل معادله T
@@ -1350,25 +1573,24 @@ $T_n$
 \begin{align*}
 &\frac{1}{c^2} \frac{T''}{T} = -(\frac{n \pi}{L})^2
 \rightarrow
-T'' +  c^2{\frac{n \pi}{L}}^2	T = 0
-\\& \rightarrow
+T'' +  c^2({\frac{n \pi}{L}})^2	T = 0
+ \rightarrow
 T_n(t) = A_n cos (\frac{n \pi c}{L} t) + B_n sin \frac{n \pi c}{L} t
 \end{align*}
-lalala (up)
 
 گام ۴)
 تعریف 
-$u(x,t) = \Sigma _ {n=1} ^ \infty X_n T_n$
+$u(x,t) = \sum_{n=1}^\infty X_n T_n$
 و محاسبه ضرایب مجهول
 
 \begin{equation}
-	u(x,t) = \Sigma _ {n=1} ^ \infty 
+	u(x,t) = \sum_{n=1}^\infty 
 	(A_n cos \frac {n\pi c}{L}t + B_n \frac {n\pi c}{L}t) sin \frac {n\pi c}{L}x
 	\label{eq:5}
 \end{equation}
 
 \begin{equation}
-	u(x,0) = f(x) =\mathlarger{‎‎\sum}_{n=1} ^{\infty}
+	u(x,0) = f(x) =‎‎\sum_{n=1}^{\infty}
 	A_n sin \frac {n\pi c}{L}x
 	\rightarrow A_n = \frac{2}{L} 
 	\int_0^L f(x) sin \frac {n\pi}{L}x \cdot dx
