@@ -1174,3 +1174,228 @@ $f(x)=e^{-\left|x\right|}$
 		=\sqrt{\frac{2}{\pi}}\, \frac{1}{1+\omega^2}
 	\end{aligned}
 \end{equation*}
+
+lalala
+\section{روش جداسازی برای حل مسایل PDE}
+\begin{problem}
+
+	ابتدا مسئله حرارت در یک میله را در نظر بگیریم
+	
+\begin{align*}
+	&u_t = \alpha u_{xx}
+	\\
+	&u(0,t) = u(L,t) = 0
+	\\
+	&u(x,0) = f(x)
+\end{align*}
+
+در جواب 
+$u(x,t)$
+بخش‌های وابسته به
+x
+و
+t 
+را به صورت ضربی تفکیک‌‌‌ پذیر می‌گیریم یعنی 
+\\
+$u(x,t) = X(x) T(t)$
+
+
+*توجه می‌کنیم که این فرم ضربی در برخی 
+PDE
+های خاص منجر به محسابه جواب می‌شود و روش عمومی برای هر مسئله 
+PDE
+نیست
+.
+
+با جایگذاری u در معادله داریم:
+\[
+\begin{rcases}
+u_t = X(x) T'(t) \\
+u_{xx} = X''(x)T(t) \\	
+\end{rcases}
+\rightarrow XT' = \alpha X'' T
+\]
+
+
+طرفین معادله را بر 
+$\alpha XT$
+تقسیم می‌کنیم٫ در نتیجه
+
+\begin{equation*}
+	\frac{1}{\alpha} \frac{T'}{T} = \frac{X''}{X} \label{eq:1}
+\end{equation*}
+
+سمت چپ تساوی
+ (1)
+ وابسته به 
+ t 
+ و سمت راست آن وابسته به 
+ x 
+ است٫ بنابراین (با توجه به مستقل بودن x و t) تساوی فقط در صورتی امکان‌پذیر است که 
+ طرفین برابر با مقدار ثابتی مانند c
+ باشند٫ پس داریم
+ 
+\begin{equation}
+	\frac{1}{\alpha} \frac{T'}{T} = \frac{X''}{X} = C \rightarrow 
+	\begin{cases}
+		\item \frac{1}{\alpha}\frac{T'}{T} = C &(3)\\
+		\item \frac{X''}{X} = C &(2)
+	\end{cases}
+\end{equation}
+
+از شرط‌های مرزی مساله داریم که 
+
+\begin{equation}
+	u(0,t) = u(L,t) = 0 \rightarrow
+	X(0) = X(L) = 0
+\end{equation}
+
+بنابراین شرط‌های مرزی به همراه معادله (۲) نتیجه می‌دهد که 
+
+\begin{equation}
+	\begin{cases}
+		\item \frac{X''}{X} = C \\
+		\item X(0) = X(L) = 0
+	\end{cases}
+\end{equation}
+
+حال لازم است علامت عدد ثابت c را تعیین کنیم
+
+\begin{enumerate}
+	\item
+	فرض کنیم c مثبت باشد 
+	
+	\begin{align*}
+		&c = \lambda^2 > 0 (\lambda \neq 0) \\
+		&X'' - \lambda^2 X = 0 \rightarrow 
+		X(x) = ae^{\lambda x} + b e ^ {-\lambda x} = 
+		\tilde{a} cosh(\lambda x) 
+		+ \tilde{b} sinh(\lambda x)
+		\\
+		&X(0) = 0 \rightarrow \tilde(a) = 0
+		\\
+	 	&X(L) = 0 \rightarrow sinh(\lambda L) = 0 \rightarrow \lambda L  = 0 \rightarrow \lambda \neq 0  &\text{(contradiction)}
+	 	\\
+	 	\rightarrow 
+	 	\tilde{b} = 0 \rightarrow
+	 	X(x) = 0 \rightarrow
+	 	u(x, t) = 0
+	 	& \text{(contradiction)}
+	\end{align*}
+	
+	بنابراین c  مثبت جوابی متناظر با ظرط‌های مرزی تولید نمی‌کند.
+	\\
+	\item
+	فرض کنیم
+$c = 0$
+
+\\
+\item 
+نهایتا اگر 
+$c<0$
+داریم 
+
+lalala
+	
+\end{enumerate}
+
+\end{problem} 
+
+
+\begin{problem}
+	مساله موج در یک طناب با دو سر ثابت را در نظر می‌گیریم
+\begin{flalign*}
+&u_{tt} = c^2 u_{xx} \\
+&u(0,t) = u(L,t) = 0\\
+&u(x,0) = f(x) \\	
+&u_t(x,0) = g(x)
+\end{flalign*}
+	
+گام ۱)
+جایگذاری 
+$u(x,t) = X(x) \cdot T(t)$
+در 
+PDE
+:
+\begin{equation*}
+	X(x) T''(t) = c^2X''(x)T(t) \xrightarrow{\div c^2X(x)T(t)}
+	\underbrace{
+	\frac{1}{c^2}\frac{T''}{T}
+	}_{
+	\text{تابع $t$}
+	}
+	= \underbrace{ \frac{X''}{X}}_\text{تابع $x$}
+\end{equation*}
+\begin{equation*}
+	\Rightarrow 
+	\begin{cases}
+		\item \frac{X''}{X} = \alpha \\
+		\item \frac{1}{c^2} \frac{T''}{T} = \alpha
+	\end{cases}
+\end{equation*}
+
+گام ۲) تعیین علامت 
+$\alpha$
+و حل معادله 
+$X$
+
+lalala
+
+
+گام ۳)
+حل معادله T
+و محاسبه توابع 
+$T_n$
+
+\begin{align*}
+&\frac{1}{c^2} \frac{T''}{T} = -(\frac{n \pi}{L})^2
+\rightarrow
+T'' +  c^2{\frac{n \pi}{L}}^2	T = 0
+\\& \rightarrow
+T_n(t) = A_n cos (\frac{n \pi c}{L} t) + B_n sin \frac{n \pi c}{L} t
+\end{align*}
+lalala (up)
+
+گام ۴)
+تعریف 
+$u(x,t) = \Sigma _ {n=1} ^ \infty X_n T_n$
+و محاسبه ضرایب مجهول
+
+\begin{equation}
+	u(x,t) = \Sigma _ {n=1} ^ \infty 
+	(A_n cos \frac {n\pi c}{L}t + B_n \frac {n\pi c}{L}t) sin \frac {n\pi c}{L}x
+	\label{eq:5}
+\end{equation}
+
+\begin{equation}
+	u(x,0) = f(x) =\mathlarger{‎‎\sum}_{n=1} ^{\infty}
+	A_n sin \frac {n\pi c}{L}x
+	\rightarrow A_n = \frac{2}{L} 
+	\int_0^L f(x) sin \frac {n\pi}{L}x \cdot dx
+\end{equation}
+
+\begin{equation}
+	u_t(x,t) = \sum_{n=1}^{\infty}
+	( -\frac{n\pi c }{L} A_n sin \frac {n \pi c}{L}t + \frac {n \pi c}{L} B_n cos \frac {n \pi c}{L}t) sin \frac {n \pi }{L}x
+\end{equation}
+\begin{equation}
+	u_t(x,0) = \sum_{n=1}^{\infty} \frac {n \pi c}{L}B_n sin\frac {n \pi}{L}x = g(x)
+\end{equation}
+\begin{equation}
+	\frac {n \pi c}{L} B_n = \frac{2}{L} \int_0^L g(x) sin \frac {n \pi}{L}x \cdot dx
+\end{equation}
+\begin{equation}
+	B_n = \frac{2}{n\pi c} \int_0^L g(x) sin \frac{n\pi}{L} x \cdot dx
+\end{equation}
+
+و با جایگذاری 
+$A_n$
+و
+ $B_n$
+ در 
+ $(18)$
+ ٫ 
+ u(x,t)
+ جواب مساله موج در دست است.
+
+\end{problem}
