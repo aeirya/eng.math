@@ -1305,8 +1305,6 @@ $c = 0$
 	\rightarrow X(x) = 0 \rightarrow
 	u(x,t) = 0 \text{(تناقض)}	
 \end{align*}
-
-\\
 \item 
 نهایتا اگر 
 $c<0$
@@ -1454,7 +1452,7 @@ $u(x,0) = f(x)$
 نیز برقرار باشد٫ یعنی
 
 \begin{equation}
-u(x,0) = f(x) = \sum_{n=1}^{\infty} A_n \cdot 1 \cdot sin \frac {n\pi}{L}x &
+u(x,0) = f(x) = \sum_{n=1}^{\infty} A_n \cdot 1 \cdot sin \frac {n\pi}{L}x 
 \end{equation}
 
 تساوی (۴) سری فوریه سینوسی برای 
@@ -1619,3 +1617,231 @@ $A_n$
  جواب مساله موج در دست است.
 
 \end{problem}
+% start from 42:
+گام ۲) حل معادله ی
+$(1)$
+و تعیین علامت و مقدار 
+$c_2$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac {X^"}{X}=C_2
+		\\ &\
+		u(0,y,t)=u(a,y,t)=0 \rightarrow X(0)=X(a)=0
+		\\ &\
+		\Rightarrow c_{2}<0 ,\quad X_{n}(x) = \sin \frac{n \pi}{a} x ,\quad c_{2}=-\left(\frac{n\pi}{a}\right)^{2}
+	\end{aligned}
+\end{equation*}
+گام ۳) حل معادله ی
+$(2)$
+و تعیین علامت و مقدار 
+$c_1-c_2$
+(معادله ی دومی که شرط های همگن دارد)
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac {Y^{\prime\prime}}{Y}=C_{1}-C_2=C_{3}
+		\\ &\
+		u(x,0,t)=u(x,b,t)=0 \rightarrow Y(0)=Y(b)=0
+		\\ &\
+		\Rightarrow c_{3}<0 ,\quad Y_{m}(y) = \sin \left(\frac{m \pi}{b} y\right) ,\quad c_{3}=-\left(\frac{m\pi}{b}\right)^{2}
+	\end{aligned}
+\end{equation*}
+توجه کنید که 
+$y_m$
+به ازای هر 
+$m\in\N$
+و
+$X_n$
+به ازای هر 
+$n\in\N$
+جواب معادله های 
+$\frac{X^{''}}{X}=c_2$
+و
+$\frac{Y^{''}}{Y}=c_3$
+هستند و 
+$n,m$
+هیچ وابستگی به هم ندارند.\\
+گام ۴) حل معادله ی
+$(3)$
+و تشکیل
+$u(x,y,t)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac{1}{\alpha}\frac{T'}{T}= C_{1}=C_{2} +C_{1}-C_{2}= C_{2}+C_{3}=-\left(\left(\frac{n \pi}{a}\right)^{2}+\left(\frac{m \pi}{b}\right)^{2}\right)=-\gamma_{mn}^{2}
+		\\ &\
+		T'+\alpha \gamma_{m n}^{2}T=0 \rightarrow T_{mn}(t)=A_{mn}e^{-\alpha \gamma_{m n}^{2} t}
+		\\ &\
+		u(x, y, t) \overset{(\star)}{=}\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} A_{mn} \sin \left(\frac{n \pi}{a} x\right) \sin \left(\frac{m \pi }{b}y\right)\  e^{-\alpha \gamma_{m n}^{2} t}
+	\end{aligned}
+\end{equation*}
+گام ۵) تعیین ضرایب از شرط اولیه
+\begin{equation*}
+	\begin{aligned}
+		u(x, y, 0)  {}&\
+		=f(x,y)
+		\\ &\
+		=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} A_{mn} \sin \left(\frac{n \pi}{a} x\right) \sin \left(\frac{m \pi }{b}y\right)
+	\end{aligned}
+\end{equation*}
+لازم است از این تساوی 
+$A_{mn}$
+محاسبه شود. تساوی شبیه به سری فوریه سینوسی است اما با دو تغییر متغیر مستقل! با تغییراتی در تساوی و دوبار استفاده از روابط سری فوریه می توان
+$A_{mn}$
+را حساب کرد:
+\begin{equation*}
+	\begin{aligned}
+		f(x,y) {} &\
+		=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty} A_{mn} \sin \left(\frac{n \pi}{a} x\right) \sin \left(\frac{m \pi }{b}y\right)
+		\\ &\
+		=\sum_{m=1}^{\infty}\underline{\sum_{n=1}^{\infty} A_{mn} \sin \left(\frac{n \pi}{a} x\right) }\sin \left(\frac{m \pi }{b}y\right)
+		%todo : neveshte zir
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	\begin{aligned}
+		{} 
+		\rightarrow&\ f(x,y)=\sum_{m=1}^{\infty} A_{m}(x) \sin \left(\frac{m \pi }{b}y\right)
+		\\ 
+		\rightarrow &\ A_{m}(x)=\frac{2}{b}\int_{0}^{b}  f(x,y) \sin\left( \frac{m \pi }{b}y\right) \ dy
+		\\ &\
+		A_{m}(x)=\sum_{n=1}^{\infty} A_{mn}(x) \sin \left(\frac{n \pi }{a}x\right)
+		\\ &\
+		\begin{aligned}
+			\rightarrow A_{mn} {} &\
+			=\frac{2}{a}\int_{0}^{a} A_{m}(x) \sin \left(\frac{n \pi }{a}x\right) \ dx
+			\\ &\
+			=\frac{2}{a}\int_{0}^{a}\left(\frac{2}{b}\int_{0}^{b}  f(x,y) \sin \left(\frac{m \pi }{b}y\right) \ dy \right) \sin \left(\frac{n \pi }{a}x\right) \ dx
+			\\ &\
+			=\frac{4}{ab}\int_{0}^{a}\int_{0}^{b}  f(x,y)\sin\left( \frac{n \pi }{a}x\right) \ \sin \left(\frac{m \pi }{b}y\right) \ dx dy
+		\end{aligned}
+	\end{aligned}
+\end{equation*}
+با جایگذاری
+$A_{mn}$
+در
+$(*)$
+\quad
+$u(x,y,t)$
+کامل می شود.
+مساله ی ۶) \\
+% todo : method problems
+مساله ی نوسان در یک صفحه ی مستطیلی را در نظر می گیریم:
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		u_{tt}= c^{2}\left(u_{xx} + u_{yy}\right)
+		\\ &\
+		u(0,y,t)= u(a,y,t)=0
+		\\ &\
+		u(x,0,t)=u(x,b,t)=0
+		\\ &\
+		u(x,y,0)=f(x,y)
+		\\ &\
+		u_{t}(x,y,0)=g(x,y)
+	\end{aligned}
+\end{equation*}
+گام اول) جایگذاری 
+$u(x,y,t)=X(x)Y(y)T(t)$
+در 
+$PDE$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		X(x) Y(y) T^{\prime \prime}(t)=C^{2}\left(X^{\prime \prime}(x) Y(y) T(t)+X(x) Y^{\prime \prime}(y) T(t)\right) \quad\quad\quad\quad /C^{2}X(x)Y(y)T(t)
+		\\ &\
+		\frac{1}{c^{2}}\frac{T^{\prime \prime}}{T}=\frac{X^{\prime \prime}}{X}+\frac{Y^{\prime \prime}}{Y} \rightarrow\left\{\begin{array}{l}\frac{1}{c^{2}}\frac{T^{\prime \prime}}{T}=\alpha \\ \frac{X^{\prime \prime}}{X}+\frac{Y^{\prime \prime}}{Y}=\alpha \rightarrow \frac{X^{\prime \prime}}{X}=\alpha-\frac{Y^{\prime \prime}}{Y}=\beta\end{array}\right.
+		\\ &\
+		\rightarrow\left\{\begin{array}{l} \frac{X^{\prime \prime}}{X}=\beta \quad (1) \\ \frac{Y^{\prime \prime}}{Y}=\alpha-\beta\quad(2) \\ \frac{1}{c^{2}}\frac{T^{\prime \prime}}{T}=\alpha\quad(3) \end{array}\right.
+		%todo : alignment of nums
+	\end{aligned}
+\end{equation*}
+گام دوم) حل معادله ی
+$(1)$
+و تعیین علامت و مقدار 
+$\beta$
+\[
+\frac{X^{\prime \prime}}{X}=\beta  \quad\quad \quad  \quad \quad \quad \quad \quad u(0,y,t)=u(a,y,t)=0 \Rightarrow X(0)=X(a)=0
+\]
+\[
+\rightarrow X_{n}(x)=\sin\frac{n \pi }{a}x \quad\quad\quad \beta_{n}=-(\frac{n \pi }{a})^{2}
+\]
+گام سوم) حل معادله ی 
+$(2)$
+و تعیین علامت و مقدار 
+$\alpha-\beta$
+(معادله ی دیگر با شرط های همگن)
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac{Y^{\prime \prime}}{Y}=\alpha-\beta=\gamma     \quad \quad \quad \quad u(x,0,t)=u(x,b,t)=0 \Rightarrow Y(0)=Y(b)=0
+		\\ &\
+		Y_{m}(y)=\sin\frac{m \pi }{b}y \quad\quad\quad \gamma_{m}=-(\frac{m \pi }{b})^{2}
+	\end{aligned}
+\end{equation*}
+گام چهارم) حل معادله ی
+$(3)$
+و تشکیل
+$u(x,y,t)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac{1}{c^{2}}\frac {T^{\prime\prime}}{T}=\alpha=\alpha-\beta+\beta=\beta+\gamma=-\left[\left(\frac{n \pi}{a}\right)^2+\left(\frac{m \pi}{b}\right)^2\right]=-\eta^{2}_{mn}
+		\\ &\
+		T^{\prime\prime}+c^{2}\eta^{2}_{mn}T=0 \Rightarrow T_{mn}(t)=A_{mn}\cos\eta_{mn}t+B_{mn} \sin c\eta_{mn}t
+		\\ &\
+		u(x,y,t)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}\left(A_{mn} \cos\eta_{mn}ct+B_{mn} \sin \eta_{mn}ct\right) \sin \left(\frac{n \pi}{a}x\right) \sin\left( \frac{m \pi}{b}y\right)
+	\end{aligned}
+\end{equation*}
+گام پنجم) تعیین ضرایب
+$A_{mn}$
+و
+$B_{mn}$
+با استفاده از شرط های اولیه
+\begin{equation*}
+	\begin{aligned}
+	{} &\
+	\begin{aligned}
+		u(x,y,0) {} &\
+		=f(x,y)
+		\\ &\
+		=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}A_{mn}  \sin \left(\frac{n \pi}{a}x\right) \sin\left( \frac{m \pi}{b}y\right)=\sum_{m=1}^{\infty}A_{m} (x)\sin \left(\frac{m \pi}{b}y\right)
+	\end{aligned}
+\\ &\
+\begin{aligned}
+	\rightarrow {} &\
+	A_{m}(x)\overset{(\star)}{=}\rightarrow A_{m}(x)=\frac{2}{b}\int_{0}^{b}  f(x,y) \sin \left(\frac{m \pi }{b}y\right) \ dy
+	\\ &\
+	A_{m}(x)=\sum_{n=1}^{\infty} A_{mn}(x) \sin \left(\frac{n \pi }{a}x\right) \Rightarrow A_{mn}=\frac{2}{a}\int_{0}^{a} A_{m}(x) \sin \left(\frac{n \pi }{a}x\right) \ dx
+	\\ \Rightarrow &\
+	A_{mn}=\frac{4}{ab}\int_{0}^{a}\int_{0}^{b}  f(x,y)\sin \left(\frac{n \pi }{a}x\right)\ \sin \left(\frac{m \pi }{b}y\right) \ dx dy
+\end{aligned}
+\\ &\
+\begin{aligned}
+	{} 
+	u(x,y,0) &\ =g(x,y) \\&\ =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}c \eta_{mn}B_{mn}  \sin \frac{n \pi}{a}x \sin \frac{m \pi}{b}y
+\end{aligned}
+\\ &\
+\begin{aligned}
+	{} &\
+	\Rightarrow c \eta_{mn}B_{mn}=\frac{4}{ab}\int_{0}^{a}\int_{0}^{b}  g(x,y)\sin \frac{n \pi }{a}x \ \sin \frac{m \pi }{b}y \ dx dy
+	\\ &\
+	\Rightarrow B_{mn}=\frac{4}{abc \eta_{mn}}\int_{0}^{a}\int_{0}^{b}  g(x,y)\sin \frac{n \pi }{a}x \ \sin \frac{m \pi }{b}y \ dx dy
+\end{aligned}
+\end{aligned}
+\end{equation*}
+روش جداسازی برای حل مسایل PDE با سه متغیر مستقل-الگوریتم\\
+%todo : section?
+گام ۱- جایگذاری 
+$u(x,y,t)=X(x)Y(y)T(t)$\\
+گام ۲- حل اولین معادله با شرط های همگن و تعیین علامت و مقدار ثابت\\
+گام ۳- حل دومین معادله با شرط های همگن و تعیین علامت و مقدار ثابت دوم \\
+گام ۴- حل معادله ی سوم(معادله ی
+$t$
+یا معادله با شرط های ناهمگن
+)
+و تشکیل فرم
+\[u(x,y,t)=\sum\sum {X_n(x)Y_m(y)T_{mn}(t)}\]
+گام ۵- محاسبه ی ضرایب مجهول با استفاده از شرط های (اولیه) ناهمگن\\
+مساله ۷)\\
