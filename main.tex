@@ -1845,3 +1845,371 @@ $t$
 \[u(x,y,t)=\sum\sum {X_n(x)Y_m(y)T_{mn}(t)}\]
 گام ۵- محاسبه ی ضرایب مجهول با استفاده از شرط های (اولیه) ناهمگن\\
 مساله ۷)\\
+مساله ی لاپلاس را در یک مکعب با چهار وجه عایق در نظر می گیریم:
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		u_{xx}+u_{yy}+u_{zz}=0
+		\\ &\
+		u_{x}(0,y,z)=u_{x}(a,y,z)=0
+		\\ &\
+		u_{y}(x,0,z)=u_{y}(x,b,z)=0
+		\\ &\
+		u(x,y,0)=0
+		\\ &\
+		u(x,y,c)=f(x,y)
+	\end{aligned}
+\end{equation*}
+گام ۱) جایگذاری 
+$u(x,y,z)=X(x)Y(y)Z(z)$
+در PDE
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		X^{\prime \prime}(x) Y(y) Z(z)+X(x) Y^{\prime \prime}(y) Z(z)+X(x) Y(y) Z^{\prime\prime}(z)=0
+		\\ &\
+		\frac{X^{\prime \prime}}{X}+\frac{Y^{\prime \prime}}{Y}+\frac{Z^{\prime \prime}}{Z}=0 \rightarrow \frac{X^{\prime \prime}}{X}=-\left(\frac{Y^{\prime \prime}}{Y}+\frac{Z^{\prime \prime}}{Z}\right)=\alpha
+		\\ &\
+		\Rightarrow\frac{Y^{\prime \prime}}{Y}=-\alpha-\frac{Z^{\prime \prime}}{Z}=\beta
+		\Rightarrow\left\{\begin{array}{l}\frac{X^{\prime \prime}}{X}=\alpha \quad\quad (1) \\ \frac{Y^{\prime \prime}}{Y} = \beta  \quad\quad (2) \\ \frac{Z^{\prime \prime}}{Z} =-(\alpha+\beta)  \quad\quad (3)\end{array}\right.
+		%todo : allignment of nums
+	\end{aligned}
+\end{equation*}
+گام ۲) حل معادله ی
+$(1)$
+و تعیین علامت و مقدار
+$\alpha$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac{X^{\prime \prime}}{X}=\alpha  \quad\quad \quad\quad X^{\prime}(0)=X^{\prime}(a)=0
+		\\ &\
+		(1) \quad \alpha=0  \quad\quad\quad X_{0}(x)=1
+		\\ &\
+		(2) \quad \alpha <0  \quad\quad\quad X_{n}(x)=\cos\frac{n \pi}{a}x \quad\quad\quad \alpha_{n}=-(\frac{n \pi}{a})^{2}
+	\end{aligned}
+\end{equation*}
+گام ۳) حل معادله ی
+$(2)$
+و تعیین علامت و مقدار
+$\beta$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\frac{Y^{\prime \prime}}{Y}=\beta  \quad\quad \quad\quad Y^{\prime}(0)=Y^{\prime}(b)=0
+		\\ &\
+		(1) \quad \beta=0  \quad\quad\quad Y_{0}(y)=1
+		\\ &\
+		(2) \quad \beta <0  \quad\quad\quad Y_{m}(y)=\cos\frac{m \pi}{b}y \quad\quad\quad \beta_{m}=-(\frac{m \pi}{b})^{2}
+	\end{aligned}
+\end{equation*}
+گام ۴) حل معادله ی
+$(3)$
+و تشکیل
+$u(x,y,z)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		(1) \quad \alpha= \beta=0  \quad\quad\quad \frac{Z^{\prime \prime}}{Z}=0 \quad\quad\quad Z(0)=0 \Rightarrow Z_{0}(z)=\alpha_{0}z
+		\\ &\
+		(2) \quad \alpha \neq  or \ \beta \neq 0  \quad\rightarrow \frac{Z^{\prime \prime}}{Z}=(\frac{m \pi}{b})^{2}+(\frac{n \pi}{a})^{2}=\gamma_{mn}^{2}
+		\\ &\
+		(2) \quad \alpha \neq  or \ \beta \neq 0  \quad\rightarrow \frac{Z^{\prime \prime}}{Z}=(\frac{m \pi}{b})^{2}+(\frac{n \pi}{a})^{2}=\gamma_{mn}^{2}
+		\\ &\
+		Z(0)=0 \rightarrow B_{mn}=0 \rightarrow Z_{mn}(z)=A_{mn} \sinh \gamma_{mn}z
+		\\ &\
+		\begin{aligned}
+			u(x, y, z)=a_{0} z {} &\
+			+\sum_{m=1}^{\infty} \sum_{n=1}^{\infty} A_{m n} \cos \frac{n \pi}{a} x \cos \frac{m \pi}{b} y \sinh \gamma_{m n} z 
+			\\ &\
+			+\sum_{m=1}^{\infty} A_{m 0} \cos \frac{m \pi}{b} y \sinh \gamma_{m 0} z+\sum_{n=1}^{\infty} A_{0 n} \cos \frac{n \pi}{a} x  \sinh \gamma_{0 n} z
+		\end{aligned}
+	\end{aligned}
+\end{equation*}	
+گام ۵) محاسبه ی ضرایب
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		u(x, y, z)= \cdot \cdot\cdot
+		\\ &\
+		\begin{aligned}
+			u(x,y,c) {} &\
+			 = f(x,y)
+			 \\ &\
+			 \begin{aligned}
+			 	=a_0c {} &\
+			 	+\sum_{m=1}^{\infty} \sum_{n=1}^{\infty} A_{m n} \cos \frac{n \pi}{a} x \cos \frac{m \pi}{b} y \sinh \gamma_{m n} c
+			 	\\ &\
+			 	+\sum_{m=1}^{\infty} A_{m 0} \cos \frac{m \pi}{b} y \sinh \gamma_{m 0} c
+			 	\\ &\
+			 	+\sum_{n=1}^{\infty} A_{0 n} \cos \frac{n \pi}{a} x  \sinh \gamma_{0 n} c
+			 \end{aligned}
+		\end{aligned}
+		\\ &\
+		1 -\quad  \int_{0}^{a} \int_{0}^{b} f(x, y) d xdy=a_{0} c \int_{0}^{a} \int_{0}^{b} d x \ d y \Rightarrow a_{0}= \frac{1}{a b c} \int_{0}^{a} \int_{0}^{b} f(x, y) d x d y
+		\\ &\
+		\begin{aligned}
+			2-\quad
+			{} &\
+			\int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{n \pi}{a} x \cos \frac{m \pi}{b} y \ d x \ dy=A_{mn} \int_{0}^{a} \cos \frac{n \pi}{a} xdx \int_{0}^{b}  \cos \frac{m \pi}{b} y d y \ \sin h \  \gamma_{mn} C= 
+			\\ &\
+			A_{mn}( \frac{a}{2})( \frac{b}{2}) \sin h \  \gamma_{mn} C
+		\end{aligned}
+	\\ &\
+	\Rightarrow A_{mn}=\frac{4}{ab \sin \gamma_{mn}C}\int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{n \pi}{a} x \cos \frac{m \pi}{b} y \ d x \ dy
+	\\ &\
+	3 - \quad \int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{n \pi}{a} x  \ d x \ dy=( \frac{a}{2})A_{0n} \sinh\frac{n \pi}{a}C \times b
+	\\ &\
+	\Rightarrow A_{0n}=\frac{2}{ab \sinh \frac{n \pi}{a}C}\int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{n \pi}{a} x  \ d x \ dy
+	\\ &\
+	4 - \quad \int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{m \pi}{b} x  \ d x \ dy=( \frac{b}{2})A_{m0} \sinh\frac{m \pi}{b}C \times a
+	\\ &\
+	\Rightarrow A_{m0}=a\frac{2}{ab \sinh \frac{m \pi}{b}C}\int_{0}^{a} \int_{0}^{b} f(x, y)\cos \frac{m \pi}{b} y  \ d x \ dy
+	\end{aligned}
+\end{equation*}
+مساله ی ۸)\\
+%todo
+معادله ی لاپلاس در یک استوانه را در نظر بگیریم
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		u_{r r}+\frac{1}{r} u_{r}+\frac{1}{r^{2}} u_{\theta \theta}+u_{z z}=0
+		\\ &\
+		0<r \leqslant R\ , \quad 0 \leqslant \theta \leqslant 2 \pi\ , \quad 0 \leqslant z \leqslant L
+		\\ &\
+		u(R, \theta, z)=f(\theta, z)=0
+		\\ &\
+		u(r, \theta, 0)=0
+		\\ &\
+		u(r, \theta, L)=g(r, \theta)
+		\\ &\
+		(u(r, \theta, z)=u(r, \theta+2 \pi, z))
+	\end{aligned}
+\end{equation*}
+گام ۱) جایگذاری
+$u(r,\theta,z)=R(r)\Theta(\theta)Z(z)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		R^{\prime \prime}(r) \Theta(\theta) Z(z)+\frac{1}{r} R^{\prime}(r) \Theta(\theta) Z(z)+\frac{1}{r^{2}} R(r) \Theta^{\prime \prime}(\theta) Z(z)+R(r) \Theta(\theta) Z^{\prime \prime}(z)=0
+		\\ &\
+		(\rightarrow \times\frac{r^{2}}{R(r) \Theta(\theta) Z(z)})
+		\\ &\
+		\begin{aligned}
+			\Rightarrow {} &\
+			r^{2} \frac{R^{\prime\prime}}{R} + r\frac{R^{\prime}}{R}+\frac{\Theta^{\prime\prime}}{\Theta}+r^{2}\frac{Z^{\prime\prime}}{Z}=
+			\\ &\
+			r^{2} \frac{R^{\prime\prime}}{R} + r\frac{R^{\prime}}{R}+r^{2}\frac{Z^{\prime\prime}}{Z}=-\frac{\Theta^{\prime\prime}}{\Theta}=\alpha \rightarrow  \frac{R^{\prime\prime}}{R} + 
+			\frac{1}{r}\frac{R^{\prime}}{R}-\frac{\alpha}{r^{2}}=-\frac{Z^{\prime\prime}}{Z}=\beta
+		\end{aligned}
+		\\ &\
+		\Rightarrow\left\{\begin{array}{l}\frac{\Theta^{\prime\prime}}{\Theta}=-\alpha \\ \frac{Z^{\prime \prime}}{Z} =- \beta \\ r^{2}{R^{\prime \prime}}+rR^{\prime}-(\beta r^{2}+ \alpha)R=0\end{array}\right.
+	\end{aligned}
+\end{equation*}
+گام ۲) حل معادله ی
+$(1)$
+و تعیین علامت و مقدار
+$\alpha$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\Theta(\theta+2\pi)=\Theta(\theta)\quad\rightarrow\quad 2\pi=nT\quad\rightarrow\quad \text{جواب تناوبی}
+		\\ &\
+		\begin{aligned}
+			\Rightarrow \alpha \geq 0 \quad \quad \quad  \alpha=\gamma^{2}  \quad \quad \quad
+			{} &\
+			 \Theta(\theta)=a \cos\gamma\theta+ b \sin\gamma\theta
+			 \\ &\
+			 T=\frac{2 \pi}{\gamma}=\frac{2 \pi}{n}\rightarrow \gamma_{n}=n
+			 \\ &\
+			 \Theta_{n}(\theta)=a_{n} \cos n\theta+ b_{n} \sin n\theta
+		\end{aligned}
+	\end{aligned}
+\end{equation*}
+گام ۳) حل معادله ی
+$(2)$
+و تعیین علامت و مقدار
+$\beta$\\
+از ذات مساله نتیجه می شود که جواب در راستای
+$z$
+تناوبی نیست و بنابراین
+$\beta<0$
+است.
+\begin{equation*}
+	\begin{aligned}
+		\beta=-\eta^{2} \rightarrow
+		{} &\
+		 \frac{Z^{\prime\prime}}{Z}=\eta^{2}
+		 \\ &\
+		 Z(z)=c \cosh \eta z+ d \sinh \eta z
+		 \\ &\
+		 Z(0)=0\rightarrow c=0 \quad\quad ,\quad\quad Z(z)=\sinh \eta z
+	\end{aligned}
+\end{equation*}
+گام ۴) حل معادله ی
+$(3)$
+و تشکیل
+$u(r,\theta,z)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		r^{2}R^{\prime\prime}+rR^{\prime}+\eta^{2} r^{2} R -n^{2} R=0
+		\\ &\
+		r^{2}R^{\prime\prime}+rR^{\prime}+(\eta^{2} r^{2}  -n^{2}) R=0 \quad\quad 
+		\text{معادله ی بسل}\quad \text{(*)}
+	\end{aligned}
+\end{equation*}
+توجه- تغییر متغیر
+$\tilde{r}=\eta r$
+در
+$(*)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		R^{\prime}=\frac{d R}{d r}=\frac{d R}{d \tilde{ r}} \frac{d \tilde{ r}}{d r}=\eta \frac{d R}{d \tilde{ r}}=\eta R
+		\\ &\
+		R^{\prime \prime}=\frac{d}{d r}\left(\eta \frac{d R}{d \widetilde{r}}\right)=\frac{d}{d \tilde{r}}\left(\eta \frac{d R}{d \tilde{r}}\right) \frac{d \tilde{ r}}{d r}=\eta^{2} \frac{d^{2} R}{d \tilde{r}^{2}}=\eta^{2} \overset {\cdot\cdot}{R}
+		\\ &\
+		\eta^2r^2R^{\prime\prime}+\eta r R^\prime+\left(\eta^2r^2-n^2\right)=0
+		\\ &\
+		\tilde{r}^2 R^{\prime\prime}+\tilde{r}R^\prime+\left(\tilde{r}^2-n^2\right)R=0\rightarrow R_n\left(\tilde{r}\right)=A_nJ_n\left(\tilde{r}\right)+B_nY_n\left(\tilde{r}\right)
+	\end{aligned}
+\end{equation*}
+با توجه به متناهی بودن
+$u$
+و در نتیجه
+$R$
+در
+$r\to 0$
+لازم است که
+$B_n=0$
+بنابراین
+$R_n\left(\tilde{r}\right)=A_nJ_n\left(\tilde{r}\right)$
+\begin{equation*}
+	\begin{aligned}
+		\rightarrow {} &\
+		\Theta_{n}(\theta)=a_n cos(n\theta)+b_n sin(n\theta)
+		\\ &\
+		Z_n(z)=sinh \left(\eta_nz\right)
+		% todo : check is that h
+		\\ &\
+		R_n(r)=J_n\left(\eta_nr\right)
+	\end{aligned}
+\end{equation*}
+همچنین از شرط
+$u(R,\theta,z)=0$
+نتیجه می شود
+$R_n(R)=0$
+و داریم
+\[
+J_n\left(\eta_nR\right)=0\rightarrow \eta_n R=0
+\]
+پس اگر مقصود از 
+$\gamma_{mn}$
+ریشه
+$m$
+ام تابع 
+$J_n$
+باشد، نتیجه می گیریم که
+$
+\eta_{mn}=\frac{\gamma_{mn}}{R}
+$
+داریم
+\[
+u(r,\theta,z)=\sum\sum \left(a_{mn}cos(n\theta)+b_{mn}sin(n\theta)\right) sinh\left(\frac{\gamma_{mn}}{R}z\right)J_n\left(\frac{\gamma_{mn}}{R}r\right)
+\]
+گام  ۵) محاسبه ی ضرایب از شرط های مرزی
+\begin{equation*}
+	\begin{aligned}
+		u(r,\theta,L) {} &\
+		=\sum_{m=0}^\infty{\sum_{n=0}^\infty{\left(a_{mn}cos(n\theta)+b_{mn}sin(n\theta)\right) J_n\left(\frac{\gamma_{mn}}{R}r\right)sinh\left(\frac{\gamma_{mn}}{R}z\right)}}
+		\\ &\
+		=g(r,\theta)
+	\end{aligned}
+\end{equation*}
+معادله ی لاپلاس در کره - گام ۱)
+\[
+\nabla^2 u = \frac{\partial^2 u}{\partial r^2}+\frac{2}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2 u}{\partial \phi^2}+\frac{cot \phi}{r^2}\frac{\partial u}{\partial \phi}+\frac{1}{r^2 sin^2 \phi}\frac{\partial^2 u}{\partial \theta^2}
+\]
+با فرض عدم تغییر نسبت به 
+$\theta$
+داریم
+$\frac{\partial^2 u}{\partial \theta^2}=0$
+.\\
+داریم
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\nabla^2u=0
+		\\ &\
+		\frac{\partial^2 u}{\partial r^2}+\frac{2}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2 u}{\partial \rho^2}+\frac{cot \rho}{r^2}\frac{\partial u}{\partial \rho}=0
+		\\ &\
+		u(r,\rho)=R(r)\phi(\rho)
+		\\ &\
+		R^{\prime \prime}\phi+\frac{2}{R}R^\prime \phi +\frac{1}{r^2}R\rho^{\prime\prime}+\frac{cot \rho}{r^2}R\phi^\prime=0
+		\\ &\
+		r^2 \frac{R^{\prime\prime}}{R}+2r\frac{R^\prime}{R}+\frac{\phi^{\prime\prime}}{\phi}+cot \rho \frac{\phi^\prime}{\phi}=0
+		\\ &\
+		r^2\frac{R^{\prime\prime}}{R}+2r\frac{R^\prime}{R}=-\frac{\phi^{\prime\prime}}{\phi}-cot \phi \frac{\phi^\prime}{\phi}=\alpha\rightarrow
+		\\ &\
+		r^2R^{\prime\prime}+2rR^\prime-\alpha R=0
+		\\ &\
+		\phi^{\prime\prime}+cot \rho \phi +\alpha \phi=0
+		\\ &\
+		cos \rho = \eta
+		\\ &\
+		\phi^\prime=\frac{d\phi}{d\rho}=\frac{d\phi}{d\eta}\frac{d\eta}{d\rho}=-sin \rho \frac{d\phi}{d\eta}=-sin \rho \dot{\phi}
+		\\
+		\rightarrow &\
+		cot \rho \phi^\prime = -cos \rho \dot{\phi}=-\eta \dot{\phi}
+		\\ &\
+		\begin{aligned}
+			\phi^{\prime\prime} 
+			{} &\
+			=\frac{d}{d\rho}\left(\phi^\prime\right)=\frac{d}{d\rho}\left(-sin \rho \dot{\phi}\right)=-sin \rho \frac{d \dot{\phi}}{d\rho}-cos \rho \dot{\phi}
+			\\ &\
+			= -sin \rho \frac{d\eta}{d\rho}\frac{d\dot{\phi}}{d\eta}-cos \rho \dot{\phi}=sin^2 \rho \ddot{\phi}-cos \rho \dot{\phi}=-sin \rho
+			\end{aligned}
+		\\ &\
+		\phi^{\prime\prime}+cot \rho \phi^\prime+\alpha \phi=0
+		\\ &\
+		sin^2 \rho \ddot{\phi}-cos \rho\dot{\phi}-cos \rho \dot{\phi}+\alpha \phi=0
+		\\ &\
+		\left(1-\eta^2\right)\ddot{\phi}-2\eta\dot{\phi}+\alpha\phi=0
+		\\ &\
+		\phi=P_\beta(\eta)=P_\beta\left(cos \rho\right)
+	\end{aligned}
+\end{equation*}
+روش جداسازی برای حل برخی مسایل ناهمگن\\
+مساله مدلسازی حرارت را در یک میله در نظر می گیریم
+و فرض می کنیم که یک منبع حرارتی در کنار میله وجود دارد. همچنین فرض می کنیم که نقاط ابتدای و انتهایی میله دارای دمای متغیر در طول زمان هستند. از نظر ریاضی هم PDE و هم شرط های مرزی ناهمگن هستند.
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		u_t=\alpha u_{xx}+f(x,t)
+		\\ &\
+		u(0,t)=a(t)
+		\\ &\
+		u(L,t)=b(t)
+		\\ &\
+		u(x,0)=g(x)
+	\end{aligned}
+\end{equation*}
+برای حل این مساله با روش جداسازی، ابتدا لازم است که با تغییر متغیر مناسب شرط های مرزی را همگن کنیم :
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		v(x,t)=u(x,t)+p(t)x+q(t)
+		\\ &\
+		v(0,t)=v(L,t)=0\rightarrow
+		v(0,t)=u(0,t)+q(t) \rightarrow q(t)=-a(t)
+		\\ &\
+		v(L,t)=u(L,t)+p(t)L+q(t)\rightarrow p(t)=\frac{a(t)-b(t)}{L}
+		\\ &\
+		\rightarrow v(x,t)=u(x,t)+\frac{a(t)-b(t)}{L}x-a(t)
+	\end{aligned}
+\end{equation*}
+حال باید PDE و شرط اولیه را هم بر حسب
+$v$
+بنویسیم
+$v_t,v_{xx}=?$
