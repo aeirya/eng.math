@@ -3,93 +3,93 @@
 \subsection*{مقدمه}
 در فصل ۱ هدف حل برخی از معادلات دیفرانسیل پاره ای است. برای این منظور سری و تبدیل فوریه به عنوان یک ابزار مهم استفاده می شوند. به همین دلیل، در این بخش ابتدا چند تعریف اساسی و مهم را در زمینه ی معادلات دیفرانسیل پاره ای ارائه می کنیم و سپس با سری و تبدیل فوریه آشنا می شویم. بعدا در بخش های ۲ و ۳ خواهیم دید که سری و تبدیل فوریه چگونه در حل برخی معادلات دیفرانسیل پاره ای به کار می روند.\\
 \begin{definition}
- اگر 
-$u:\R^n \to \R$
-تابعی از متغیر های مستقل
-$x_n,...,x_1$
-باشد، یک معادله بین 
-$u$
-و 
-$x_i$
- ها و مشتقات جزئی
- $u$
- نسبت به
- $x_i$
- ها را یک معادله دیفرانسیل با مشتقات جزئی یا معادلات دیفرانسیل پاره ای می نامیم.\\
+	اگر 
+	$u:\R^n \to \R$
+	تابعی از متغیر های مستقل
+	$x_n,...,x_1$
+	باشد، یک معادله بین 
+	$u$
+	و 
+	$x_i$
+	ها و مشتقات جزئی
+	$u$
+	نسبت به
+	$x_i$
+	ها را یک معادله دیفرانسیل با مشتقات جزئی یا معادلات دیفرانسیل پاره ای می نامیم.\\
 \end{definition}
- به عنوان نمونه
- \begin{equation}
-u+u_x+u_{xy}+uu_{yy}=x^2y
+به عنوان نمونه
+\begin{equation}
+	u+u_x+u_{xy}+uu_{yy}=x^2y
 \end{equation}
 \begin{equation}
-u_{xx}+u_{yy}=0
+	u_{xx}+u_{yy}=0
 \end{equation}
 \begin{equation}
-u_t=u_{xx}+uu_x
+	u_t=u_{xx}+uu_x
 \end{equation}
 \begin{equation}
-u_x+u_{xxy}=0
+	u_x+u_{xxy}=0
 \end{equation}
 معادلات دیفرانسیل با مشتقات جزئی هستند.\\
 \begin{definition}
- مرتبه معادله دیفرانسیل پاره ای عبارت از بزرگترین مرتبه مشتق جزئی ظاهر شده در آن است.
+	مرتبه معادله دیفرانسیل پاره ای عبارت از بزرگترین مرتبه مشتق جزئی ظاهر شده در آن است.
 \end{definition}
-  به عنوان نمونه معادله دیفرانسیل پاره ای (۴) یک معادله ی مرتبه ۳ است.\\
+به عنوان نمونه معادله دیفرانسیل پاره ای (۴) یک معادله ی مرتبه ۳ است.\\
 مرتبه نسبت به هر متغیر مستقل به طور مجزا نیز تعریف می شود. مثلا معادله ی 
 $(4)$
- نسبت به 
+نسبت به 
 $x$
 مرتبه ۲ و نسبت به 
 $y$
 مرتبه ۱ است.\\
 
 \begin{definition}
-معادله دیفرانسیل پاره ای را همگن می گوییم اگر جمله ای که فقط وابسته به متغیر های مستقل است، نداشته باشد(برابر با صفر باشد).\\
+	معادله دیفرانسیل پاره ای را همگن می گوییم اگر جمله ای که فقط وابسته به متغیر های مستقل است، نداشته باشد(برابر با صفر باشد).\\
 \end{definition}
 معادله
 $(1)$
-  ناهمگن و معادلات
+ناهمگن و معادلات
 $(4),(3),(2)$
- همگن هستند.\\
- 
+همگن هستند.\\
+
 \begin{definition}
- یک معادله دیفرانسیل پاره ای را خطی می گوییم اگر ضریب
- $u$
- و مشتقات جزئی آن فقط تابعی از متغیر های مستقل باشند.
+	یک معادله دیفرانسیل پاره ای را خطی می گوییم اگر ضریب
+	$u$
+	و مشتقات جزئی آن فقط تابعی از متغیر های مستقل باشند.
 \end{definition}
-  معادلات
- $(2)$
- و
- $(4)$
- خطی و معادلات 
- $(1)$
- و
- $(3)$
- به ترتیب به خاطر وجود جملات
- $uu_{yy}$
- و
- $uu_x$
- غیر خطی هستند.\\
+معادلات
+$(2)$
+و
+$(4)$
+خطی و معادلات 
+$(1)$
+و
+$(3)$
+به ترتیب به خاطر وجود جملات
+$uu_{yy}$
+و
+$uu_x$
+غیر خطی هستند.\\
 \\
- در درس ریاضی مهندسی چند نمونه از معادلات خطی (ضریب ثابت) را بررسی می کنیم.
- 
- این معادلات عبارتند از :
- \begin{enumerate}
- 	\item 
- 	\textbf{
- 	معادله حرارت : 
- }
- 	$u_t=\alpha u_{xx}$
- 	\item
- 	معادله موج (مدل سازی نوسان در یک طناب) : 
- 	$u_{tt}=c^2u_{xx}$
- 	\item
- 	معادله ی لاپلاس (انتقال حرکت پایا در یک صفحه) : 
- 	$u_{xx}+u_{yy}=0$
- 	\item
- 	معادله ی تیر :
- 	$u_{tt}=au_{xxxx}$
- \end{enumerate}
+در درس ریاضی مهندسی چند نمونه از معادلات خطی (ضریب ثابت) را بررسی می کنیم.
+
+این معادلات عبارتند از :
+\begin{enumerate}
+	\item 
+	\textbf{
+		معادله حرارت : 
+	}
+	$u_t=\alpha u_{xx}$
+	\item
+	معادله موج (مدل سازی نوسان در یک طناب) : 
+	$u_{tt}=c^2u_{xx}$
+	\item
+	معادله ی لاپلاس (انتقال حرکت پایا در یک صفحه) : 
+	$u_{xx}+u_{yy}=0$
+	\item
+	معادله ی تیر :
+	$u_{tt}=au_{xxxx}$
+\end{enumerate}
 
 نکته : هر مساله ی 
 PDE
@@ -102,105 +102,143 @@ $x$
 در ادامه ابتدا سری فوریه و سپس تبدیل فوریه را می بینیم.
 \subsection*{مدل سازی مسائل حرارت، لاپلاس و موج}
 \subsubsection{انتقال حرارت در یک میله ی فلزی}
-todo : pic\\
-داریم
+انتقال حرارت در یک میله ی فلزی به طول $L$
+را بررسی می کنیم. چگالی، ضریب هدایت و ظرفیت گرمایی فلز را به ترتیب برابر با $\rho$، $k$ و  $c_p$ در نظر می گیریم. همچنین فرض می کنیم که قطر میله نسبت به طول آن بسیار کوچک است و بنایراین تغییر دما در راستای شعاع میله وجود ندارد. در این صورت طبق قانون هدایت فوریه داریم:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im01.jpg}
+	\caption*{شکل ۱: مدلسازی انتقال حرارت یک بعدی\\
+		\large{
+		}
+	}
+\end{figure}
+
 \[(\left.KA\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.KA\frac{\partial u}{\partial x}\right|_{x}) \cdot \Delta t=
-	mc_p \cdot \Big(u(x,t+\Delta t)-u(x,t)\Big)\]
+mc_p \cdot \Big(u(x,t+\Delta t)-u(x,t)\Big)\]
 و
 \[m=\rho \cdot \Delta v=\rho \cdot  A \cdot \Delta x\]
-پس
+که در آن $u(x,t)$ دمای نقطه به طول $x$ در لحظه $t$ است. پس
 \begin{alignat*}{1}
-&\begin{cases}
-\left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.\frac{\partial u}{\partial x}\right|_{x} = \frac{\partial^2 u}{\partial x^2}  \cdot \Delta x\\
-u(x,t+\Delta t)-u(x,t)=\frac{\partial u}{\partial t} \cdot \Delta t
-\end{cases} 
-\\& \Rightarrow 
-K A \cdot \frac{\partial^2 u}{\partial x^2}  \Delta x \Delta t=m\rho A\frac{\partial u}{\partial t}\Delta t\Delta x
-\\& \Rightarrow
-\frac{\partial u}{\partial t}=\frac{k}{m\rho} \cdot \frac{\partial^2 u}{\partial x^2}
+	&\begin{cases}
+		\left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}-\left.\frac{\partial u}{\partial x}\right|_{x} = \frac{\partial^2 u}{\partial x^2}  \cdot \Delta x\\
+		u(x,t+\Delta t)-u(x,t)=\frac{\partial u}{\partial t} \cdot \Delta t
+	\end{cases} 
+	\\& \Rightarrow 
+	K A \cdot \frac{\partial^2 u}{\partial x^2}  \Delta x \Delta t=c_p\rho A\frac{\partial u}{\partial t}\Delta t\Delta x
+	\\& \Rightarrow
+	\frac{\partial u}{\partial t}=\frac{k}{c_p\rho} \cdot \frac{\partial^2 u}{\partial x^2}
 \end{alignat*}
 
 پس اگر تعریف کنیم
-$\alpha := \frac{k}{m\rho}$
+$\alpha := \frac{k}{c_p\rho}$
 متوجه می شویم که\\
 \[u_t=\alpha u_{xx}\]
 \[u(0,t)=u(L,t)=0\]
 \[u(x,0)=f(x)\]
-اگر هم این مسئله را در ۲ بعد بررسی کنیم، خواهیم داشت\\
-todo : pic
+اگر هم این مسئله را در ۲ بعد بررسی کنیم، به دلیل وجود هدایت گرما در هر دو راستای $x$ و $y$ خواهیم داشت\\:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im02.jpg}
+	\caption*{شکل ۲: مدلسازی انتقال حرارت دو بعدی\\
+		\large{
+		}
+	}
+\end{figure}
+
+
 \[\frac{\partial u}{\partial t}=\alpha(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2})\]
 \subsubsection{
 	معادله لاپلاس، انتقال حرارت پایا
-	 \lr{(steady state)}
+	\lr{(steady state)}
 }
 \begin{equation*}
 	\begin{aligned}
-	{} &\ \frac{\partial u}{\partial t}=0 \\
-	&\ \frac{\partial u}{\partial t}=\alpha(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}) \\
-	&\ \Rightarrow \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0
+		{} &\ \frac{\partial u}{\partial t}=0 \\
+		&\ \frac{\partial u}{\partial t}=\alpha(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}) \\
+		&\ \Rightarrow \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0
 	\end{aligned}
 \end{equation*}
 پس داریم
 \begin{equation*}
-\begin{aligned}
-{} &\ 
-u_{xx}+u_{yy}=0
-\\
-&\
-u_x(0,y)=u_x(a,y)=0
-\\
-&\
-u(x,0)=f(x)
-\\
-&\
-u(x,b)=g(x)
-\\
-\end{aligned}
+	\begin{aligned}
+		{} &\ 
+		u_{xx}+u_{yy}=0
+		\\
+		&\
+		u_x(0,y)=u_x(a,y)=0
+		\\
+		&\
+		u(x,0)=f(x)
+		\\
+		&\
+		u(x,b)=g(x)
+		\\
+	\end{aligned}
 \end{equation*}
 
 
 
 \subsubsection{موج (نوسان طناب)}
-pic : todo\\
-با توجه به اصل
-Hooke
- داریم
- \[
- F=k[u(x+2\Delta x)-u(x+\Delta x)]-k[u(x+\Delta x)-u(x)]=ma=m\frac{\partial^2 u}{\partial t^2}
- \]
- todo : pic\\
- داریم 
- $L=n\Delta x$
- و
- $M=nm$
- و
- $K=\frac{k}{n}$
- حال با توجه به رابطه قبلی داریم
- \begin{equation*}
- \begin{aligned}
- k\Big(u(x+{}&\ 2\Delta x,t)- 2u(x+\Delta x,t)+u(x,t)\Big)=m\frac{\partial^2 u}{\partial t^2}\\
- &\  \Rightarrow  u_{tt}=\frac{k}{m}u_{xx}(\Delta x)^2\\
- &\  \Rightarrow u_{tt}=\frac{k(\Delta x)^2}{m}u_{xx}\\ 
- &\ \Rightarrow u_{tt}=\frac{nK\frac{L^2}{K^2}}{\frac{M}{n}}u_{xx}\\
- &\  \Rightarrow u_{tt}=\frac{KL^2}{M}u_{xx} \\
- \end{aligned}
- \end{equation*}
+حال مدلسازی نوسان طناب یک بعدی را بررسی می کنیم. چنانچه، طناب دارای طول $L$، جرم $M$ و سختی $K$ باشد و $u(x,t)$ ارتفاع نقطه به طول $x$ در لحظه باشد، بر اساس قانون هوک داریم:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im03.jpg}
+	\caption*{شکل ۳: مدلسازی نوسان یک بعدی\\
+		\large{
+		}
+	}
+\end{figure}
+\[
+F=k[u(x+2\Delta x)-u(x+\Delta x)]-k[u(x+\Delta x)-u(x)]=ma=m\frac{\partial^2 u}{\partial t^2}
+\]
+همچنین، فرض می کنیم هر المان طناب با طول $dx$ دارای جرم $m$ و سختی $k$ باشد و کل طناب از $n$ المان تشکیل شود.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im04.jpg}
+	\caption*{شکل ۴: المان های مورد نیاز برای مدلسازی\\
+		\large{
+		}
+	}
+\end{figure}
+بنابراین، 
+$L=n\Delta x$
+و
+$M=nm$
+و
+$K=\frac{k}{n}$
+حال با توجه به رابطه قبلی داریم
+\begin{equation*}
+	\begin{aligned}
+		k\Big(u(x+{}&\ 2\Delta x,t)- 2u(x+\Delta x,t)+u(x,t)\Big)=m\frac{\partial^2 u}{\partial t^2}\\
+		&\  \Rightarrow  u_{tt}=\frac{k}{m}u_{xx}(\Delta x)^2\\
+		&\  \Rightarrow u_{tt}=\frac{k(\Delta x)^2}{m}u_{xx}\\ 
+		&\ \Rightarrow u_{tt}=\frac{nK\frac{L^2}{K^2}}{\frac{M}{n}}u_{xx}\\
+		&\  \Rightarrow u_{tt}=\frac{KL^2}{M}u_{xx} \\
+	\end{aligned}
+\end{equation*}
 تعریف می کنیم
 $c^2 = \frac{KL^2}{M}$
 .
 پس داریم
 
 \begin{equation*}
-\begin{aligned}
-{}&\ u_{tt}=c^2u_{xx} \\
-&\ u(0,t)=u(L,t)=0 \\
-&\ u(x,0)=f(x) \\
-&\ u_t(x,0)=g(x) \\
-\end{aligned}
+	\begin{aligned}
+		{}&\ u_{tt}=c^2u_{xx} \\
+		&\ u(0,t)=u(L,t)=0 \\
+		&\ u(x,0)=f(x) \\
+		&\ u_t(x,0)=g(x) \\
+	\end{aligned}
 \end{equation*}
 
 اگر هم این مسئله را در ۲ بعد بررسی کنیم، خواهیم داشت\\
-todo : pic\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im05.jpg}
+	\caption*{شکل ۵: مدلسازی نوسان دو بعدی\\
+		\large{
+		}
+	}
+\end{figure}
 \[
 u_{tt}=c^2(u_{xx}+u_{yy})
 \]
@@ -208,217 +246,224 @@ u_{tt}=c^2(u_{xx}+u_{yy})
 \subsection*{سری فوریه}
 ۱) تابع پیوسته و متناوب
 $f$
- با دوره تناوب
- $2\pi$\\
- اگر 
- $f:\R\to\R$
- پیوسته و متناوب با دوره ی تناوب 
- $2\pi$
- باشد، ضرایب
- $a_k,a_0$
- و
- $b_k$
- موجودند به طوری که به ازای هر
- $x\in\R$
- داریم
- \begin{equation}
- f(x)=\int_{-\pi}^\pi{\frac{a_0}{2}dx}+\sum_{k=1}^\infty {\int_{-\pi}^\pi{a_kcos(kx)dx}}+\sum_{k=1}^\infty{\int_{-\pi}^\pi{b_ksin(kx)dx}}
- \end{equation}
- همچنین داریم
- \begin{equation}
- a_0=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)dx}
- \end{equation}
- \begin{equation}
- a_k=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)cos(kx)dx}
- \end{equation}
-  \begin{equation}
- b_k=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)sin(kx)dx}
- \end{equation}
- 
- 
- \begin{proof}
-  برای محاسبه ضریب
- $a_0$
- ، کافی است از طرفین 
- $(5)$
- در بازه ی
- $[-\pi,\pi]$
- انتگرال بگیریم : 
- \[
- \int_{-\pi}^\pi {f(x)dx}=\int_{-\pi}^\pi{\frac{a_0}{2}}dx+\sum_{k=1}^\infty a_k{int_{-\pi}^\pi{cos(kx)dx}}+\sum_{k=1}^\infty b_k{int_{-\pi}^\pi{sin(kx)dx}}
- \]
- همچنین داریم :
- \[
- \int_{-\pi}^\pi{cos(kx)dx}=\left.\frac{sin(kx)}{k}\right |_{-\pi}^\pi=0
- \]
- \[
-  \int_{-\pi}^\pi{sin(kx)dx}=0
- \]
- دقت کنید که دلیل رابطه آخر این است که
- $sin(kx)$
- تابعی فرد است و بازه انتگرال گیری متقارن است. بنابراین داریم
- \[
-  f(x)=\frac{a_0}{2}(2\pi)+0+0\Rightarrow  a_0=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)dx}
- \]
- حال برای محاسبه ضرایب 
- $a_j$
- ، ابتدا طرفین تساوی 
- $(5)$
- را در 
- $cos(jx)$
- ضرب می کنیم و سپس در بازه ی 
- $[-\pi,\pi]$
- انتگرال می گیریم :
- \begin{equation*}
- \begin{aligned}
- \int_{-\pi}^\pi{f(x)cos(jx)dx} {} &\ =\frac{a_0}{2}\int_{-pi}^\pi{cos(jx)dx}+\sum_{k=1}^\infty{\int_{-\pi}^\pi{cos(kx)cox(jx)dx}} \\
- &\ +\sum_{k=1}^\infty{a_k\int_{-\pi}^\pi{cos(kx)cox(jx)dx}} \\
- &\ +\sum_{k=1}^\infty{b_k\int_{-\pi}^\pi{cos(kx)sin(jx)dx}} \\
- \end{aligned}
- \end{equation*}
- از طرفی برای هر عدد صحیح
- $j\ne0$
- داریم
- \[
- \int_{-\pi}^\pi{cos(jx)dx}=\left.{\frac{sin(kx)}{k}}\right |_{-\pi}^\pi=0
- \]
- وبرای هر 
- $j,k$
- صحیح، با توجه به فرد بودن تابع
- $sin(kx)cos(jx)$
- داریم
- \[
- \int_{-\pi}^\pi{sin(kx)cos(jx)dx}=0
- \]
- و همچنین داریم
-\begin{align*}
- \int_{-\pi}^\pi{cos(kx)cox(jx)dx}&=
-\begin{cases}
-\int_{-\pi}^\pi{\frac{1}{2}\Big[cos\big((k+j)x\big)+cos\big((k-j)x\big)\Big]} &\mbox{if } k\ne j\\
-\int_{-\pi}^\pi{\frac{1+cos(2jx)}{2}dx}   
-	&\mbox{if } k=j\\
-\end{cases}
-\\
-&=\begin{cases}
-0 &\mbox{if } k\ne j
-\\
-\pi &\mbox{if } k=j
-\end{cases}
-\end{align*}
- و بنابراین متوجه می شویم که برای هر 
- $j\in\N$
- داریم
- \[
- \int_{-\pi}^\pi{f(x)cos(jx)dx} {} = 0+a_j\times\pi+0\Rightarrow a_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)cos(jx)dx}
- \]
- به طور مشابه با ضرب طرفین
- $(5)$
- در
- $sin(jx)$
- و انتگرال گیری در بازه
- $[-\pi,\pi]$
- می توان نشان داد که برای هر 
- $j\in\N$
- ،
- $b_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)sin(jx)dx}$
- است.\\
- \end{proof}
- 
+با دوره تناوب
+$2\pi$\\
+اگر 
+$f:\R\to\R$
+پیوسته و متناوب با دوره ی تناوب 
+$2\pi$
+باشد، ضرایب
+$a_k,a_0$
+و
+$b_k$
+موجودند به طوری که به ازای هر
+$x\in\R$
+داریم
+\begin{equation}
+	f(x)=\int_{-\pi}^{\pi}{\frac{a_0}{2}dx}+\sum_{k=1}^\infty {\int_{-\pi}^{\pi}{a_kcos(kx)dx}}+\sum_{k=1}^\infty{\int_{-\pi}^{\pi}{b_ksin(kx)dx}}
+\end{equation}
+همچنین داریم
+\begin{equation}
+	a_0=\frac{1}{\pi}\int_{-\pi}^{\pi} {f(x)dx}
+\end{equation}
+\begin{equation}
+	a_k=\frac{1}{\pi}\int_{-\pi}^{\pi} {f(x)cos(kx)dx}
+\end{equation}
+\begin{equation}
+	b_k=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)sin(kx)dx}
+\end{equation}
+
+
+\begin{proof}
+	برای محاسبه ضریب
+	$a_0$
+	، کافی است از طرفین 
+	$(5)$
+	در بازه ی
+	$[-\pi,\pi]$
+	انتگرال بگیریم : 
+	\[
+	\int_{-\pi}^\pi {f(x)dx}=\int_{-\pi}^\pi{\frac{a_0}{2}}dx+\sum_{k=1}^\infty a_k{int_{-\pi}^\pi{cos(kx)dx}}+\sum_{k=1}^\infty b_k{int_{-\pi}^\pi{sin(kx)dx}}
+	\]
+	همچنین داریم :
+	\[
+	\int_{-\pi}^\pi{cos(kx)dx}=\left.\frac{sin(kx)}{k}\right |_{-\pi}^\pi=0
+	\]
+	\[
+	\int_{-\pi}^\pi{sin(kx)dx}=0
+	\]
+	دقت کنید که دلیل رابطه آخر این است که
+	$sin(kx)$
+	تابعی فرد است و بازه انتگرال گیری متقارن است. بنابراین داریم
+	\[
+	f(x)=\frac{a_0}{2}(2\pi)+0+0\Rightarrow  a_0=\frac{1}{\pi}\int_{-\pi}^\pi {f(x)dx}
+	\]
+	حال برای محاسبه ضرایب 
+	$a_j$
+	، ابتدا طرفین تساوی 
+	$(5)$
+	را در 
+	$cos(jx)$
+	ضرب می کنیم و سپس در بازه ی 
+	$[-\pi,\pi]$
+	انتگرال می گیریم :
+	\begin{equation*}
+		\begin{aligned}
+			\int_{-\pi}^\pi{f(x)cos(jx)dx} {} &\ =\frac{a_0}{2}\int_{-pi}^\pi{cos(jx)dx}+\sum_{k=1}^\infty{\int_{-\pi}^\pi{cos(kx)cox(jx)dx}} \\
+			&\ +\sum_{k=1}^\infty{a_k\int_{-\pi}^\pi{cos(kx)cox(jx)dx}} \\
+			&\ +\sum_{k=1}^\infty{b_k\int_{-\pi}^\pi{cos(kx)sin(jx)dx}} \\
+		\end{aligned}
+	\end{equation*}
+	از طرفی برای هر عدد صحیح
+	$j\ne0$
+	داریم
+	\[
+	\int_{-\pi}^\pi{cos(jx)dx}=\left.{\frac{sin(kx)}{k}}\right |_{-\pi}^\pi=0
+	\]
+	وبرای هر 
+	$j,k$
+	صحیح، با توجه به فرد بودن تابع
+	$sin(kx)cos(jx)$
+	داریم
+	\[
+	\int_{-\pi}^\pi{sin(kx)cos(jx)dx}=0
+	\]
+	و همچنین داریم
+	\begin{align*}
+		\int_{-\pi}^\pi{cos(kx)cox(jx)dx}&=
+		\begin{cases}
+			\int_{-\pi}^\pi{\frac{1}{2}\Big[cos\big((k+j)x\big)+cos\big((k-j)x\big)\Big]} &\mbox{if } k\ne j\\
+			\int_{-\pi}^\pi{\frac{1+cos(2jx)}{2}dx}   
+			&\mbox{if } k=j\\
+		\end{cases}
+		\\
+		&=\begin{cases}
+			0 &\mbox{if } k\ne j
+			\\
+			\pi &\mbox{if } k=j
+		\end{cases}
+	\end{align*}
+	و بنابراین متوجه می شویم که برای هر 
+	$j\in\N$
+	داریم
+	\[
+	\int_{-\pi}^\pi{f(x)cos(jx)dx} {} = 0+a_j\times\pi+0\Rightarrow a_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)cos(jx)dx}
+	\]
+	به طور مشابه با ضرب طرفین
+	$(5)$
+	در
+	$sin(jx)$
+	و انتگرال گیری در بازه
+	$[-\pi,\pi]$
+	می توان نشان داد که برای هر 
+	$j\in\N$
+	،
+	$b_j=\frac{1}{\pi}\int_{-\pi}^\pi{f(x)sin(jx)dx}$
+	است.\\
+\end{proof}
+
 \begin{example}
- 
- سیگنال مثلثی
-\begin{align*}
- &f(x)=
- \begin{cases}
- \pi-x &\mbox{if  } { 0\le x\le \pi}
- \\
- \pi+x &\mbox{if  }  {-\pi\le x \le 0}
- \end{cases}
- &f(x+2\pi)=f(x)
-\end{align*}
-
-\hrulefill
-
-حل- 
- \begin{equation*}
- \begin{aligned}
- a_0 {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)dx}\\
- &\ =\frac{1}{\pi}\left(\int_{-\pi}^0{\pi-x \, dx}+\int_0^\pi{\pi+x \, dx}\right)\\
- &\ =\frac{1}{\pi}\left(
- \left.{\frac{(\pi+x)^2}{2}}\right |_{-\pi}^0
- +
-  \left.{\frac{-(\pi-x)^2}{2}}\right |_0^\pi
- \right)\\
- &\ = \frac{1}{\pi}\left(
- \frac{\pi^2}{2}-0+0+\frac{\pi^2}{2}
- \right)= \pi
- \\\\
-  a_k {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)cos(kx)dx}\\
- &\ = \frac{1}{\pi}\left(
- \int_{-\pi}^{0}{(\pi+x)cos(kx) dx} +\int_{0}^{\pi}{(\pi-x)cos(kx)dx}
- \right)\\
- &\ = \frac{1}{\pi}\left(
- \int_{-\pi}^{0}{xcos(kx) dx} -\int_{0}^{\pi}{(xcos(kx)dx}
- \right)
- +
- \int_{-\pi}^{\pi}{cos(kx)dx}
- \end{aligned}
- \end{equation*}
-
- که در آن 
- \begin{alignat*}{3}
- \int_{-\pi}^{0}{xcos(kx)dx}
- = & \left.{\frac{xsin(kx)}{k}}\right |_{-\pi}^{0} & -\int_{-\pi}^{0}{\frac{sin(kx)}{k}dx}
- &= \frac{1-(-1)^k}{k^2}
-\\
- \int_{0}^{\pi}{xcos(kx)dx}
- = & \left.{\frac{xsin(kx)}{k}}\right |_{0}^{\pi} & -\int_{0}^{\pi}{\frac{sin(kx)}{k}dx}
- &=\frac{(-1)^k-1}{k^2}
- \\
- \int_{-\pi}^{\pi}{cos(kx)dx}=& 0
- \end{alignat*}
-
- بنابراین
- \[
- a_k=\frac{1}{\pi}\frac{2}{k^2}\left(1-(-1)^k\right)=
- \begin{cases}
- 0 &\mbox{if } k=2n\\
- \frac{4}{\pi(2n-1)^2} &\mbox{if } k=2n-1
- \end{cases}
- \]
- و
-\begin{equation*}
-	\begin{aligned}
-	b_k {} &\ = \frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)sin(kx)dx}\\
-	&\ = \frac{1}{\pi}\left(
-	\int_{-\pi}^{0}{(\pi+x)sin(kx)dx}+\int_{0}^{\pi}{(\pi-x)sin(kx)dx}
-	\right)\\
-	&\ = \frac{1}{\pi}\left(\int_{-\pi}^{0}{xsin(kx)dx}-\int_{0}^{\pi}{xsin(kx)dx} \right)+\int_{-\pi}^{\pi}{sin(kx)dx}
-	\end{aligned}
-\end{equation*}
-که
-\begin{alignat*}{2}
-{} &\ \int_{-\pi}^{0}{xsin(kx)dx}
-	=&\left.{-\frac{xcos(kx)}{k}}\right |_{-\pi}^{0} 
-	&+\int_{-\pi}^{0}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
-&\ \int_{0}^{\pi}{xsin(kx)dx}
-	=&\left.{-\frac{xcos(kx)}{k}}\right |_{0}^{\pi} 
-	&+\int_{0}^{\pi}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
-&\ \int_{-\pi}^{\pi}{sin(kx)dx}=0
-\end{alignat*}
-
-پس 
-$b_k=0$
-است. پس\\
-\[f(x)=\frac{\pi}{2}+\sum_{n=1}^{\infty}{\frac{4}{n(2n-1)^2}}cos(2n-1)x\]
-
+	
+	سیگنال مثلثی
+	\begin{align*}
+		&f(x)=
+		\begin{cases}
+			\pi-x &\mbox{if  } { 0\le x\le \pi}
+			\\
+			\pi+x &\mbox{if  }  {-\pi\le x \le 0}
+		\end{cases}
+		&f(x+2\pi)=f(x)
+	\end{align*}
+	
+	\hrulefill
+	
+	حل- 
+	\begin{equation*}
+		\begin{aligned}
+			a_0 {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)dx}\\
+			&\ =\frac{1}{\pi}\left(\int_{-\pi}^0{\pi-x \, dx}+\int_0^\pi{\pi+x \, dx}\right)\\
+			&\ =\frac{1}{\pi}\left(
+			\left.{\frac{(\pi+x)^2}{2}}\right |_{-\pi}^0
+			+
+			\left.{\frac{-(\pi-x)^2}{2}}\right |_0^\pi
+			\right)\\
+			&\ = \frac{1}{\pi}\left(
+			\frac{\pi^2}{2}-0+0+\frac{\pi^2}{2}
+			\right)= \pi
+			\\\\
+			a_k {} &\ = \frac{1}{\pi}\int_{-\pi}^\pi{f(x)cos(kx)dx}\\
+			&\ = \frac{1}{\pi}\left(
+			\int_{-\pi}^{0}{(\pi+x)cos(kx) dx} +\int_{0}^{\pi}{(\pi-x)cos(kx)dx}
+			\right)\\
+			&\ = \frac{1}{\pi}\left(
+			\int_{-\pi}^{0}{xcos(kx) dx} -\int_{0}^{\pi}{(xcos(kx)dx}
+			\right)
+			+
+			\int_{-\pi}^{\pi}{cos(kx)dx}
+		\end{aligned}
+	\end{equation*}
+	
+	که در آن 
+	\begin{alignat*}{3}
+		\int_{-\pi}^{0}{xcos(kx)dx}
+		= & \left.{\frac{xsin(kx)}{k}}\right |_{-\pi}^{0} & -\int_{-\pi}^{0}{\frac{sin(kx)}{k}dx}
+		&= \frac{1-(-1)^k}{k^2}
+		\\
+		\int_{0}^{\pi}{xcos(kx)dx}
+		= & \left.{\frac{xsin(kx)}{k}}\right |_{0}^{\pi} & -\int_{0}^{\pi}{\frac{sin(kx)}{k}dx}
+		&=\frac{(-1)^k-1}{k^2}
+		\\
+		\int_{-\pi}^{\pi}{cos(kx)dx}=& 0
+	\end{alignat*}
+	
+	بنابراین
+	\[
+	a_k=\frac{1}{\pi}\frac{2}{k^2}\left(1-(-1)^k\right)=
+	\begin{cases}
+		0 &\mbox{if } k=2n\\
+		\frac{4}{\pi(2n-1)^2} &\mbox{if } k=2n-1
+	\end{cases}
+	\]
+	و
+	\begin{equation*}
+		\begin{aligned}
+			b_k {} &\ = \frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)sin(kx)dx}\\
+			&\ = \frac{1}{\pi}\left(
+			\int_{-\pi}^{0}{(\pi+x)sin(kx)dx}+\int_{0}^{\pi}{(\pi-x)sin(kx)dx}
+			\right)\\
+			&\ = \frac{1}{\pi}\left(\int_{-\pi}^{0}{xsin(kx)dx}-\int_{0}^{\pi}{xsin(kx)dx} \right)+\int_{-\pi}^{\pi}{sin(kx)dx}
+		\end{aligned}
+	\end{equation*}
+	که
+	\begin{alignat*}{2}
+		{} &\ \int_{-\pi}^{0}{xsin(kx)dx}
+		=&\left.{-\frac{xcos(kx)}{k}}\right |_{-\pi}^{0} 
+		&+\int_{-\pi}^{0}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
+		&\ \int_{0}^{\pi}{xsin(kx)dx}
+		=&\left.{-\frac{xcos(kx)}{k}}\right |_{0}^{\pi} 
+		&+\int_{0}^{\pi}{\frac{cos(kx)}{k}dx}=\frac{\pi(-1)^{k+1}}{k}\\
+		&\ \int_{-\pi}^{\pi}{sin(kx)dx}=0
+	\end{alignat*}
+	
+	پس 
+	$b_k=0$
+	است. پس\\
+	\[f(x)=\frac{\pi}{2}+\sum_{n=1}^{\infty}{\frac{4}{n(2n-1)^2}}cos(2n-1)x\]
+	
 \end{example}
 \hrulefill
 
 *توجه : نمودار 
 $f(x)$
 در مثال ۱ بصورت 
-todo : pic
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.275\textwidth]{im06.jpg}
+	\caption*{شکل ۶: نمودار موج مثلثی\\
+		\large{
+		}
+	}
+\end{figure}
 است. بنابراین 
 $f(x)$
 تابعی زوج است و در رابطه 
@@ -447,29 +492,29 @@ $x_0$
 \hrulefill
 
 \begin{example}
-سری فوریه ی تابع
-$f(x))$
-با ضابطه ی زیر را بدست آورید.
-\begin{align*}
-&f(x)=
-\begin{cases}
-0 &\mbox{if } 0\le x\le \pi
-\\
-\pi &\mbox{if } -\pi\le x \le 0
-\end{cases}
-& f(x+2\pi)=f(x)
-\end{align*}
-\hrulefill
-\\
-حل-
-\begin{equation*}
-\begin{aligned}
-{} &\ a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi dx}=\pi\\
-&\ a_k=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)cos(kx)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi cos(kx) dx}=0\\
-&\ b_k=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)sin(kx)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi sin(kx) dx}=\frac{1-(-1)^k}{k}\\
-\end{aligned}
-\end{equation*}
-
+	سری فوریه ی تابع
+	$f(x)$
+	با ضابطه ی زیر را بدست آورید.
+	\begin{align*}
+		&f(x)=
+		\begin{cases}
+			0 &\mbox{if } 0\le x\le \pi
+			\\
+			\pi &\mbox{if } -\pi\le x \le 0
+		\end{cases}
+		& f(x+2\pi)=f(x)
+	\end{align*}
+	\hrulefill
+	\\
+	حل-
+	\begin{equation*}
+		\begin{aligned}
+			{} &\ a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi dx}=\pi\\
+			&\ a_k=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)cos(kx)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi cos(kx) dx}=0\\
+			&\ b_k=\frac{1}{\pi}\int_{-\pi}^{\pi}{f(x)sin(kx)dx}=\frac{1}{\pi}\int_{0}^{\pi}{\pi sin(kx) dx}=\frac{1-(-1)^k}{k}\\
+		\end{aligned}
+	\end{equation*}
+	
 \end{example}
 \hrulefill
 حال در 
@@ -479,22 +524,25 @@ $f^+(0)=\pi , f^-(0)=0$
 و  سری فوریه در این نقطه به
 $\frac{\pi}{2}=\frac{f^+(0)+f^-(0)}{2}$
 همگراست.\\
-مثال ۲: تابع زیر را در نظر بگیرید.
-\[
-f(x)=
-\begin{cases}
-	\pi if -\pi\le x< 0
+\begin{example}
+	تابع زیر را در نظر بگیرید.
+	\begin{align*}
+		&f(x)=
+		\begin{cases}
+			-\pi &\mbox{if } -\pi\le x\le 0
+			\\
+			x &\mbox{if } 0\le x \le \pi
+		\end{cases}
+		& f(x+2\pi)=f(x)
+	\end{align*}
+	\hrulefill
 	\\
-	x if -0\le x \le \pi
-\end{cases}
-, f(x+2\pi)=f(x)
-\]
-الف) سری فوریه ی تابع 
-$f(x)$
-را به دست آورید.\\
-ب) نشان دهید 
-$\sum_{k=1}^{\infty}{\frac{1}{(2k+1)^2}}=\frac{\pi^2}{8}$
-.\\
+	الف) سری فوریه ی تابع 
+	$f(x)$
+	را به دست آورید.\\
+	ب) نشان دهید 
+	$\sum_{k=1}^{\infty}{\frac{1}{(2k+1)^2}}=\frac{\pi^2}{8}$
+\end{example}
 حل-
 \begin{equation*}
 	\begin{aligned}
@@ -652,9 +700,9 @@ $b_k$
 مثال- سری فوریه ی همگرا به تابع زیر را بدست آوردید و در نقاط ناپیوستگی مقدار همگرایی را به دست آورید.
 \begin{equation*}
 	\begin{gathered}
-	x \quad \text{if } -1\le x\le 1
-	\\
-	 f(x+2)=f(x)
+		x \quad \text{if } -1\le x\le 1
+		\\
+		f(x+2)=f(x)
 	\end{gathered}
 \end{equation*}
 حل-
@@ -736,7 +784,7 @@ $f$
 			x       & \quad \text{if }\;\; 0\le x\le 2 \\
 			-x  & \quad \text{if }\;\; -2\le x< 0
 		\end{cases}\\
-	f(x+4)=f(x)
+		f(x+4)=f(x)
 	\end{gathered}
 \end{equation*}
 حل- تابع زوج است و بنابراین برای محاسبه ی ضرایب سری فوریه داریم :
@@ -757,10 +805,10 @@ $f$
 			0+\frac{4}{k^2\pi^2}\left.{cos\left(\frac{k\pi}{2}x\right)} \right |_0^2
 			=\frac{4}{k^2\pi^2}\left( (-1)^k-1\right)
 		\end{aligned}
-	\\ &\
-	b_k = 0
-	\\ &\
-	\implies f(x)=1+\sum_{k=1}^\infty{\frac{4}{k^2\pi^2}\left( (-1)^k-1\right)cos\left( \frac{k\pi}{2}x\right)}
+		\\ &\
+		b_k = 0
+		\\ &\
+		\implies f(x)=1+\sum_{k=1}^\infty{\frac{4}{k^2\pi^2}\left( (-1)^k-1\right)cos\left( \frac{k\pi}{2}x\right)}
 	\end{aligned}
 \end{equation*}
 *کاربرد سری فوریه در حل معادلات پاره ای\\
@@ -927,7 +975,7 @@ $f(x)$
 	\end{aligned}
 \end{equation*}
 *تبدیل فوریه\\
-در بخش قبل دیدیم که (اشاره کردیم که) برای حل معادلات پاره ای در بازه ی
+در بخش قبل دیدیم که برای حل معادلات پاره ای در بازه ی
 $[0,L]$
 از سری فوریه استفاده می کنیم. چنانچه دامنه ی حل معادله ی پاره ای نامتناهی
 $(-\infty,\infty)$
@@ -944,7 +992,7 @@ $[-L,L]$
 		{} &\
 		f(x)=\frac{a_{0}}{2}+\sum_{k=1}^{\infty} a_{k} \cos \frac{k \pi}{L} x
 		\\ &\
-		a_{0}=\frac{2}{L} \int_{0}^{t} f(x) d x
+		a_{0}=\frac{2}{L} \int_{0}^{L} f(x) d x
 		\\ &\
 		a_{k}=\frac{2}{L} \int_{0}^{L} f(x) \cos \left(\frac{k \pi}{L} x\right) d x
 		\\ &\
@@ -975,7 +1023,7 @@ g\left(\omega_k\right)=f(v) \cos \left( \omega_{k} v\right)\cos \left( \omega_{k
 \]
 خواهیم داشت
 \[
- f(x)=\sum_{k=1}^{\infty}\frac{2} {\pi} \lim_{L->{\infty}} g( \omega_{k} )  \Delta \omega =\frac{2} {\pi} \int_{0}^{{\infty}} g( \omega_{k} )  d \omega=\frac{2} {\pi} \int_{0}^{{\infty}}\int_{0}^{{\infty}} f(v) \cos ( \omega_{k} v)\cos ( \omega_{k} x)  d v\, d\omega
+f(x)=\sum_{k=1}^{\infty}\frac{2} {\pi} \lim_{L\to{\infty}} g( \omega_{k} )  \Delta \omega =\frac{2} {\pi} \int_{0}^{{\infty}} g( \omega_{k} )  d \omega=\frac{2} {\pi} \int_{0}^{{\infty}}\int_{0}^{{\infty}} f(v) \cos ( \omega_{k} v)\cos ( \omega_{k} x)  d v\, d\omega
 \]
 بنابراین در 
 $L\to\infty$
@@ -1067,9 +1115,9 @@ g\left(\omega_k\right)=f(v)(\cos  \omega_{k} v \cos  \omega_{k} x+\sin \omega_{k
 \begin{equation*}
 	\begin{aligned}
 		f(x) {} &\ =
-		\sum_{k=1}^{\infty} \lim _{l \rightarrow \infty} \frac{1}{\pi} \Delta w(\int_{-{\infty}}^{{\infty}} f(v)(\cos  \omega_{k} v \cos  \omega_{k} x+\sin \omega_{k} v \sin \omega_{k} x) d v)
+		\sum_{k=1}^{\infty} \lim _{l\to \infty} \frac{1}{\pi} \Delta w(\int_{-{\infty}}^{{\infty}} f(v)(\cos  \omega_{k} v \cos  \omega_{k} x+\sin \omega_{k} v \sin \omega_{k} x) d v)
 		\\ &\
-		=\sum_{k=1}^{\infty} \lim _{l \rightarrow \infty} \frac{1}{\pi} \Delta w g(\omega_{k}) 
+		=\sum_{k=1}^{\infty} \lim _{l \to\infty} \frac{1}{\pi} \Delta w g(\omega_{k}) 
 		\\ &\
 		= \frac{1}{\pi}\int_{0}^{{\infty}}g(\omega) d\omega
 		\\ &\
@@ -1084,9 +1132,8 @@ $\omega$
 \[
 f(x)= \frac{1}{2\pi}\int_{-{\infty}}^{{\infty}}\int_{-{\infty}}^{{\infty}} f(v)\cos(  \omega(x-v) ) d v \ d\omega
 \]
-همچنین اتنگرال
+همچنین انتگرال
 $\int_{-\infty}^\infty{f(v)sin\left(\omega(x-v)\right)d\omega}\quad$
-
 برابر با صفر است (به دلیل فرد بودن تابع نسبت به
 $\omega$
 و متقارن بودن بازه
@@ -1127,7 +1174,7 @@ F^{-1}\{F\{f(x)\}\}=\frac{1} {\sqrt{2\pi}}\int_{-{\infty}}^{{\infty}}F\{f(x)\} \
 \[
 f(x)=F^{-1}\{F\{f(x)\}\}
 \]
-مثال- تبدیل فوریه‌‌ی کسینوسی و سینوسی تابع 
+مثال- تبدیل فوریه ی کسینوسی و سینوسی تابع 
 $f(x)$
 با ضابطه زیر را محاسبه کنید.
 \[
