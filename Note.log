@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  10 MAR 2021 12:23
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.8)  20 MAR 2021 21:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1727,7 +1727,8 @@ Overfull \hbox (37.1075pt too wide) detected at line 2016
 [][]
  []
 
-[29] [30] [31] [32]) [33]
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
+[44] [45] [46]) [47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 13.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 13.
  (./Note.aux)
@@ -1741,12 +1742,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 39344 strings out of 492916
- 800253 string characters out of 6133346
- 1006602 words of memory out of 5000000
- 42612 multiletter control sequences out of 15000+600000
- 542961 words of font info for 121 fonts, out of 8000000 for 9000
+ 39408 strings out of 492916
+ 801815 string characters out of 6133346
+ 1006757 words of memory out of 5000000
+ 42673 multiletter control sequences out of 15000+600000
+ 542985 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,19n,80p,4828b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,24n,80p,4828b,757s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Note.pdf (34 pages).
+Output written on Note.pdf (48 pages).

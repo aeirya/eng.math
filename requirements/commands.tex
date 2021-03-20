@@ -19,6 +19,23 @@
 \newcommand{\nn}{\nonumber}
 \newcommand{\tw}{\textwidth}
 \newcommand{\findent}{\hspace{\parindent}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand{\myover}[2]{
+\overset{\displaystyle #1}{\displaystyle #2}
+}
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\ubcolored}[4]{
+\begingroup
+\color{#3}
+\underbrace{\color{#1}#2}_{#4}
+\endgroup
+}
+\newcommand{\RN}[1]{%
+	\textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\abs}[1]{\left|#1\right|}
 
 
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1 cm}}

@@ -1662,7 +1662,6 @@ $A_n$
  ٫ 
  u(x,t)
  جواب مساله موج در دست است.
-
 \end{problem}
 % start from 42:
 گام ۲) حل معادله ی
@@ -2260,3 +2259,1050 @@ $\frac{\partial^2 u}{\partial \theta^2}=0$
 $v$
 بنویسیم
 $v_t,v_{xx}=?$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		\begin{rcases}
+			v_t=u_t+\frac{a^\prime(t)-b^\prime(t)}Lx-a^\prime(t)\\
+			v_{xx}=u_{xx}
+		\end{rcases}
+		\rightarrow \\ &\
+		v_t-\frac{a^\prime(t)-b^\prime(t)}Lx+a^\prime(t)=\alpha v_{xx}+f(x,t)\rightarrow \\ &\
+		v_t=\alpha v_{xx}+\tilde{f}(x,t) \\ &\
+		\begin{aligned}
+			v(x,0) {} &\ =u(x,0)+\frac{a(0)-b(0)}{L}x-a(0)
+			\\ &\
+			= g(x)+\frac{a(0)-b(0)}{L}x-a(0)=\tilde{g}(x)
+		\end{aligned}
+	\end{aligned}
+\end{equation*}
+پس داریم
+\begin{equation*}
+	\begin{cases}
+		v_t=\alpha v_{xx}+\tilde{f}(x,t)\\
+		v(0,t)=v(L,t)=0\\
+		v(x,0)=g\tilde(x)
+	\end{cases}
+\end{equation*}
+بنابراین مساله بر حسب
+$v$
+دارای شرط های مرزی همگن و PDE ناهمگن است.\\
+حال برای حل این مساله ابتدا باید گام ۱ و ۲ الگوریتم همگن را برای حل مساله ی همگن
+\begin{equation*}
+	\begin{gathered}
+		v_t=\alpha v_{xx}\\
+		v(0,t)=v(L,t)=0
+	\end{gathered}
+\end{equation*}
+اجرا کنیم تا توابع
+$X_n$
+محاسبه شوند. در این مساله داریم
+$X_n(x)=sin\frac{n\pi}{L}x$
+سپس باید جمله‌ی ناهمگن معادله یعنی
+$\tilde{f}(x,t)$
+را با استفاده از سری فوریه بر حسب
+$X_n(x)$
+بسط دهیم :
+\begin{equation*}
+	\tilde{f}(x,t)=\sum_{n=1}^\infty A_n(t)sin\frac{n\pi}{L}x\rightarrow A_n(t)=\frac2L\int_0^L\tilde{f}(x,t)sin\frac{n\pi}Lx\, dx
+\end{equation*}
+با جایگذاری
+$V_{xx}=\sum_{n=1}^\infty X_n(x)T_n(x)$
+و
+$\tilde{f}(x,t)=\sum_{n=1}^\infty A_n(t)X_n(x)$
+در PDE داریم
+\[
+v_t=\sum_{n=1}^\infty X_n(x)T^\prime(t)
+\quad
+\text{و}
+\quad
+V_{xx}=\sum_{n=1}^\infty -\pr{\frac{n\pi}{L}}^2X_n(x)T_n(x)
+\]
+حال داریم
+\[
+\tilde{f}(x,t)=\sum_{n=1}^\infty X_n(x)A_n(t)\Longrightarrow\sum_{n=1}^\infty X_n(x)\left[T^\prime_n(t)+\alpha\pr{\frac{n\pi}{L}}^2T_n(t)-A_n(t)\right]=0
+\]
+و از استقلال خطی توابع
+$X_n(x)$
+نتیجه می شود که
+\[
+T^\prime_n(t)+\alpha\pr{\frac{n\pi}{L}}^2T_n(t)=A_n(t)
+\]
+حال با ضرب کردن دو طرف عبارت در
+$exp\pr{\alpha\pr{\frac{n\pi}{L}}^2t}$
+خواهیم داشت
+\begin{equation*}
+	\begin{aligned}
+	{} &\
+	\left( T_n(t)exp\pr{\alpha\pr{\frac{n\pi}{L}}^2t}\right)^\prime=
+	A_n(t)exp\pr{\alpha\pr{\frac{n\pi}{L}}^2t}
+	\\ &\
+	T_n(t)=exp\pr{-\alpha\pr{\frac{n\pi}{L}}^2t}\pr{
+	\int A_n(t)exp\pr{\alpha\pr{\frac{n\pi}{L}}^2t}dt
+	}=F_n(t)+B_n
+	\end{aligned}
+\end{equation*}
+حال با جایگذاری
+$T_n(t)$
+در
+$v(x,t)$
+و برقرار کردن شرط اولیه‌ی
+$v(x,0)=g\tilde(x)$
+ضرایب مجهول
+$B_n$
+نیز محاسبه می‌شوند و محاسبه‌ی
+$T_n$
+و در نتیجه
+$v$
+کامل است.\\
+برای کامل شدن حل کافی است از تعریف تغییر متغیر
+$u$
+به
+$v$،
+$u$
+را حساب کنیم.\\
+مثال-
+\begin{equation*}
+	\begin{aligned}
+		{}&\
+		u_t-u_{xx}=e^tsin(3x)
+		\\ &\
+		u(0,t)=0\qquad u(\pi,t)=1
+		\\ &\
+		u(x,0)=x^2
+	\end{aligned}
+\end{equation*}
+گام اول- تغییر متغیر برای همگن کردن شرط های مرزی
+\[
+v(x,t)=u(x,t)+p(t)x+q(t)
+\]
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		@ x=0\qquad 0=0+0+q(t)\rightarrow q(t)=0
+		\\ &\
+		@ x=\pi 0=1+p(t)\times \pi +0\rightarrow p(t)=-\frac1\pi
+		\\ &\
+		\Rightarrow v(x,t)=u(x,t)-\frac x\pi
+	\end{aligned}
+\end{equation*}
+گام دوم- جایگذاری متغیر جدید
+$v$
+به جای
+$u$
+در PDE و شرط اولیه
+\begin{equation*}
+	\begin{aligned}
+	{} &\
+	v_t=u_t\quad,\quad v_{xx}=u_{xx}\rightarrow v_t-v_{xx}=e^{-t}sin(3x)
+	\\ &\
+	v(x,0)=u(x,0)-\frac x\pi=x^2-\frac x\pi
+	\\ &\
+	\rightarrow
+	\begin{cases}
+		v_t=v_{xx}+e^{-t}sin(3x)
+		\\
+		v(0,t)=v(\pi,t)=0
+		\\
+		v(x,0)=x^2-\frac x\pi
+	\end{cases}
+	\end{aligned}
+\end{equation*}
+گام سوم-
+حل مساله‌همگن متناظر با به دست آوردن
+$X_n(x)$
+\begin{equation*}
+	\begin{rcases}
+		v_t=v_{xx}\\
+		v(0,t)=v(\pi,t)=0
+	\end{rcases}
+	\rightarrow
+	X_n(x)=sin(nx)
+\end{equation*}
+گام چهارم - بسط دادن جمله‌ی نا‌همگن PDE بر حسب
+$X-n(x)$
+ها
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		e^{-t}sin(3x)=\sum_{n=1}^\infty A_n(t)sin(nx)
+		\\ &\
+		\rightarrow
+		A_n(t)=
+		\begin{cases}
+			e^{-t}\qquad &\ n=3
+			\\
+			0 \qquad &\ \text{در غیر اینصورت}
+		\end{cases}
+	\end{aligned}
+\end{equation*}
+گام پنجم - تشکیل
+$u(x,t)=\sum X_n(x)T_n(t)$
+و جایگذاری در PDE و محاسبه ی
+$T_n(t)$
+\begin{equation*}
+	\begin{aligned}
+		{} &\
+		T_n^\prime +n^2T_n=A_n(t)
+		\\ &\
+		\begin{aligned}
+			\circled 1 \quad n=3 \qquad {} &\
+			T_3^\prime+qT_3=e^{-t}\qquad \qquad \times e^{qt}
+			\\ &\
+			\pr{T_3e^{qt}}^\prime=e^{8t}\rightarrow T_3=\frac18e^{-t}+b_3e^{-qt}
+		\end{aligned}
+		\\ &\
+		\begin{aligned}
+			\circled2 \quad n\ne3\qquad {}&\
+			T_n^\prime+n^2T_n=0
+			\\ &\
+			\frac{T_n^\prime}{T_n}=-n^2\rightarrow ln(T_n)=-n^2t+c\rightarrow T_n(t)=b_ne^{-n^2t}
+		\end{aligned}
+		\\ &\
+		v(x,t)=\pr{\frac18e^{-t}+b_3e^{-qt}}sin(3x)+\sum_{\myover{n=1}{n\ne3}} b_n e^{-n^2t}sin(nx)
+	\end{aligned}
+\end{equation*}
+گام ششم - محاسبه‌ی ضرایب مجهول از شرط اولیه
+\begin{equation*}
+	\begin{aligned}
+		{}&\
+		V(x,0)=x^2-\frac x\pi=\pr{\frac18+b_3}sin(3x)+\sum_{\myover{n=1}{n\ne3}}^\infty b_n sin(nx)
+		\\&\
+		x^2-\frac x\pi=\sum_{n=1}^\infty a_nsin(nx)
+		\\ &\
+		\begin{aligned}
+			a_n {}&\ =
+			\frac2\pi\int_0^\pi \pr{x^2-\frac x\pi}sin(nx)dx
+			\\ &\
+			=\frac 2\pi \left[
+			\frac{n^2\pr{-1}^{n+1}}{n}+\frac2{n^3}\pr{\pr{-1}^n-1}+\frac{\pr{-1}^n}{n}
+			\right]
+			\\ &\
+			=
+			\begin{cases}
+				b_n \qquad &\ n\ne3
+				\\
+				b_3+\frac18\qquad &\ n=3
+			\end{cases}
+		\end{aligned}
+		\\ &\
+		 \rightarrow b_3\simeq 1.663
+		\\ &\ 
+		\begin{aligned}
+			\rightarrow v(x,t){}&\
+			=\pr{\frac18e^{-t}+1.663e^{-qt}}sin(3x)
+			\\&\
+			+\sum_{n=1}^\infty\pr{
+			\frac{2\pi\pr{-1}^{n+1}}{n}+\frac4{n^3\pi}\pr{\pr{-1}^n-1}+\frac{2\pr{-1}^n}{\pi n}
+			}e^{-n^2t}sin(nx)
+		\end{aligned}
+	\\ &\
+	u(x,t)=v(x,t)+\frac x\pi
+	\end{aligned}
+\end{equation*}
+الگوریتم - حل مساله‌ی نا‌همگن دو متغیر با روش جدا‌سازی\\
+گام ۱) با تفییر متغیر
+$v(x,t)=u(x,t)+p(t)x+q(t)$
+شرط های مرزی را روی
+$v$
+همگن می کنیم.\\
+گام ۲) 
+$v$
+را در PDE و شرط اولیه جایگزین
+$u$
+می کنیم.\\
+گام ۳) مساله‌ی همگن متناظر را تا محاسبه‌ی توابع
+$X_n(x)$
+حل می کنیم.\\
+گام ۴) بخش ناهمگن PDE (نوشته شده بر حسب v) را با سری فوریه بر حسب
+$X_n(x)$
+می نویسیم.\\
+گام ۵) 
+$v(x,t)=\sum X_nT_n$
+را در PDE جایگزین می‌کنیم و همچنین
+$\tilde{f}=\sum X_n(x)A_n(t)$
+را، و توابع
+$T_n(t)$
+را به دست می آوریم.\\
+گام ۶) ضرایب مجهول را با استفاده از شرط اویه و کمک گرفتن از سری فوریه به دست می آوریم.\\
+%todo : section
+حل مسایل معادلات پاره‌ای با استفاده از تبدیل فوریه\\
+در برخی مسایل دامنه‌ی تغییرات یک یا چند متغیر مستقل به گونه‌ای است که دامنه‌ی تغییرات نسبت به آن نامتناهی
+$(-\infty,\infty)$
+یا نیمه متناهی
+$(0,\infty)$
+در نظر گرفته می شود. به عنوان نمونه مدلسازی تار مرتعش را در نظر می‌گیریم که طول آن نسبت به قطرش بسیار بزرگ است (معمولا نسبت طول به قطر بیش از ۱۰۰ را بزرگ می‌گیریم). در این‌صورت دامنه‌ی
+$x$
+به صورت
+$[0,\infty)$
+و تاز نیمه متناهی در نظر گرفته می‌شود. همچنین در مدلسازی اتو، به دلیل تغییر بسیار زیاد دما در اطراف تیغه تفلون مقدار
+$\frac{\partial T}{\partial x}$
+نا‌متناهی در نظر گرفته‌ می‌شود.\\
+در مسائل PDE اگر دامنه تغییرات یک یا چند متغیر مستقل نا‌متناهی یا نیمه نا‌متناهی باشد به جای سری فوریه، برای حل از تبدیل فوریه استفاده می‌کنیم. برای این کار لازم است :\\
+۱) با توجه به نوع دامنه و شرایط مرزی تبدیل فوریه‌ی مناسب را انتخاب کنیم.\\
+۲) از طرفین PDE تبدیل فوریه می‌گیریم. به این ترتیب PDE به یک ODE تبدیل می‌شود.\\
+۳) با حل ODE به دست آمده، تبدیل فوریه‌ی جواب را محاسبه می‌کنیم.\\
+۴) تبدیل وارون گرفته و جواب PDE را به دست می‌آوریم.\\
+۱- انتخاب تبدیل مناسب\\
+۱-۱) اگر دامنه نا‌متناهی باشد، تبدیل فوریه‌ی نمایی مناسب است.\\
+۱-۲) اگر دامنه نیمه متناهی باشد، تبدیل فوریه‌ی سینوسی یا کسینوسی را انتخاب می کنیم. انتخاب بین این دو به شرط مرزی مساله بستگی دارد(در بخش بعد جزئیات را می‌بینیم).\\
+۲- گرفتن تبدیل فوریه از طرفین PDE\\
+PDE
+شامل جملات مشتق جزئی است. بنابراین لازم است تبدیل فوریه‌ی مشتق را حساب کنیم.
+\begin{equation*}
+	\begin{aligned}
+		1) F\left\{f^\prime(x)\right\} {}&\ =
+		\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty
+		f^\prime(v)e^{i\omega v}dv
+		\\ &\
+		= \frac1{\sqrt{2\pi}}\left[
+		\left.{f(v)e^{-i\omega v}}\right|_{-\infty}^\infty
+		+i\omega \int_{-\infty}^\infty f(v)e^{-i\omega v}dv
+		\right]
+	\end{aligned}
+\end{equation*}
+با فرض اینکه
+$\lim_{x\to\pm\infty}\left|f(x)\right|=0$
+%todo : is it true
+داریم
+\begin{equation*}
+	\begin{aligned}
+		F\left\{
+		f^\prime(x)
+		\right\}{}&\
+		=\frac1{\sqrt{2\pi}}\left[
+		0\times\ \text{کراندار}+i\omega\int_{-\infty}^\infty f(v)e^{-i\omega v}dv
+		\right]
+		\\ &\
+		=i\omega F\left\{f(x)\right\}
+	\end{aligned}
+\end{equation*}
+به‌عنوان نمونه اگر در یک مساله‌ی PDE، تبدیل فوریه‌ی
+$u(x,y)$
+را
+$F\left\{u(x,y)\right\}=U(w,y)$
+در نظر بگیریم، داریم
+$F\left\{u_{xx}\right\}=\pr{i\omega}^2U=-\omega^2U$.
+\begin{equation*}
+	\begin{aligned}
+		2) F_s\left\{f^\prime(x)\right\} {} &\ =\sqrt{\frac2\pi}\int_0^\infty f^\prime(v)sin(\omega v)dv
+		\\ &\
+		= \sqrt{\frac2\pi}\left[
+		\left.{f(v)sin(\omega v)}\right|_0^\infty-\int_0^\infty \omega f(v)cos(\omega v)dv
+		\right]
+		\\ &\
+		= \sqrt{\frac2\pi}\left[
+		\lim_{v\to\infty}f(v)sin(\omega v) -0
+		-\omega\int_0^\infty f(v)cos(\omega v)dv
+		\right]
+	\end{aligned}
+\end{equation*}
+و با فرض
+$\lim_{x\to\infty}f(x)=0$
+نتیجه می شود
+\[
+F_S\left\{f^\prime(x)\right\}=0-\sqrt{\frac2\pi}\omega\int_0^\infty f(v)cos(\omega v)dv=-\omega F_C\left\{f(x)\right\}
+\]
+\begin{equation*}
+	\begin{aligned}
+		3) F_C\left\{f^\prime(x)\right\}&\ =\sqrt{\frac2\pi}\int_0^\infty f^\prime(v)cos(\omega v)dv
+		\\ &\
+		= \sqrt{\frac2\pi}\left[
+		\left.{f(v)cos(\omega v)}\right|_0^\infty+\int_0^\infty \omega f(v)sin(\omega v)dv
+		\right]
+	\end{aligned}
+\end{equation*}
+و مشابه تبدیل فوریه‌ی سینوسی، اگر
+$\lim_{x\to\infty}f(x)=0$
+خواهیم داشت
+\begin{equation*}
+	\begin{aligned}
+		F_c\left\{f^\prime(x)\right\}
+		&\ =\sqrt{\frac2\pi}\left[
+		0-f(0)+\omega\int_0^\infty f(v)sin(\omega v)dv
+		\right]
+		\\ &\
+		=-\sqrt{\frac2\pi}f(0)+\omega F_s\left\{f(x)\right\}
+	\end{aligned}
+\end{equation*}
+حال می خواهیم تبدیل فوریه‌ی سینوسی و کیسنوسی
+$u_{xx}$
+را حساب کنیم :\\
+- فرض کنیم
+$F_s\left\{u(x,y)\right\}=U(\omega,y)$
+\begin{equation*}
+	\begin{aligned}
+		F_S\left\{u_{xx}\right\} &\
+		=-\omega F_c\left\{u_x\right\}
+		\\ &\
+		-\omega\left[
+		-\sqrt{\frac2\pi}u(0,y)+\omega F_S\left\{u\right\}
+		\right]
+		\\ &\
+		\sqrt{\frac2\pi}\omega u(0,y)-\omega^2 U
+	\end{aligned}
+\end{equation*}
+- فرض کنیم
+$F_C\left\{u(x,y)\right\}=U(\omega,y)$
+\begin{equation*}
+	\begin{aligned}
+		F_c\left\{u_{xx}\right\}
+		&\
+		=-\sqrt{\frac2\pi}u_x(0,y)+\omega F_S\left\{u_x\right\}
+		\\ &\
+		=-\sqrt{\frac2\pi}u_x(0,y)-\omega^2 F_C\left\{u\right\}
+		\\ &\
+		-\sqrt{\frac2\pi}u_x(0,y)-\omega^2U
+	\end{aligned}
+\end{equation*}
+نتیجه : بنابراین در فوریه‌ی سینوسی
+$u_{xx}$،
+$u(0,y)$
+و در فوریه‌ی کسینوسی
+$u_{xx}$،
+$u_x(0,y)$
+مورد نیاز است. پس برای انتخاب تبدیل فوریه‌ی مناسب در دامنه‌های نیمه متناهی، چنانچه در مساله شرط مرزی
+$u(0,y)$
+را داشته باشیم تبدیل سینوسی و اگر شرط مرزی
+$u_x(0,y)$
+موجود بود، تبدیل فوریه‌ی کسینوسی را انتخاب می کنیم.\\
+مساله‌ی ۱)\\
+مساله‌ی حرارت نیمه متناهی به صورت زیر را در نظر می‌گیریم :
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_t=\alpha u_{xx}
+		\\ &\
+		t\ge 0 \, , \, x\ge 0
+		\\ &\
+		u(0,t)=0
+		\\ &\
+		u(x,0)=
+	\end{aligned}
+\end{equation*}
+گام ۱) انتخاب تبدیل فوریه‌ی مناسب\\
+نیمه متناهی
+$\longleftarrow$
+سینوسی یا کسینوسی\\
+شرط مرزی 
+$u(0,t)$
+$\longleftarrow$
+سینوسی\\
+گام ۲) گرفتن تبدیل فوریه از طرفین PDE
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F_S\left\{u(x,y)\right\}=U(\omega,t)
+		\\ &\
+		F_S\left\{u_{xx}\right\}=\sqrt{\frac2\pi}\omega u(0,t)-\omega^2U=-\omega^2U
+		\\ &\
+		\begin{aligned}
+			F_S\left\{u_t\right\}&\ =\sqrt{\frac2\pi}\int_0^\infty u_t(v,t)sin(\omega v)dv
+			\\ &\
+			=\frac d{dt}\left(
+			\sqrt{\frac2\pi}\int_0^\infty u(v,t)sin(\omega v)dv
+			\right)=U_t
+		\end{aligned}
+		\\ &\
+		u_t=\alpha u_{xx}\rightarrow U_t=-\alpha\omega^2U\rightarrow
+		u_t+\alpha\omega^2U=0
+	\end{aligned}
+\end{equation*}
+(با گرفتن تبدیل فوریه، نسبت به
+$x$
+($
+w\leftarrow
+$)
+جبری می شود در نتیجه یک معادله دیفرانسیل معمولی است)\\
+گام ۳) حل ODE به دست آمده و محاسبه‌ی $U$
+\begin{equation}
+	\begin{aligned}
+		u_t+\alpha\omega^2U=0\longrightarrow &\
+		\frac{U_t}{U}=-\alpha\omega^2
+		\\ &\
+		ln\, U =-\alpha\omega^2t+c_0(\omega)
+		\\ &\
+		U(\omega,t)=c(\omega)e^{-\alpha\omega^2t}
+	\end{aligned}
+\end{equation}
+گام ۴) محاسبه‌ی ضریب از شرط اولیه
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u(x,0)=e^{-x}
+		\\ &\
+		U(\omega,0)=F_S\left\{e^{-x}\right\}=
+		\sqrt{\frac2\pi}\int_0^\infty e^{-v}sin(\omega v)dv
+	\end{aligned}
+\end{equation*}
+روش ۱) دو‌بار جز‌به‌جز\\
+روش ۲) تبدیل لاپلاس
+\begin{equation*}
+	\begin{aligned}
+		&\
+		\int_0^\infty e^{-st}sin(at)dt=d\left\{sin(at)\right\}=\frac a{s^2+a^2}
+		\\ &\
+		\downarrow \qquad \qquad s=1\, , \, a=\omega
+		\\ &\
+		\int_0^\infty e^{-v}sin(\omega v)dv=\frac\omega{1+\omega^2}
+		\\ &\
+		\Rightarrow
+		\begin{rcases}
+			U(\omega,0)=\sqrt{\frac2\pi}\frac\omega{1+\omega^2}
+			\\
+			U(\omega,0)=C(\omega)\times1
+		\end{rcases}
+	\rightarrow
+	C(\omega)=\sqrt{\frac2\pi}\frac\omega{1+\omega^2}\rightarrow U(\omega,t)=\sqrt{\frac2\pi}\frac\omega{1+\omega^2}e^{-\alpha\omega^2t}
+	\end{aligned}
+\end{equation*}
+گام ۵) گرفتن تبدیل وارون و محاسبه‌ی 
+$u(x,t)$
+\begin{equation*}
+	\begin{aligned}
+		u(x,t)&\ =
+		F_S^{-1}\left\{U(\omega,t)\right\}
+		\\ &\
+		=\sqrt{\frac2\pi}\int_0^\infty U(\omega,t)sin(\omega x)d\omega
+		\\ &\
+		=\frac2\pi\int_0^\infty \frac\omega{1+\omega^2}e^{-\alpha\omega^2t}sin(\omega x)d\omega
+	\end{aligned}
+\end{equation*}
+مساله‌ی ۲)\\
+مساله‌ی موج نیمه متناهی به صورت زیر را در نظر می‌گیریم :
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_{tt}=c^2u_{xx}
+		\\ &\
+		t\ge 0 \, , \, x\ge0
+		\\ &\
+		u_x(0,t)=0
+		\\ &\
+		u(x,0)=e^{-x}
+		\\ &\
+		u_t(x,0)=e^{-2x}
+	\end{aligned}
+\end{equation*}
+گام ۱) انتخاب تبدیل فوریه‌ی مناسب\\
+نیمه متناهی
+$\leftarrow$
+سینوسی یا کسینوسی\\
+شرط مرزی
+$u_x(0,t)$
+$\leftarrow$
+کسینوسی\\
+گام ۲) گرفتن تبدیل فوریه از طرفین PDE
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F_C\left\{u(x,t)\right\}=U(\omega,t)
+		\\ &\
+		F_C\left\{u_{xx}\right\}=-\sqrt{\frac2\pi}u_x(0,t)-\omega^2U=-\omega^2U
+		\\ &\
+		F_C\left\{u_{tt}\right\}=U_{tt}
+		\\ &\
+		u_{tt}=c^2u_{xx}\rightarrow u_{tt}=-c^2\omega^2U\rightarrow u_{tt}+c^2\omega^2U=0
+	\end{aligned}
+\end{equation*}
+گام ۳) حل ODE به دست آمده و محاسبه‌ی 
+$U$
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_{tt}+c^2\omega^2U=0 \qquad s^2+c^2\omega^2=0 \qquad s=\pm c\omega i
+		\\ &\
+		u(\omega,t)=A(\omega)cos(c\omega t)+B(\omega)sin(c\omega t)
+	\end{aligned}
+\end{equation*}
+گام ۴) محاسبه‌ی ضرایب از شرط های اولیه
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u(x,0)=e^{-x}\rightarrow U(\omega,0)=F_C\left\{e^{-x}\right\}
+		\\ &\
+		u_t(x,0)=e^{-2x}\rightarrow u_t(\omega,0)=F_C\left\{e^{-2x}\right\}
+		\\ &\
+		\begin{aligned}
+			\text{\lr{\RN{1})}}\ \ U(\omega,0) &\ =F_C\left\{e^{-x}\right\}
+			\\ &\
+			=\sqrt\frac2\pi \int_0^\infty e^{-v}cos(\omega v)dv
+		\end{aligned}
+	\\&\
+	\int_0^\infty e^{-st}cos(at)dt=\frac s{s^2+a^2}\qquad s=1 \quad a=\omega
+	\\
+	\rightarrow &\
+	\int_0^\infty e^{-v}cos(\omega v)dv=\frac1{1+\omega^2}
+	\\
+	\rightarrow &\
+	\begin{rcases}
+		U(\omega,0)\sqrt\frac2\pi\frac1{1+\omega^2}\\
+		U(\omega,0)=A(\omega)
+	\end{rcases}
+	\rightarrow A(\omega)=\sqrt\frac2\pi\frac1{1+\omega^2}
+	\\ &\
+	\begin{aligned}
+		\text{\lr{\RN2)}}\ \ U_t(\omega,0) &\
+		= F_C\left\{e^{-2x}\right\}\qquad s=2\quad a=\omega
+		\\ &\
+		= \sqrt\frac2\pi\frac2{4+\omega^2}
+	\end{aligned}
+	\\ \rightarrow &\
+	\begin{rcases}
+	U_t(\omega,0)=\sqrt\frac2\pi\frac2{4+\omega^2}
+	\\
+	U_r(\omega,0)=c\omega B(\omega)
+	\end{rcases}
+	\rightarrow B(\omega)=\frac{2\sqrt\frac2\pi}{c\omega\pr{4_+\omega^2}}
+	\\ &\
+	U(\omega,t)=\frac{\sqrt\frac2\pi}{1+\omega^2}cos(c\omega t)+\frac{2\sqrt\frac2\pi}{c\omega\pr{4+\omega^2}}sin(c\omega t)
+	\end{aligned}
+\end{equation*}
+گام ۵) گرفتن تبدیل وارون و محاسبه‌ی
+$u(x,y)$
+\begin{equation*}
+	\begin{aligned}
+		u(x,t) &\ = F_c^{-1}\left\{U(\omega,t)\right\}=\sqrt\frac2\pi\int_0^\infty U(\omega,t)cos(\omega x)d\omega
+		\\ &\
+		\int_0^\infty \pr{\frac{\frac2\pi}{1+\omega^2}cos(c\omega t)+\frac{\frac4\pi}{c\omega\pr{4+\omega^2}}sin(c\omega t)}cos(\omega x)d\omega
+	\end{aligned}
+\end{equation*}
+مساله‌ی ۳)\\
+مساله‌ی لاپلاس روی نیم صفحه را در نظر بگیریم
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_{xx}+u_{yy}=0
+		\\ &\
+		x\ge0\quad , \quad -\infty<y<\infty
+		\\ &\
+		u(0,y)=e^{-\left|y\right|}
+	\end{aligned}
+\end{equation*}
+گام ۱) انتخاب تبدیل فوریه‌ی مناسب\\
+نکته : دامنه‌ی حل نسبت به
+$x$
+نیمه متناهی و نسبت به
+$y$
+نا‌متناهی است. در شرایطی که دامنه نسبت به بیش از یک متغیر نا‌متناهی یا نیمه متناهی باشد، متغیر نا‌متناهی‌تر ملاک انتخاب تبدیل فوریه است. مثلا در مساله‌ی فوق دامنه نسبت به
+$x$
+نیمه متناهی و نسبت به
+$y$
+نا‌متناهی است پس 
+$y$
+ملاک انتخاب است.\\
+$\leftarrow \, y$
+نامتناهی : تبدیل فوریه‌ی نمایی نسبت به
+$y$\\
+گام ۲) گرفتن تبدیل فوریه از طرفین PDE
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F\set{u(x,y)}=U(x,\omega)
+		\\ &\
+		F\set{u_{xx}}=U_{xx}
+		\\ &\
+		F\set{U_{yy}}=\pr{i\omega}^2U=-\omega^2U
+		\\ &\
+		U_{xx}-\omega^2U=0
+	\end{aligned}
+\end{equation*}
+گام ۳) حل ODE به دست آمده و محاسبه‌ی 
+$U$
+\begin{equation*}
+	\begin{aligned}
+		&\
+		U_{xx}-\omega^2 U=0
+		\\ &\
+		S^2-\omega^2=0\rightarrow s=\pm\omega\rightarrow U(x,\omega)=A(\omega)e^{\omega x}+B(\omega)e^{-\omega x}
+	\end{aligned}
+\end{equation*}
+گام ۴) محاسبه‌ی ضرایب از شرط های مرزی\\
+توجه - با توجه به فیزیک مساله (مدلسازی انتقال حرارت پایا) می دانیم که در کل دامنه
+$\left|u(x,y)\right|<\infty$
+و بنابراین در حالتی که
+$x\to+\infty$
+و
+$\omega\to+\infty$
+نتیجه می‌شود که
+$A(\omega)=0$
+و در حالتی که
+$x\to+\infty$
+و
+$\omega\to-\infty$
+نتیجه می‌شود که
+$B(\omega)=0$
+پس
+\[
+U(x,\omega)=C(\omega)e^{-\left|\omega x\right|}
+\]
+برای محاسبه‌ی ضریب
+$C(\omega)$
+از شرط مرزی داده شده داریم
+\begin{equation*}
+	\begin{aligned}
+		U(0,\omega)=C(\omega) &\ =F\set{e^{-\abs{y}}}
+		\\ &\
+		=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\abs{v}}e^{-i\omega v}dv
+		\\ &\
+		=\frac1{\sqrt{2\pi}}\pr{\int_{-\infty}^0e^{v\pr{1-i\omega}}dv+\int_0^\infty e^{-v\pr{1+i\omega}}dv}
+		\\ &\
+		=\frac1{\sqrt{2\pi}}\pr{\frac1{1-i\omega}\pr{1-0}-\frac1{1+i\omega}\pr{0-1}}
+		\\ &\
+		=\frac1{\sqrt{2\pi}}\pr{\frac1{1+i\omega}+\frac1{1-i\omega}}=\frac1{\sqrt{2\pi}}\frac2{1+\omega^2}=\sqrt\frac2\pi\frac1{1+\omega^2}
+	\end{aligned}
+\end{equation*}
+گام ۵) گرفتن تبدیل وارون و محاسبه‌ی 
+$u(x,y)$
+\begin{equation*}
+	\begin{aligned}
+		u(x,y) &\ =
+		F^{-1}\set{U(x,\omega)}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty U(x,\omega)e^{i\omega y}d\omega
+		\\ &\
+		\frac1{\sqrt{\pi}}\int_{-\infty}^\infty \frac{e^{i\omega y}}{1+\omega^2}e^{-\abs{\omega x}}d\omega
+	\end{aligned}
+\end{equation*}
+مساله‌ی ۴)\\
+حال مساله‌ی لاپلاس را روی ربع صفحه در نظر بگیریم
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_{xx}+u_{yy}=0
+		\\ &\
+		x\ge0\\, , \, y\ge0
+		\\ &\
+		u(x,0)=e^{-x}
+		\\ &\
+		u_x(0,y)=e^{-2y}
+	\end{aligned}
+\end{equation*}
+گام ۱) انتخاب تبدیل فوریه‌ی مناسب\\
+نکته : دامنه نسبت به هر دو متغیر مستقل
+$x$
+و
+$y$
+نیمه متناهی است. بنابراین با توجه به شرط مرزی موجود نسبت به هر‌یک از این دو متغیر می‌توان تبدیل فوریه گرفت.\\
+۱) متغیر
+$x$
+: دامنه نیمه متناهی، شرط مرزی \quad
+$\Leftarrow u_x(0,y)$
+تبدیل کسینوسی\\
+۲) متغیر
+$y$
+: دامنه نیمه متناهی، شرط مرزی \quad
+$\Leftarrow u(x,0)$
+تبدیل سینوسی\\
+بنابراین تبدیل فوریه‌ی کسینوسی نسبت به
+$x$
+و یا سینوسی نسبت به
+$y$
+هر دو قابل قبول هستند.\\
+۴-۱) حل مساله‌ی ۴ با تبدیل فوریه‌ی کسینوسی نسبت به
+$x$\\
+گام ۲) گرفتن تبدیل فوریه از طرفین PDE
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F_C\set{u(x,y)}=U(\omega,y)
+		\\ &\
+		F_C\set{u_{xx}}=-\sqrt\frac2\pi u_x(0,y)-\omega^2U=-\sqrt\frac2\pi e^{-2y}-\omega^2U
+		\\ &\
+		F_C{u_{yy}}=U_{yy}
+		\\ \rightarrow &\
+		-\sqrt\frac2\pi e^{-2y}-\omega^2U+U_{yy}=0
+		\\ &\
+		U_{yy}-\omega^2U=\sqrt\frac2\pi e^{-2y}
+	\end{aligned}
+\end{equation*}
+گام ۳) حل ODE به دست آمده و محاسبه‌ی
+$U$
+\[
+U(\omega,y)=A(\omega)e^{\omega y}+B(\omega)e^{-\omega y}+U_p(\omega,y)
+\]
+{جواب خصوصی ناهمگن}
+%todo : centering
+\begin{equation*}
+	\begin{aligned}
+		&\
+		U=c_0e^{-2y}\qquad U_y=-2c_0e^{-2y}\qquad U_{yy}=4c_0e^{-2y}
+		\\ &\
+		\pr{4c_0-c_0\omega^2}\cancel{e^{-2y}}=\sqrt\frac2\pi\cancel{e^{-2y}}
+		\\ &\
+		c_0=\sqrt\frac2\pi\frac1{4-\omega^2}\rightarrow U_p(\omega,y)=\sqrt\frac2\pi\frac{e^{-2y}}{4-\omega^2}
+		\\ &\
+		U(\omega,y)=A(\omega)e^{\omega y}+B(\omega)e^{-\omega y}+\sqrt\frac2\pi\frac{e^{-2y}}{4-\omega^2}
+	\end{aligned}
+\end{equation*}
+همچنین با توجه به متناهی بودن جواب در دامنه‌ی حل، در حالت حدی
+$\omega\to+\infty$
+و
+$y\to+\infty$
+نتیجه می‌گیریم که
+$A(\omega)=0$ :
+\[
+U(\omega,y)=B(\omega)e^{-\omega y}+\sqrt\frac2\pi\frac{e^{-2y}}{4-\omega^2}
+\]
+توجه کنید که شرط مرزی
+$u_x(0,y)=e^{-2y}$
+منجر به نقطه تکین
+$\omega=2$
+در جواب شد و این به این معنی است که با آن شرط مرزی جواب پایداری نخواهیم داشت\\
+گام ۴) محاسبه‌ی ضریب با استفاده از شرط مرزی
+\begin{equation*}
+	\begin{aligned}
+		&\
+		\begin{aligned}
+			U(\omega,0)&\ =B(\omega)+\sqrt\frac2\pi\frac1{4-\omega^2}=F_C\set{u(x,0)}=F_C\set{e^{-x}}
+			\\ &\
+			=\sqrt\frac2\pi\int_0^\infty e^{-v}cos(\omega v)dv=\left.{\sqrt\frac2\pi\frac s{s^2+a^2}}\right|_{\myover{s=1}{a=\omega}}=\sqrt\frac2\pi\frac1{1+\omega^2}
+		\end{aligned}
+	\\ &\
+	B(\omega)+\sqrt\frac2\pi\frac1{4-\omega^2}=\sqrt\frac2\pi\frac1{1+\omega^2}\rightarrow B(\omega)=\sqrt\frac2\pi\pr{\frac1{1+\omega^2}-\frac1{4-\omega^2}}
+	\end{aligned}
+\end{equation*}
+گام ۵) گرفتن تبدیل وارون و محاسبه‌ی 
+$u(x,y)$
+\begin{equation*}
+	\begin{aligned}
+		u(x,y)&\ =F_C^{-1}\set{U(\omega,y)}
+		\\ &\
+		=\sqrt\frac2\pi\int_0^\infty U(\omega,y)cos(\omega x)d\omega
+		\\ &\
+		=\sqrt\frac2\pi\int_0^\infty\pr{
+			\sqrt\frac2\pi\pr{\frac{3-2\omega^2}{\pr{1+\omega^2}\pr{4-\omega^2}}e^{-\omega y}}+\sqrt\frac2\pi e^{-2y}
+		}cos(\omega x)d\omega
+		\\ &\
+		\frac2\pi\int_0^\infty\pr{
+		\frac{3-2\omega^2}{\pr{1+\omega^2}\pr{4-\omega^2}}e^{-\omega y}+e^{-2y}
+		}cos(\omega x)d\omega
+	\end{aligned}
+\end{equation*}
+۴-۲) حل مساله‌ی ۴ با تبدیل فوریه‌ی سینوسی نسبت به
+$y$
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F_S\set{u(x,y)}=U(x,\omega)
+		\\ &\
+		F_S\set{u_{xx}}=U_{xx}
+		\\ &\
+		F_S\set{u_{yy}}=\sqrt\frac2\pi\omega u(x,0)-\omega^2U=\sqrt\frac2\pi\omega e^{-x}-\omega^2U
+		\\ \rightarrow &\
+		U_{xx}-\omega^2U+\sqrt\frac2\pi\omega e^{-x}=0
+	\end{aligned}
+\end{equation*}
+گام ۳) حل ODE به دست آمده و محاسبه‌ی
+$U$
+\begin{equation*}
+	\begin{aligned}
+		&\
+		U_{xx}-\omega^2U=-\sqrt\frac2\pi\omega e^{-x}
+		\\ &\
+		U(x,y)=A(\omega)e^{\omega x}+B(\omega)e^{-\omega x}+U_P(x,\omega)
+		\\ &\
+		\begin{aligned}
+					U_P=c_0e^{-x}\Rightarrow &\
+					\pr{c_0-\omega^2 c_0}\cancel{e^{-x}}=-\sqrt\frac2\pi\omega\cancel{e^{-x}}
+					\\ &\
+					c_0=\sqrt\frac2\pi\frac\omega{\omega^2-1}\, , \, \abs{U}<\infty \Rightarrow A(\omega)=0
+		\end{aligned}
+		\\ \rightarrow &\
+		U(x,\omega)=B(\omega)e^{-\omega x}+\sqrt\frac2\pi\frac\omega{\omega^2-1}e^{-x}
+	\end{aligned}
+\end{equation*}
+گام ۴) محاسبه‌ی ضریب از شرط مرزی
+\begin{equation*}
+	\begin{aligned}
+		&\
+		u_x(0,y)=e^{-2y}
+		\\ \rightarrow &\
+		\begin{aligned}
+			U_x(0,\omega)=F_S\set{e^{-2y}}&\ =\sqrt\frac2\pi\int_0^\infty e^{-2v}sin(\omega v)dv
+			\\ &\
+			= \left.{\sqrt\frac2\pi\frac a{s^2+a^2}}\right|_{\myover{s=2}{a=\omega}}=\sqrt\frac2\pi\frac\omega{\omega^2+4}
+		\end{aligned}
+		\\ &\
+		\begin{aligned}
+			U_x(0,\omega) &\ =-\omega B(\omega) e^{-\omega x}-\left.{\sqrt\frac2\pi\frac\omega{\omega^2-1}e^{-x}}\right|_{x=0}
+			\\ &\
+			=-\omega B(\omega)-\sqrt\frac2\pi\frac\omega{\omega^2-1}
+		\end{aligned}
+		\\ \Rightarrow &\
+		B(\omega)=-\sqrt\frac2\pi\frac1{\omega^2+4}-\sqrt\frac2\pi\frac1{\omega^2-1}
+		\\ &\
+		U(x,\omega)=-\sqrt\frac2\pi\pr{\frac1{\omega^2+4}-\frac1{\omega^2-1}}e^{-\omega x}+\sqrt\frac2\pi\frac\omega{\omega^2-1}e^{-x}
+	\end{aligned}
+\end{equation*}
+گام ۵) گرفتن تبدیل وارون و محاسبه‌ی 
+$u(x,y)$
+\begin{equation*}
+	\begin{aligned}
+		u(x,y) &\ = \sqrt\frac2\pi\int_0^\infty U(x,\omega)sin(\omega y)d\omega
+		\\ &\
+		\frac2\pi\int_0^\infty\pr{\frac5{\pr{\omega^2+4}\pr{\omega^2-1}}e^{-\omega x}+\frac\omega{\omega^2-1}e^{-x}}sin(\omega y)d\omega
+	\end{aligned}
+\end{equation*}
+%todo : section
+روش گرین برای حل مسایل PDE\\
+تعریف : معادله دیفرانسیل
+$Lu=f$
+را در نظر بگیرید. (مثلا در مساله‌ی حرارت داریم 
+$u_t-\alpha^2 u_{xx}=0$
+و
+$L=\partial_t-\alpha^2\partial_{xx}$)
+اگر تابع
+$G$
+جواب مساله‌ی
+$Lu=S$
+باشد که در آن
+$S$
+تابع ضربه‌ی دیراک است، 
+$G$
+را تابع گرین متناظر با
+$L$
+می‌نامیم.\\
+%todo
+قضیه اگر 
+$G$
+تابع گرین
+$L$
+باشد، جواب
+$PDE$‌ی
+$Lu=f$
+برابر است با
+$u=\pr{G\star f}$
+که در آن
+$\star$
+علامت کانولوشن است.
+%todo : check shavad
+\begin{equation*}
+	\begin{aligned}
+		&\
+		LG=S
+		\\ &\
+		\begin{aligned}
+		L(G\star f)&\ =L(\pr{int G(s)f(t-s)ds}
+		\\ &\
+		=\int L\pr{G(s)f(t-s)}ds=\int S(s)f(t-s)ds=f(t)
+		\end{aligned}
+	\end{aligned}
+\end{equation*}
+مثال - محاسبه‌ی تابع گرین برای معادله‌ی حرارت
+%todo : fix Greek symbols
+\begin{equation*}
+	\begin{aligned}
+		&\
+		G_t-\alpha^2 G_{xx}=S(x-\zeta)S(t-\tau) \qquad \pr{\star}
+		\\ &\
+		x,\zeta\in\R\qquad t,\tau\ge0 \qquad \left.G\right|_{t=0}=0
+		\\ &\
+		\abs{G}<\infty \quad @ \ \ \abs{x}<\infty
+	\end{aligned}
+\end{equation*}
+۱) از طرفین
+$\pr{\star}$
+تبدیل لاپلاس نسبت به
+$t$
+بگیریم
+\begin{equation*}
+	\begin{aligned}
+		&\
+		L\set{G\pr{x,t,\zeta,\tau}}=\tilde{G}\pr{x,s,\zeta,\tau}
+		\\ &\
+		L\set{G_t}=s\tilde{G}-G\pr{x,0,\zeta,\tau}=s\tilde{G}
+		\\ &\
+		L\set{G_{xx}}=\tilde{G}_{xx}
+		\\ &\
+		L\set{s\pr{t-\tau}}=e^{-\tau s}
+		\\ \Rightarrow &\
+		\alpha^2\tilde{G}_{xx}-s\tilde{G}=-e^{-\tau s}S\pr{x-\zeta} \qquad\pr{\star\star}
+	\end{aligned}
+\end{equation*}
+۲) از طرفین
+$\pr{\star\star}$
+نسبت به
+$x$
+تبدیل فوریه بگیریم
+\begin{equation*}
+	\begin{aligned}
+		&\
+		F\set{\tilde{G}\pr{x,s,\zeta,\tau}}=\bar{G}\set{\omega,s,\zeta,\tau}
+		\\ &\
+		F\set{\tilde{G_{xx}}}=\pr{i\omega}^2\bar{G}=-\omega^2\bar{G}
+		\\ &\
+		F\set{S(x-\zeta)}=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty e^{i\omega v}S\pr{v-\zeta}dv=\frac1{\sqrt{2\pi}}e^{-i\omega\zeta}
+		\\ \Rightarrow &\
+		-\alpha^2\omega^2\bar{G}-S\bar{G}=-\frac{e^{-\zeta s}e^{-i\omega s}}{\sqrt{2\pi}}
+		\\ \rightarrow &\
+		\bar{G}\pr{\omega,s,\zeta,\tau}=\frac{e^{-\zeta s}e^{-i\omega\zeta}}{\sqrt{2\pi}\pr{\alpha^2\omega^2+s}}=F\set{L\set{G}}
+	\end{aligned}
+\end{equation*}
+۳) لاپلاس وارون
+\begin{equation*}
+	\begin{aligned}
+		&\
+		L^{-1}\set{\frac1{s-a}}=e^{at}
+		\\ &\
+		L^{-1}\set{e^{-cs}F(s)}=u_c(t)f(t-c)
+		\\ \Rightarrow &\
+		L^{-1}\set{\frac1{s+\alpha^2\omega^2}}=e^{-\alpha^2\omega^2t}
+		\\ &\
+		L^{-1}\set{\frac{e^{-\zeta s}}{s+\alpha\omega^2}}=u_{\zeta}(t)e^{-\alpha^2\omega^2\pr{t-\zeta}}
+		\\ &\
+		L^{-1}\set{\bar{G}}=\frac{u_{\zeta}(t)e^{-\alpha^2\omega^2\pr{t-\tau}}e^{-i\omega\zeta}}{\sqrt{2\pi}}
+	\end{aligned}
+\end{equation*}
+۴) فوریه وارون
+\begin{equation*}
+	\begin{aligned}
+		&\
+		\begin{aligned}
+		G &\ =
+		F^{-1}\set{\frac{u_{\zeta}(t)e^{-\alpha^2\omega^2\pr{t-\tau}}e^{-i\omega\zeta}}{\sqrt{2\pi}}}
+		\\ &\
+		= \frac1{\sqrt{2\pi}}u_{\zeta}(t)\int_{-\infty}^\infty\frac1{\sqrt{2\pi}}e^{-\alpha^2\omega^2\pr{t-\tau}}e^{-i\omega\zeta}e^{i\omega x}d\omega
+		\end{aligned}
+		\\ &\
+		G=\frac1{2\pi}u_{\zeta}(t)\int_{-\infty}^\infty e^{-\alpha^2\omega^2\pr{t-\tau}}e^{-i\omega\zeta}e^{i\omega x}d\omega
+		\\ &\
+		t--\tau=\tilde{t}
+		\\
+		\rightarrow G &\
+		=\frac1{2\pi}u_{\zeta}(t)\int_{-\infty}^\infty e^{-\alpha^2\tilde{t}\omega^2-i\omega\pr{\zeta-x}}d\omega
+		\\ &\
+		=\frac1{2\pi}\int_{-\infty}^\infty e^{-\alpha^2\tilde{t}\left[
+			\omega^2+\frac{i\pr{\zeta-x}}{\alpha^2\tilde{t}}\omega
+			\right]}
+		d\omega
+		\\ &\
+		= \frac1{2\pi}\int_{-\infty}^\infty e^{
+			-\alpha^2\tilde{t}\left[
+			\pr{\omega+\frac{i\pr{\zeta-x}}{2\alpha^2 \tilde{t}}}^2
+			+
+			\frac{\pr{\zeta-x}^2}{4\alpha^4 \tilde{t}^2}
+			\right]}d\omega
+		\\ &\
+		=\frac1{2\pi}e^{-\frac{\pr{\zeta-x}^2}{4\alpha^2\tilde{t}}}\int_{-\infty}^\infty e^{-\alpha^2\tilde{t}\pr{\omega+\frac{i\pr{\zeta-x}}{2\alpha^2\tilde{t}}}^2}d\omega
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	\begin{aligned}
+	&\
+	\begin{aligned}
+		\int_{-\infty}^\infty e^{-\alpha^2\tilde{t}\underbrace{\pr{\omega+\frac{i\pr{\zeta-x}}{2\alpha^2\tilde{t}}}}_{\hat{\omega}}^2}d\omega &\ =
+		\int_{-\infty}^\infty e^{-\alpha^2\tilde{t}\hat{\omega}^2}d\hat{\omega}
+		\\ &\
+		=\int_{-\infty}^\infty e^{-\pr{\alpha\sqrt{\tilde{t}}\hat{\omega}}^2}d\hat{\omega}
+		\\ &\
+		=\int_{-\infty}^\infty e^{-\pr{\omega^\star}^2}\frac{d\omega^\star}{\alpha\sqrt{\tilde{t}}}=\frac{\sqrt\pi}{\alpha\sqrt{\tilde{t}}}
+	\end{aligned}
+	\\ \Rightarrow &\
+	G=\frac1{2\pi}e^{-\frac{\pr{\zeta-x}^2}{4\alpha^2\tilde{t}}}\frac{\sqrt\pi}{\alpha\sqrt{\tilde t}}=\frac1{2\sqrt{\pi\pr{t-\zeta}}\alpha}e^{-\frac{\pr{\zeta-x}^2}{4\alpha^2\tilde{t}}}
+	\\ &\
+	\begin{aligned}
+			u_t-\alpha^2u_{xx}=f(x,t)\Rightarrow u &\ = G\star f
+			\\ &\
+			= \int G\pr{x,t,\zeta,\tau}f\pr{x-\zeta,t-\tau}d\zeta d\tau
+	\end{aligned}
+	\end{aligned}
+\end{equation*}
