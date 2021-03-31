@@ -3647,3 +3647,721 @@ $f$
 $z_0$
 ($f^\prime\pr{z_0}$)
 می‌گوییم.
+مثال -
+$f(z)=\ol{z}$
+در
+$z=1$
+مشتق نا‌پذیر است.\\
+۱) $\Delta z=\Delta t$
+\[
+\lim_{\Delta z=\Delta t\to0} \frac{f\pr{1+\Delta z}-f(1)}{\Delta z}=
+\frac{f\pr{1+\Delta t}-f(1)}{\Delta t}=
+\frac{{1+\Delta t}-(1)}{\Delta t}=1
+\]
+۲)
+$\Delta z=\delta t i$
+\[
+\lim_{\Delta z=\Delta t \,i\to0} \frac{f\pr{1+\Delta z}-f(1)}{\Delta z}=
+\frac{f\pr{1+\Delta t\, i}-f(1)}{\Delta t\, i}=
+\frac{{1-\Delta t\, i}-(1)}{\Delta t \, i}=-1
+\]
+$1\ne -1$
+پس حد وجود ندارد و مشتق نا‌پذیر است.\\
+شرایط مشتق‌پذیری\\
+قضیه ۱ (شرایط کوشی زیمان - شرط لازم مشتق‌پذیری) : اگر
+$f(z)=u(x,y)+iv(x,y)$
+در
+$z_0=x_0+y_0i$
+مشتق پذیر باشد، آنگاه در
+$x=x_0$
+و
+$y=y_0$
+داریم
+$\begin{cases}
+	u_x=v_y\\
+	v_x=-u_y
+\end{cases}$.
+\\
+اثبات - با توجه به فرض مشتق‌پذیر بودن می‌دانیم که حد
+$lim_{\Delta z\to0}\frac{f\pr{z_0+\Delta z}-f\pr{z_0}}{\Delta z}$
+موجود و یکتاست، بنابراین به ازای هر
+$\Delta z\to0$
+مقدار این تغییر نخواهد کرد. دو جهت
+$\myover{\Delta z=\Delta x}{\Delta x\to0}$
+و
+$\myover{\Delta z=\Delta y\, i}{\Delta y\to0}$
+را در نظر می‌گیریم.\\
+۱)
+$\Delta z=\Delta x$
+\[\begin{aligned}
+	f^\prime\pr{z_0} &\ =
+	\lim_{\Delta x\to0}\frac{f\pr{z_0+\Delta x}-f\pr{z_0}}{\Delta x}
+	\\ &\
+	=\lim_{\delta x\to0}\frac{u\pr{x_0+\Delta x,y_0}+iv\pr{x_0+\Delta x,y_0}-u\pr{x_0,y_0}-iv\pr{x_0,y_0}}{\Delta x}
+	\\ &\
+	=\lim_{\Delta x\to0}\frac{u\pr{x_0+\Delta x,y_0}-u\pr{x_0,y_0}}{\Delta x}+i \frac{v\pr{x_0+\Delta x,y_0}-v\pr{x_0,y_0}}{\Delta x}
+	\\ &\
+	=\left.{u_x}\right|_{\pr{x_0,y_0}}+\left.{iv_x}\right|_{\pr{x_0,y_0}}
+\end{aligned}\]
+۲)
+$\Delta z=\Delta y\, i$
+\[\begin{aligned}
+	f^\prime\pr{z_0} &\ =
+	\lim_{\Delta y\to0}\frac{f\pr{z_0+\Delta y\,i}-f\pr{z_0}}{\Delta y\,i}
+	\\ &\
+	=\lim_{\delta y\to0}\frac{u\pr{x_0,y_0+\Delta y}+iv\pr{x_0,y_0+\Delta y}-u\pr{x_0,y_0}-iv\pr{x_0,y_0}}{\Delta y\,i}
+	\\ &\
+	=\lim_{\Delta y\to0}\frac{u\pr{x_0,y_0+\Delta y}-u\pr{x_0,y_0}}{\Delta y\,i}+i \frac{v\pr{x_0,y_0+\Delta y}-v\pr{x_0,y_0}}{\Delta y\,i}
+	\\ &\
+	=\frac1i\left.{u_y}\right|_{\pr{x_0,y_0}}+\left.{v_y}\right|_{\pr{x_0,y_0}}
+	\\ &\
+	=\left.{v_y}\right|_{\pr{x_0,y_0}}-i\left.{u_y}\right|_{\pr{x_0,y_0}}
+\end{aligned}\]
+پس متوجه می‌شویم که
+\[
+\left.{u_x}\right|_{\pr{x_0,y_0}}+\left.{iv_x}\right|_{\pr{x_0,y_0}}
+=
+\left.{v_y}\right|_{\pr{x_0,y_0}}-i\left.{u_y}\right|_{\pr{x_0,y_0}}
+\]
+پس
+\[
+\left.{u_x=v_y}\right|_{\pr{x_0,y_0}} \quad , \quad
+\left.{v_x=-u_y}\right|_{\pr{x_0,y_0}}
+\]
+مثال -
+$f(z)=\ol{z}$
+در هیچ نقطه‌ای مشتق پذیر نیست.
+\[
+f(z)=\ol{z}=x-yi \qquad u(x,y)=x \quad v(x,y)=-y
+\]
+پس
+$u_x=1$
+و
+$v_y=-1$
+است. پس در هیچ نقطه ای شرایط کوشی ریمان برقرار نیست.\\
+قضیه ۲ : اگر مشتقات جزئی
+$u_x$،
+$u_y$،
+$v_x$
+و
+$v_y$
+در
+$z_0=x_0+y_0i$
+پیوسته باشند و در
+$x=x_0$
+و
+$y=y_0$
+داشته باشیم
+$\begin{cases}
+	u_x=v_y\\ v_x=-u_y
+\end{cases}$،
+آنگاه
+$f(z)=u(x,y)+iv(x,y)$
+در
+$z_0$
+مشتق پذیر است و داریم
+$f^\prime\pr{z_0}=\left.{u_x+iv_x}\right|_{x_0,y_0}$.\\
+تعریف - اگر به ازای هر
+$z_0\in D$،
+تابع
+$f(z)$
+را در ناحیه‌ی
+$D$
+تحلیلی می‌گوییم. توابع تحلیلی خاصیت های مهمی دارند که فصل های بعد می‌بینیم.\\
+شرایط کوشی ریمان در مختصات قطبی
+\[\begin{aligned}
+	&\
+	u_x=v_y
+	\\ &\
+	v_x=-u_y \quad r=\sqrt{x^2+y^2}\quad \Theta=tan^{-1}\frac yx
+	\\ &\
+	u_x=u_r\frac{\partial r}{\partial x}+u_{\theta}\frac{\partial \theta}{\partial x}=\frac{x}{\sqrt{x^2+y^2}}u_r-\frac{\frac y{x^2}}{1+\frac{y^2}{x^2}}u_{\theta}
+	\\ &\
+	\qquad \Rightarrow u_x=\cos\theta u_r-\frac{\sin\theta}{r}u_\theta
+	\\ &\
+	u_y=u_r\frac{\partial r}{\partial y}+u_\theta\frac{\partial\theta}{\partial y}=\frac{y}{\sqrt{x^2+y^2}}u_r+\frac{\frac1x}{1+\frac{y^2}{x^2}}u_\theta
+	\\ &\
+	\qquad u_y=\sin\theta u_r+\frac{\cos\theta}{r}u_\theta
+	\\ &\
+	u_x=v_y\longrightarrow
+	\cos\theta u_r-\frac{\sin\theta}{r}u_\theta=
+	\sin\theta u_r+\frac{\cos\theta}{r}u_\theta\quad (1)
+	\\ &\
+	u_y=-v_x\longrightarrow \sin\theta u_r+\frac{\cos\theta}{r}u_\theta=-\cos\theta v_r+\frac{\sin\theta}{r}v_\theta\quad(2)
+	\\ &\
+	(1)\longrightarrow \cos\theta\pr{u_r-\frac{v_\theta}{r}}-\sin\theta\pr{\frac{u_\theta}{r}+v_r}=0
+	\\ &\
+	(2)\longrightarrow \cos\theta\pr{\frac{u_\theta}{r}+v_r}-\sin\theta\pr{u_r-\frac{v_\theta}{r}}=0 \qquad \forall \theta
+\end{aligned}\]
+با توجه به برقراری دو تساوی آخر به ازای هر
+$\theta$،
+نتیجه می‌شود که
+\[
+u_r=\frac{v_\theta}{r} \qquad v_r=-\frac1r u_\theta
+\]
+به علاوه داریم
+\[\begin{aligned}
+	f^\prime(z)&\ =u_x+iv_x
+	\\ &\
+	=\pr{\cos\theta u_r-\sin\theta\frac{u_\theta}{r}}+i\pr{\cos\theta v_r-\sin\theta\frac{v_\theta}{r}}
+	\\ &\
+	=\pr{\cos\theta u_r+\sin\theta v_r}+i\pr{\cos\theta v_r-\sin\theta u_r}
+	\\ &\
+	=\cos\theta\pr{u_r+iv_r}+\sin\theta\pr{v_r-i u_r}
+	\\ &\
+	=\pr{\cos\theta-i\sin\theta}\pr{u_r+iv_r}=e^{-i\theta}\pr{u_r+iv_r}
+\end{aligned}\]
+مثال ۱ : مشتق‌پذیری
+$f(z)=z^2$
+در
+$z_0\in\CC$
+\[\begin{aligned}
+	&\
+	f(z)=z^2=x^2-y^2+2xyi \qquad u(x,y)=x^2-y^2\quad v(x,y)=2xy
+	\\ \longrightarrow&\
+	u_x=2x\quad u_y=-2y \quad v_x=2y \quad v_y=2x
+\end{aligned}\]
+پس مشتقات جزئی همه‌جا پیوسته اند و همچنین برای هر
+$x,y$
+داریم
+\[
+u_x=v_y \ \ , \ \ v_x=-u_y
+\]
+پس تابع
+$f(z)=z^2$
+روی کل
+$\CC$
+تحلیلی است و داریم
+\[
+f^\prime\pr{z_0}=\left.{u_x+iv_x}\right|_{z_0}=\left.{v_y-iv_y}\right|_{z_0}=2x_0+2y_0i=2z_0
+\]
+مثال ۲ : مشتق پذیری تابع
+$f(z)=z^3$
+در
+$z_0\in\CC$
+\[\begin{aligned}
+	&\
+	f(z)=z^3=\pr{re^{i\theta}}^3=r^3e^{3\theta i}=r^3 \cos{3\theta}+ir^3\sin{3\theta}
+	\\ &\
+	u(r,\theta)=r^3\cos{3\theta} \quad v(r,\theta)=r^3\sin{3\theta}
+	\\ &\
+	\begin{tabular}{l l}
+		$u_r=er^2\cos{3\theta} $& $v_r=3r^2\sin{3\theta}$ \\
+		$u_\theta=-3r^2\sin{3\theta} $ & $ v_\theta=3r^3\cos{3\theta}$
+	\end{tabular}\Rightarrow
+\text
+{مشتقات جزئی پیوسته اند}
+\\ &\
+u_r=\frac1rv_\theta=3r^2\cos{3\theta}
+\\ &\
+v_r=-\frac1ru_\theta=3r^2\sin{3\theta}
+\end{aligned}\]
+بنابراین تابع
+$f(z)=z^3$
+روی
+$\CC$
+تحلیلی است.\\
+مثال ۳ : مشتق‌پذیری تابع
+$f(z)$
+با ضابطه‌ی
+\[
+f(z)=e^x\cos y+ie^x\sin y
+\]
+\[\begin{aligned}
+	&\
+	u(x,y)=e^x\cos y \quad v(x,y)=e^x\sin y
+	\\ &\
+	\begin{tabular}{l l}
+		$u_x=e^x\cos y$
+		&
+		$v_x=e^x\sin y$
+		\\
+		$u_y=-e^x\sin y$
+		&
+		$v_y=e^x\sin y$
+	\end{tabular}\Rightarrow
+\text
+{مشتقات جزئی پیوسته اند}
+\end{aligned}\]
+شرایط کوشی ریمان نیز همه‌جا برقرار است. بنابراین تابع
+$f$
+با این ضابطه روی
+$\CC$
+تحلیلی است.\\
+توابع تحلیلی مهم -\\
+۱) چندجمله‌ای ها
+\hfil$P(z)=c_0+c_1z+\dots+c_nz^n\quad c_i\in\CC$\\
+هر چندجمله‌ای دلخواه با فرم کلی
+$P(z)$
+تحلیلی است و داریم
+\[
+P^\prime(z)=c_1+2c_2z+\dots+nc_nz^{n-1}
+\]
+۲)
+$exp(z)$\\
+تابع
+$exp$
+با آرگومان(ورودی) مختلط به‌صورت زیر تعریف می‌شود
+\[\begin{aligned}
+exp(z)=exp(x+yi)&\ =exp(x)exp(yi)
+\\ &\
+=e^x\pr{cos u+i\sin y}=e^x\cos y+ie^x\sin y
+\end{aligned}\]
+همان‌طور که در مثال
+3%todo
+دیدیم این تابع در کل
+$\CC$
+تحلیلی است و داریم
+\[\begin{aligned}
+	\pr{exp(z)}^\prime&\ =u_x+iv_x
+	\\ &\
+	e^x\cos y+ie^x\sin y=exp(z)
+\end{aligned}\]
+توجه - از رابطه‌ی اویلر
+$e^{i\theta}=\cos\theta+i\sin\theta$
+داریم
+\[
+\cos\theta=\frac{e^{i\theta}+e^{-i\theta}}2\qquad
+\sin\theta=\frac{e^{i\theta}-e^{-i\theta}}2
+\quad (\star)
+\]
+۳)
+$cos(z)$\\
+براساس روابط
+$(\star)$
+برای
+$\theta$
+حقیقی،
+$cos(z)$
+به‌صورت زیر تعریف می‌شود :
+\[\begin{aligned}
+	\cos z&\ =
+	=\frac{e^{iz}+e^{-iz}}2
+	\\ &\
+	=\frac{e^{i\pr{x+yi}}+e^{-i\pr{x+iy}}}2
+	\\ &\
+	=\frac{e^{-y+ix}+e^{y-ix}}2+\frac{e^{-y}e^{ix}+e^ye^{-ix}}2
+	\\ &\
+	=\frac{e^{-y}\pr{\cos x+i\sin x}+e^y\pr{\cos x-i\sin x}}2
+	\\ &\
+	=\cos x\frac{e^y+e^{-y}}2-i\sin x\frac{e^y-e^{-y}}2
+	\\ &\
+	=\cos x\cosh y-i\sin x\sinh y
+\end{aligned}\]
+\\
+۴) به طور مشابه داریم
+\[\begin{aligned}
+	\sin z&\ =
+	=\frac{e^{iz}-e^{-iz}}{2i}
+	=\frac{e^{i\pr{x+yi}}-e^{-i\pr{x+iy}}}{2i}
+	\\ &\
+	=\frac{e^{-y}e^{ix}-e^ye^{ix}}{2i}
+	=\frac{e^{-y}\pr{\cos x+i\sin x}-e^y\pr{\cos x-i\sin x}}2
+	\\ &\
+	=-\frac{\cos x}i\frac{e^y-e^{-y}}2+\sin x\frac{e^y+e^{-y}}2
+	\\ &\
+	=\sin x\cosh y+i\cos x\sinh y
+\end{aligned}\]
+توجه - توابع
+$\cos z$
+و
+$\sin z$
+در کل
+$\CC$
+تحلیلی هستند و داریم
+\[\begin{aligned}
+	&\
+	\begin{aligned}
+		\pr{\cos z}^\prime=u_x+iv_x &\ =
+		-\sin x\cosh y-i\cos x\sinh y
+		\\ &\
+		=-\sin z
+	\end{aligned}
+	\\ &\
+	\begin{aligned}
+	\pr{\sin z}^\prime=u_x+iv_x &\ =
+	\cos x\cosh y-i\sin x\sinh y
+	\\ &\
+	=\cos z
+\end{aligned}
+\end{aligned}\]
+۵)
+$Log\,z$
+\[\begin{aligned}
+	&\ w=\log z\longrightarrow exp(w)=z
+	\\ &\
+	w=u+iv\longrightarrow exp(w)=exp\pr{u+iv}=z
+	\\ \Rightarrow&\
+	 exp(u)e^{iv}=z=er^{i\theta}
+	\\ \Rightarrow&\
+	\begin{rcases}
+		&\ e^u=r\rightarrow u=\ln r
+		\\
+		&\ v=\theta
+	\end{rcases}\rightarrow
+w=\log z=\ln r+i\theta
+\end{aligned}\]
+توجه کنید که تساوی به‌ازای آرگومان اصلی
+$\Theta$
+و به‌ازای سایز مقادیر آرگومان یعنی
+$\Theta+2k\pi$
+برقرار است و برای اینکه تابع لگاریتم تک مقدار شود مقدار اصلی آرگومان را در این تساوی انتخاب می‌کنیم. به این ترتیب تابع
+$$Log\, z=\ln r+i\theta$$
+که در آن
+$\theta=Arg\pr{z}$
+و
+$-\pi<\theta\le\pi$
+تعریف می‌شود.\\
+توجه - ناحیه‌ی تحلیلی تابع
+$Log\,z$\\
+واضح است که در اطراف
+$\theta=\pi$
+تابع
+$Log\,z$
+پیوسته نیست، زیرا به ازای
+$z_0=re^{i\theta}$
+داریم
+\hfill$Log\,z_0=\ln r+i\pi$\\
+همچنین برای
+$z_1=re^{i\theta}$
+که در آن
+$\theta=\pi^-$
+داریم
+\hfill$Log\,z_1=\ln r+i\pi^-$\\
+و برای
+$z_2=re^{i\theta}$
+که در آن
+$\theta=\pi^+$
+داریم
+\[
+\theta=\pi^+=\pi^+-2\pi=-\pi^+
+\]
+%todo : pic
+و بنابراین
+\[
+Log\,z_2=\ln r-i\pi^+
+\]
+یعنی با وجود اینکه
+$z_0$،
+$z_1$
+و
+$z_2$
+به همدیگر نزدیک هستند، لگاریتم آن‌ها نزدیک نیست و بنابراین تابع لگاریتم در
+$\theta\to\pi$
+پیوسته نیست و بنابراین تحلیلی هم نیست. همچنین در
+$r=0$
+تابع تعریف شده نیست و در بقیه‌ی صفحه‌ی
+$\CC$
+مشکل خاصی وجود ندارد.
+%todo : pic
+بنابراین ناحیه‌ی تحلیلی برای تابع
+$Log\,z$
+عبارت است از
+\[
+D=\set{z=re^{i\theta}\mid r>0\ \ \text{و}\ \ -\pi<\theta<\pi}
+\]
+ناحیه‌ی
+$D$
+در شکل زیر نمایش داده شده است :\\
+%todo : pic
+در ناحیه‌ی
+$D$
+داریم :
+\[\begin{aligned}
+	&\ Log\,z=\ln r+i\theta
+	\\ &\
+	u(r,\theta)=\ln r\quad v(r,\theta)=\theta
+	\\ &\
+	\begin{tabular}{ll}
+		$u_r=\frac1r$
+		&
+		$v_r=0$
+		\\
+		$u_\theta=0$
+		&
+		$v_\theta=1$
+	\end{tabular}\Rightarrow
+	\begin{tabular}{l}
+		$u_r=\frac1rv_\theta$
+		\\
+		$v_r=-\frac1ru_\theta$
+	\end{tabular}\rightarrow
+\end{aligned}\]
+در ناحیه‌ی
+$D$
+شرط پیوستگی مشتقات جزئی و شرایط کوشی ریمان برقرار است و تابع
+$Log\,z$
+در
+$D$
+تحلیلی است و مشتق تابع برابر است با
+\[
+\pr{Log\,z}^\prime=e^{i\theta}\pr{u_r+iv_r}=e^{-i\theta}\pr{\frac1r+0}=\frac1re^{-i\theta}=\frac1z
+\]
+۶)
+$\cosh z$
+و
+$\sinh z$
+\[\begin{aligned}
+	&\ 
+	\begin{aligned}
+	\cosh z=\frac{e^z+e^{-z}}2 &\
+	=\frac{e^{x+yi}+e^{-\pr{x+yi}}}2
+	\\ &\
+	=\frac{e^x\pr{\cos y+i\sin y}+e^{-x}\pr{\cos y-i\sin y}}2
+	\\ &\
+	=\frac{e^x+e^{-x}}2\cos y+i\frac{e^x-e^{-x}}2\sin y
+	\\ &\
+	=\cosh x\cos y+i\sinh x\sin y
+	\end{aligned}
+\\ &\
+\begin{aligned}
+	\sinh z=\frac{e^z-e^{-z}}2 &\
+	=\frac{e^{x+yi}-e^{-\pr{x+yi}}}2
+	\\ &\
+	=\frac{e^x\pr{\cos y+i\sin y}-e^{-x}\pr{\cos y-i\sin y}}2
+	\\ &\
+	=\frac{e^x-e^{-x}}2\cos y+i\frac{e^x+e^{-x}}2\sin y
+	\\ &\
+	=\sinh x\cos y+i\cosh x\sin y
+\end{aligned}
+\\ &\
+\begin{aligned}
+	\pr{\cosh z}^\prime &\
+	=u-x+iv_x
+	\\ &\
+	=\sinh x \cos y+i\cosh x\sin y=\sinh z
+\end{aligned}
+\\ &\
+\begin{aligned}
+	\pr{\sinh z}^\prime &\
+	=u-x+iv_x
+	\\ &\
+	=\cosh x \cos y+i\sinh x\sin y=\cosh z
+\end{aligned}
+\end{aligned}\]
+۷)
+$z^c$
+\[
+z^c=\pr{e^{Log\,z}}^c=e^{cLog\,z}
+\]
+مثال ۱
+\[\begin{aligned}
+	&\
+	i^{4i}=?
+	\\ &\
+	i^{4i}=\pr{e^{Log\,i}}^{4i}=e^{4i\pr{Log\,i}}
+	\\ &\
+	i=e^{i\frac\pi2}\longrightarrow Log\,i=\ln 1+i\frac\pi2=i\frac\pi2
+	\\ &\
+	i^{4i}=e^{4i\times i\frac\pi2}=e^{-2\pi}
+\end{aligned}\]
+مثال ۲
+\[\begin{aligned}
+	&\ \pr{1+i}^{1-i}=?
+	\\ &\
+	\pr{1+i}^{1-i}=e^{\pr{1-i}Log\pr{1+i}}
+	\\ &\
+	1+i=\sqrt{2}e^{i\frac\pi4}\rightarrow Log\pr{1+i}=\ln \sqrt2+i\frac\pi4
+	\\ &\
+	\begin{aligned}
+			\pr{1+i}^{1-i}&\ =e^{\pr{1-i}\pr{\ln\sqrt2+i\frac\pi4}}
+			\\ &\
+			=e^{\ln\sqrt2+\frac\pi4+i\pr{\frac\pi4-\ln\sqrt2}}
+			\\ &\
+			=\underbrace{e^{\ln\sqrt2+\frac\pi4}}_{\sqrt2 e^{\frac\pi4}}\pr{\cos\pr{\frac\pi4-\ln\sqrt2}+i\sin\pr{\frac\pi4-\ln\sqrt2}}
+	\end{aligned}
+\end{aligned}\]
+خاصیت هم‌ساز(هارمونیک) بودن توابع تحلیلی
+\[\begin{aligned}
+	&\ f(z)=u(x,y)+iv(x,y)
+	\\ &\
+\begin{tabular}{l}
+	$u_x=v_y$
+	\\
+	$v_x=-u_y$
+\end{tabular}\rightarrow
+\begin{cases}
+	& \begin{rcases}
+		& u_{xy}=v_{yy}\\
+		& v_{xx}=-u_{xy}
+	\end{rcases}\rightarrow v_{xx}+v_{yy}=0
+	\\
+	& \begin{rcases}
+		& u_{xx}=v_{xy}\\
+		& v_{xy}=-u_{yy}
+	\end{rcases}\rightarrow u_{xx}+u_{yy}=0
+\end{cases}
+\end{aligned}\]
+نتیجه : اگر
+$f(z)=u+iv$
+تحلیلی باشد، آنگاه
+$u$
+و
+$v$
+در معادله‌ی لاپلاس صدق می‌کنند. همچنین
+$u$
+و
+$v$
+را مزدوج همساز یکدیگر می‌گوییم.\\
+مثال ۱ : مزدوج همساز تابع
+$u(x,y)=e^x\sin y$
+را محاسبه کنید.
+\[\begin{aligned}
+	\begin{tabular}{l}
+		$u_x=v_y\longrightarrow v_y=e^x\sin y$
+		\\
+		$u_y=-v_x\longrightarrow v_x=-e^x\cos y$
+	\end{tabular} & \longrightarrow
+	v(x,y)=-e^x\cos y+f(x)
+	\\ &
+	\longrightarrow v_x=-\cancel{e^x\cos y}+f^\prime(x)=\cancel{e^x\cos y}
+	\\ &
+	\longrightarrow f^\prime(x)=0\rightarrow f(x)=c
+	\\ &
+	\longrightarrow v(x,y)=-e^x\cos y+c
+\end{aligned}\]
+مثال ۲ : مزدوج همساز
+$v(x,y)=2xy$
+را محاسبه کنید و تابع تحلیلی متناظر را معرفی کنید.
+\[\begin{aligned}
+	\begin{tabular}{l}
+		$u_x=v_y \longrightarrow u_x=2x$
+		\\
+		$u_y=-v_x\longrightarrow u_y=-2y$
+	\end{tabular}& \longrightarrow u(x,y)=x^2+g(y)
+	\\ & \longrightarrow
+	u_y=g^\prime(y)=-2y
+	\\ & \longrightarrow
+	g(y)=-y^2+c
+	\\ & \longrightarrow
+	u(x,y)=x^2-y^2+c
+	\\ & \longrightarrow
+	f(z)=u+iv=x^2-y^2+c+2xyi=z^2+c
+\end{aligned}\]
+مثال ۳ : مزدوج همساز تابع
+$u(x,y)=\cos x\cosh y$
+را محاسبه کنید.
+\[\begin{aligned}
+	\begin{tabular}{r}
+		$u_x=v_y\longrightarrow v_y=-\sin x\cosh y$
+		\\
+		$v_x=-u_y\longrightarrow v_x=-\cos x\sinh y$
+	\end{tabular}& \longrightarrow
+	v(x,y)=-\sin x\sinh y+f(x)
+	\\ & \longrightarrow
+	v_x=\cancel{-\cos x\sinh y}+f^\prime(x)=\cancel{-\cos x\sinh y}
+	\\ & \longrightarrow
+	f^\prime(x)=0\longrightarrow f(x)=c
+	\\ & \longrightarrow
+	v(x,y)=-\sin x\sinh y+c
+\end{aligned}\]
+نگاشت - تعبیر هندسی توابع مختلط\\
+در این بخش تابع مختلط
+$f:\CC\to\CC$
+را با ضابطه‌ی
+$f(z)=u(x,y)+iv(x,y)$
+در نظر می‌گیریم. می‌خواهیم بدانیم که ناحیه‌ی
+$D$
+(به‌عنوان دامنه‌ی $f$) تحت نگاشت
+$f$
+به چه ناحیه‌ای تبدیل می‌شود.
+%todo : pic
+\[
+f(x+yi)=u(x,y)+iv(x,y)
+\]
+این مساله، به عنوان نمونه، در ساده‌کردن ناحیه‌ی حل برخی مسائل PDE کاربرد دارد که بعدا در مورد آن، به طور دقیق صحبت می‌کنیم.\\
+۱- نگاشت
+$f(z)=z^2$\\
+۱-۱) قطاع دایره\\
+%todo : pic
+\begin{tabular}{ll}
+	$f(z)=z^2=r^2e^{2\theta i}$
+	&
+	$z=re^{i\theta}$
+	\\
+	$0\le r^2\le4$
+	&
+	$0\le r\le2$
+	\\
+	$0\le2\theta\le\frac\pi2$
+	&
+	$0\le\theta\le\frac\pi4$
+\end{tabular}
+%todo : pic
+\\
+۱-۲) خط قائم\\
+*حالت
+$a\ne0$
+\[\begin{aligned}
+z=a+yi\Rightarrow f(z)=x^2-a^2+2ayi \Rightarrow
+\begin{tabular}{l}
+	$u=a^2-y^2$
+	\\
+	$v=2ay$
+\end{tabular}\rightarrow y=\frac v{2a}
+\rightarrow u=a^2-\pr{\frac v{2a}}^2
+\end{aligned}\]
+%todo : pic
+*حالت خاص
+$a=0$
+\[
+\begin{tabular}{l}
+	$z=yi$
+	\\
+	$f(z)=-y^2$
+\end{tabular}\longrightarrow
+\begin{tabular}{l}
+	$u=-y^2\le0$
+	\\
+	$v=0$
+\end{tabular}
+\]
+%todo : pic
+۱-۳) خط افقی\\
+*حالت $b\ne0$
+\[\begin{aligned}
+	z=x+bii\Rightarrow f(z)=x^2-b^2+2xbi \Rightarrow
+	\begin{tabular}{l}
+		$u=x^2-b^2$
+		\\
+		$v=2xb$
+	\end{tabular}\rightarrow x=\frac v{2b}
+	\rightarrow u=\pr{\frac v{2b}}^2-b^2
+\end{aligned}\]
+%todo : pic
+*حالت خاص $b=0$
+\[
+	z=x\rightarrow f(z)=x^2
+\begin{tabular}{l}
+	$u=x^2\ge0$
+	\\
+	$v=0$
+\end{tabular}
+\]
+%todo : pic
+۲- نگاشت انتقال
+$f(z)=z+z_0$
+%todo : pic
+\\
+مثال -
+\[
+D=\set{z\mid\norm{z}=1} \qquad f(z)=z+i
+\]
+۳- نگاشت
+$f(z)=z_0z$
+\[\begin{aligned}
+	& z_0=r_0e^{i\theta_0} \quad z=re^{i\theta}
+	\\ &
+	f(z)=\pr{r_0r}e^{i\pr{\theta+\theta_0}}
+\end{aligned}\]
+مثال -
+\[\begin{aligned}
+	&\ D=\set{x+yi\mid0\le x\le 2 \, , \, 0\le y\le1}
+	\\ &\
+	\begin{aligned}
+	f(z)=\pr{\sqrt2+\sqrt2i}z=2e^{i\frac\pi4}z\quad &\ \tilde{r}=2r
+	\\ &\
+	\tilde{\theta}=\theta+\frac\pi4
+	\end{aligned}
+\end{aligned}\]
+%todo : pic
