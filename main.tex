@@ -1517,7 +1517,7 @@ A_n = \frac{2}{L} \int_0^L f(x) sin\frac{n\pi}{L}x\cdot dx
 \] 
 \end{enumerate}
 
-\end{problem} 
+\end{problem} 
 
 \subsection{الگوریتم روش جداسازی 
 (برمبنای مساله حرارت)}
@@ -3306,3 +3306,344 @@ $x$
 	\end{aligned}
 	\end{aligned}
 \end{equation*}
+\part{توابع مختلط}
+اعداد متخلط در بسیاری از مسائل ریاضی و مهندسی کاربرد دارند. از مهم‌ترین موارد می‌توان به پیدا کردن صفرها و قطب‌ها در توابع تبدیل نظریه کنترل، پیداکردن همه‌ی ریشه‌های چندجمله‌ای‌ها و استفاده از نگاشت‌های مختلط برای ساده کردن دامنه‌ی حل معادلات PDE اشاره کرد. در این فصل به مرور محاسبات اعداد مختلط، معرفی توابع و نگاشت‌های مختلط، انتگرال مختلط و استفاده از انتگرال‌های مختلط برای محاسبه‌ی بعضی از انتگرال‌های حقیقی صحبت می‌کنیم.\\
+۲-۱) محاسبات اعداد مختلط\\
+تعریف ۱ :
+$i=\sqrt{-1}$
+با خاصیت
+$i^2=-1$
+را واحد موهومی می‌نامیم.\\
+عدد مختلط
+$z=x+yi$
+شامل بخش حقیقی
+$x$
+و بخش موهومی
+$y$
+متناظر با زوج مرتب
+$(x,y)$
+در صفحه‌ی مختصات است :
+%todo : pic
+\\
+*مجموعه‌ی اعداد مختلط
+$z=x+yi$
+که
+$x,y\in\R$،
+را با
+$\CC$
+نشان می‌دهیم.
+*
+$\overline{z}=x-yi$
+را مزدوج عدد مختلط
+$z=x+yi$
+می‌نامیم.
+$\overline{z}$
+قرینه‌ی
+$z$
+نسبت به محور حقیقی است.
+%todo : pic
+\\
+*جمع دو عدد مختلط
+$z_1$
+و
+$z_2$
+به‌صورت زیر است.
+\begin{equation*}
+	\begin{rcases}
+		z_1=x_1+y_1i
+		\\
+		z_2=x_2+y_2i
+	\end{rcases}
+	\Rightarrow
+	z_1+z_2=\pr{x_1+x_2}+\pr{y_1+y_2}i
+\end{equation*}
+*برای
+$\alpha\in\R$
+و
+$z=x+yi$
+داریم
+$$\alpha z=\alpha x+\alpha y i$$
+*بنابراین تفاضل دو عدد مختلط
+$z_1$
+و
+$z_2$
+به‌صورت
+\begin{equation*}
+	\begin{aligned}
+		z_1-z_2&\ =\pr{x_1+y_1i}-\pr{x_2+y_2i}
+		\\ &\
+		=\pr{x_1-x_2}+\pr{y_1-y_2}i
+	\end{aligned}
+\end{equation*}
+است.\\
+*ضرب دو عدد مختلط
+$z_1$
+و
+$z_2$
+با توجه به خاصیت
+$i^2=-1$
+به‌صورت زیر تعریف می‌شود
+\begin{equation*}
+	\begin{aligned}
+		z_1z_2&\ =\pr{x_1+y_1i}\pr{x_2+y_2i}
+		\\ &\
+		=x_1x_2+x_1y_2i+x_2y_1i+y_1y_2\overbrace{\pr{\cancel{i^2}}}^{-1}
+		\\ &\
+		=\pr{x_1x_2-y_1y_2}+\pr{x_1y_2+x_2y_1}i
+	\end{aligned}
+\end{equation*}
+*خاصیت مهم -
+\begin{equation}
+	\begin{aligned}
+		z\ol{z} &\ = \pr{x+yi}\pr{x-yi}
+		\\ &\
+		=x^2+y^2+\pr{xy-xy}i=x^2+y^2
+	\end{aligned}
+\end{equation}
+تعریف ۲ : نرم عدد مختلط
+$z=x+yi$
+برابر با
+$r=\norm{z}=\sqrt{x^2+y^2}$
+تعریف می‌شود.\\
+تعریف ۳) زاویه یا آرگومان عدد مختلط
+$z=x+iy$
+برابر با
+$\theta=tan^{-1}\pr{\frac x y}$
+تعریف می‌شود، پس در واقع
+$\theta$
+برابر با زاویه‌ی بین پاره خط واصل نقطه‌ی
+$z$
+و مبدا با جهت مثبت محور
+$x$
+است.
+%todo : pic
+\\
+*با توجه به تعریف نرم، تساوی
+$(1)$
+به‌صورت زیر اصلاح می‌شود.
+\begin{equation}
+	\begin{aligned}
+		&\ z=x+yi\\
+		&\ z\ol{z}=x^2+y^2=r^2=\norm{z}^2
+	\end{aligned}
+\end{equation}
+*حاصل تقسیم دو عدد مختلط
+$z_1=x_1+y_1i$
+و
+$z_2=x_2+y_2i$
+به صورت زیر تعریف می‌شود
+\begin{equation*}
+	\begin{aligned}
+		&\ \begin{rcases}
+			&\ \frac{z_1}{z_2}=z_1\frac 1{z_2}
+			\\
+			&\ z_2\ol{z_2}=\norm{z_2}^2\rightarrow \frac1{z_2}=\frac{\ol{z_2}}{\norm{z_2}^2}
+		\end{rcases}\rightarrow
+		\frac{z_1}{z_2}=z_1\frac{\ol{z_2}}{\norm{z_2}^2}=\pr{x_1+y_1i}\frac{x_2-y_2i}{x_2^2+y_2^2}
+	\end{aligned}
+\end{equation*}
+مثال -
+\begin{equation*}
+	\begin{aligned}
+		&\ \omega=\frac{2-i}{1+i}
+		\\ &\
+		\omega=\pr{2-i}\frac1{1+i}=\pr{2-i}\frac{1-i}{2}=\frac{1-3i}2
+	\end{aligned}
+\end{equation*}
+*نمایش قطبی اعداد مختلط با استفاده از نرم و آرگومان به صورت زیر است
+\begin{equation*}
+	\begin{aligned}
+		&\ z=x+yi \qquad r=\sqrt{x^2+y^2} \quad \theta=tan^{-1}\frac{y}{x}
+		\\ &\
+		z=x+yi=r \cos \theta + r\sin \theta i = r\pr{cos \theta + i\sin \theta}=re^{i\theta}
+	\end{aligned}
+\end{equation*}
+%todo : pic
+\[
+\cos \theta+i\sin\theta:=e^{i\theta}
+\]
+\begin{equation*}
+	\begin{aligned}
+		\cos\theta+i\sin\theta &\ =
+		1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}-\frac{\theta^6}{6!}+\dots
+		\\ &\
+		+i\pr{\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\dots}
+		\\ &\
+		=\sum_{k=0}^{\infty}\frac{\pr{i\theta}^{2k}}{\pr{2k}!}+\sum_{k=0}^\infty \frac{\pr{i\theta}^{2k+1}}{\pr{2k+1}!}
+		\\ &\
+		=\sum_{k=0}^\infty \frac{\pr{i\theta}^k}{k!}=e^{i\theta}
+	\end{aligned}
+\end{equation*}
+مثال - نمایش قطبی
+$z=3+4i$
+\begin{equation*}
+		\begin{rcases}
+		&\ r=\sqrt{9+16}=5
+		\\ &\
+		\theta=tan^{-1} \frac{y}{x}=tan^{-1} \pr{\frac43}
+		\end{rcases}\rightarrow z = 5e^{i\theta}
+\end{equation*}
+نکته :
+$\theta$
+از تساوی
+$tan \theta=\frac{y}{x}$
+و
+$\begin{cases}
+	x=r\cos\theta \\ y=r\sin\theta
+\end{cases}$
+به طور یکتا به دست نمی‌آید. در واقع هر
+$\theta$
+ی که جواب باشد،
+$\theta+2\pi$
+نیز جواب است.\\
+برای یکتا شدن مقدار آرگومان
+$\theta$
+ی را (به طور قراردادی) به عنوان جواب اصلی در نظر می‌گیریم که در بازه‌ی
+$\left(-\pi,\pi\right]$
+قرار دارد.\\
+این مقدار را آرگومان اصلی می‌نامیم و با
+$\Theta=Arg(z)$
+نشان می‌دهیم. بنابراین مجموعه مقادیر آرگومان عبارت است از
+\[
+\theta=arg(z)=\Theta+2k\pi
+\]
+مثال -
+\begin{equation*}
+	\begin{aligned}
+		z=2-2i \qquad &\ Arg(z)=-\frac{\pi}{4}
+		\\ &\
+		arg(z)=-\frac\pi4+2k\pi
+	\end{aligned}
+\end{equation*}
+*ضرب و تقسیم اعداد مختلط در مختصات قطبی ساده‌تر است و داریم
+\begin{equation*}
+	\begin{aligned}
+		&\ z_1=r_1e^{i\theta_1} \ \ , \ \ z_2=r_2e^{i\theta_2}
+		\\ &\
+		z_1z_2=r_1r_2e^{i\pr{\theta_1+\theta_2}}
+		\\ &\
+		\frac{z_1}{z_2}=\frac{r_1}{r_2}e^{i\pr{\theta_1-\theta_2}}
+	\end{aligned}
+\end{equation*}
+تمرین : در نمایش کارتزین
+$\pr{x+yi}$
+ثابت کنید که
+\[
+arg\pr{z_1z_2}=arg\pr{z_1}+arg\pr{z_2}
+\]
+۲-۲) توابع مختلط، حد و مشتق\\
+تابع
+$f:\CC\to\CC$
+با ضابطه‌ی
+$f(z)=u(x,y)+iv(x,y)$
+که در آن
+$z=x+yi$،
+را تابع مختلط می‌گوییم.\\
+*نمایش بعضی توابع مختلط در مختصات قطبی ساده‌تر(و یا کاراتر) است.\\
+مثال -
+$f(z)=z^2)$\\
+۱) نمایش
+$z=x+yi$
+\[
+f(z)=z^2=\pr{x+ui}^2=\pr{x+yi}\pr{x+yi}=\underbrace{x^2-y^2}_{u(x,y)}+\underbrace{2xy}_{v(x,y)}i
+\]
+۲) نمایش قطبی
+$z=re^{i\theta}$
+\[
+\begin{aligned}
+	&\ f(z)=z^2=\pr{re^{i\theta}}^2=r^2e^{2i\theta}
+	\\ &\
+	\longrightarrow
+	f(z)=u(r,\theta)e^{iv(r,\theta)} \quad
+	\text{که}
+	\quad
+	u(r,\theta)=r^2 \, , \, v(r,\theta)=2\theta
+\end{aligned}
+\]
+تعریف حد :
+همسایگی به شعاع
+$r$
+نقطه‌ی
+$z_0$
+به‌صورت زیر تعریف می‌شود.
+\[
+B_r\pr{z_0}=\set{z\mid\norm{z-z_0}<r}
+\]
+همچنین همسایگی محذوف به‌صورت
+%todo : pic
+\[
+\tilde{B_r}\pr{z_0}=\set{z\mid 0<\norm{z-z_0}<r}
+\]
+تعریف می‌شود.\\
+تعریف - اگر به ازای هر
+$\epsilon>0$،
+$\delta>0$
+موجود باشد که از
+\[
+z\in\tilde{B_\delta}\pr{z_0}=\set{z\mid0<\norm{z-z_0}<\delta}
+\]
+نتیجه شود
+\[
+f(z)\in B_\epsilon\pr{L}=\set{w\mid\norm{w-L}<\epsilon}
+\]
+می‌گوییم
+\[
+\lim_{z\to z_0} f(z)=L
+\]
+%todo : pic
+مثال ۱ : 
+$\lim_{z\to 1+i}z^2=\pr{1+i}^2=2i$
+\[\begin{aligned}
+&\ \begin{aligned}
+	\norm{z-\pr{1+i}}<\delta\rightarrow \norm{z^2-\pr{1+i}^2} &\
+	=\norm{z-\pr{1+i}}\norm{z+1+i}
+	\\ &\
+	=\norm{z-\pr{1+i}}\norm{z-\pr{1+i}+2\pr{1+i}}
+	\\ &\
+	<\delta\pr{\delta+2\norm{1+i}}
+\end{aligned}
+\\ 
+\rightarrow &\
+\norm{z^2-\pr{1+i}^2}<\delta\pr{\delta+2\sqrt2}\simeq2\sqrt2\delta=\epsilon
+\end{aligned}\]
+تعریف - تابع
+$f(z)$
+را در
+$z_0$
+پیوسته می‌گوییم اگر
+$\lim_{z\to z_0}f(z)=f(z_0)$.\\
+مثال - تابع
+$f(z)=z^2$
+به ازای هر
+$z_0=x_0+y_0i$
+پیوسته است.
+\[\begin{aligned}
+	&\
+	\lim_{z\to z_0}z^2=z_0^2
+	\\ &\
+	\norm{z-z_0}=\norm{\pr{x-x_0}+\norm{y-y_0}i}<\delta\rightarrow
+	\pr{x-x_0}^2+\pr{y-y_0}^2<\delta^2\rightarrow \begin{cases}
+		\pr{x-x_0}^2<\delta^2\\ \pr{y-y_0}^2<\delta^2
+	\end{cases}
+	\\ &\
+	\begin{aligned}
+		\norm{z^2-z_0^2} &\ =
+		\norm{x^2-y^2+2xyi-x_0^2+y_0^2-2x_0y_0i}
+		\\ &\
+		=\norm{x^2-x_0^2-\pr{y^2-y_0^2}+2i\pr{xy-x_0y_0}}
+		\\ &\
+		\le\norm{x^2-x_0^2-\pr{y^2-y_0^2}+2i\pr{xy-xy_0+xy_0-x_0y_0}}
+		\\ &\
+		\le\pr{\abs{x^2-x_0^2}+\abs{y^2-y_0^2}}+2\abs{x}\abs{y-y_0}+2\abs{y_0}\abs{x-x_0}
+		\\ &\
+		\le\pr{\abs{x+x_0}+\abs{y+y_0}+2\abs{x}+2\abs{y_0}}\delta\simeq\epsilon
+	\end{aligned}
+\end{aligned}\]
+تعریف - مقدار حد
+$\lim_{\Delta z\to0}\dfrac{f\pr{z_0+\Delta z}-f\pr{z_0}}{\Delta z}$
+را در صورت وجود، مشتق تابع
+$f$
+در
+$z_0$
+($f^\prime\pr{z_0}$)
+می‌گوییم.
