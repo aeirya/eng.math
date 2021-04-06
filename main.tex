@@ -1663,7 +1663,197 @@ $A_n$
  u(x,t)
  جواب مساله موج در دست است.
 \end{problem}
-% start from 42:
+مساله‌ی ۳)\\
+مساله‌ی لاپلاس(انتقال حرارت پایا) را در نظر می‌گیریم.
+\[\begin{aligned}
+	& u_{xx}+u_{yy}=0
+	\\ &
+	u_x(0,y)=u_x(a,y)=0 \qquad &\ : \ \ \text
+	{مرز های $x=0$ و $x=a$ عایق هستند}
+	\\ &
+	\begin{rcases}
+		u(x,0)=f(x)\\ u(x,b)=g(x)
+	\end{rcases}
+	\qquad &\ : \text
+	{دمای مرزهای $y=0$ و $y=b$ معلوم است}
+\end{aligned}\]
+گام ۱) جایگذاری
+$u(x,y)=X(x)Y(y)$
+در PDE
+\[\begin{aligned}
+	X^{\prime\prime}Y(y)+X(x)Y^{\prime\prime}=0
+	&\xrightarrow{\div X(x)Y(y)}
+	\frac{X^{\prime\prime}}{X}+\frac{Y^{\prime\prime}}{Y}=0
+	\\ & \rightarrow \underbrace{\frac{X^{\prime\prime}}{X}}_{x \text{تابع }}=
+	\underbrace{-\frac{Y^{\prime\prime}}{Y}}_{y \text{تابع }}
+	\\ &
+	\Longrightarrow \begin{cases}
+		\dfrac{X^{\prime\prime}}{X}=\alpha
+		\\
+		\\
+		\dfrac{Y^{\prime\prime}}{Y}=-\alpha
+	\end{cases}
+\end{aligned}\]
+گام ۲) تعیین علامت
+$\alpha$
+و حل معادله‌ای که شرط‌های همگن دارد
+\[\begin{aligned}
+	&
+	\frac{X^{\prime\prime}}{X}=\alpha
+	\\ &
+	u_x(0,y)=u_x(a,y)\Rightarrow x^\prime(0)=X^\prime(a)=0
+\end{aligned}\]
+۱)
+$\alpha>0$
+\[\begin{aligned}
+	& \alpha=\lambda^2 \ \ , \ \ \lambda\ne0
+	\\ &
+	\begin{tabular}{l}
+		$X(x)=\tilde{a}\cosh(\lambda x)+\tilde{b}\sinh(\lambda x)$
+		\\
+		$X^\prime(x)=\tilde{a}\lambda\sinh(\lambda x)+\tilde{b}\lambda\cosh(\lambda x)$
+	\end{tabular}\rightarrow
+	\begin{tabular}{l}
+		$X^\prime(0)=\tilde{b}\lambda=0\rightarrow\tilde{b}=0$
+		\\
+		$X^\prime(a)=\tilde{a}\lambda\sinh(\lambda a)=0$
+	\end{tabular}
+\end{aligned}\]
+از آنجا که $\lambda\ne0$ پس
+$\tilde{a}=0$
+که یک تناقض است.\\
+۲)
+$\alpha=0$
+\[\begin{aligned}
+	\begin{rcases}
+		\frac{X^{\prime\prime}}{X}=0\\
+		X^\prime(0)=X^\prime(a)=0
+	\end{rcases}\rightarrow
+	\begin{tabular}{l}
+		$X(x)=\tilde{a}x+\tilde{b}$\\
+		$X^\prime(0)=X^\prime(a)=\tilde{a}=0$
+	\end{tabular}\rightarrow X(x)=1
+\end{aligned}\]
+۳)
+$\alpha<0$
+\[\begin{aligned}
+	&\alpha=-\lambda^2<0 \ \ , \ \ \lambda\ne0
+	\\ &
+	\begin{rcases}
+		\frac{X^{\prime\prime}}{X}=-\lambda^2
+		\\
+		X^\prime(0)=X^\prime(a)=0
+	\end{rcases}\rightarrow
+	X(x)=\tilde{a}\cos{\lambda x}+\tilde{b}\sin{\lambda x}
+	\rightarrow X^\prime(x)=-\tilde{a}\lambda\sin{\lambda x}+\tilde{b}\lambda\cos{\lambda x}\\ \\ &
+	X^\prime(0)=\tilde{b}\lambda \rightarrow\tilde{b}=0
+	\\ &
+	X^\prime(a)=-\tilde{a}\lambda\sin{\lambda a}
+	\xrightarrow{\tilde{a},\lambda\ne0}
+	\sin{\lambda a}=0\rightarrow \lambda a=n\pi \rightarrow \begin{tabular}{l}
+		$\lambda_n=\frac{n\pi}{a}$\\
+		$\alpha=\pr{\frac{n\pi}{a}}^2$
+	\end{tabular}
+	\\
+	\Longrightarrow &
+	X_n(x)=\cos{\frac{n\pi}{a}x}
+\end{aligned}\]
+گام ۳) حل معادله‌ی دوم
+\[\begin{aligned}
+	& \frac{Y^{\prime\prime}}{Y}=-\alpha
+	\\ &
+	\circled1 \ \ \alpha=0\rightarrow Y^{\prime\prime}=0\rightarrow Y_0(y)=a_0y+b_0
+	\\ &
+	\alpha=-\pr{\frac{n\pi}a}^2\rightarrow Y_n(y)=a_n\cosh\pr{\frac{n\pi}ay}+b_n\sinh\pr{\frac{n\pi}ay}
+\end{aligned}\]
+گام ۴) تعریف
+$u(x,y)=\sum X_n(x)Y_n(y)$
+و محاسبه‌ی ضرایب مجهول
+\[\begin{aligned}
+	&
+	\begin{aligned}
+		u(x,y)&= \sum X_n(x)Y_n(y)
+		\\ &
+		=a_0y+b_0+\sum\pr{a_n\cosh\pr{\frac{n\pi}ay}+b_n\sinh\pr{\frac{n\pi}ay}}\cos\pr{\frac{n\pi}ax} \ \ (5)
+	\end{aligned}
+	\\ &
+	u(x,0)=b_0+\sum_{n=1}^\infty a_n\cos\frac{n\pi}a=f(x)
+	\\ &
+	u(x,b)=a_0b+b_0+\sum_{n=1}^\infty\pr{a_n\cosh\pr{\frac{n\pi}ay}+b_n\sinh\pr{\frac{n\pi}ay}}\cos\pr{\frac{n\pi}ax}=g(x)
+	\\ \Rightarrow &
+	b_0\stackrel{(1)}{=}\frac1L\int_0^Lf(x)\,dx \ \ , \ \ a_0b+b_0\stackrel{(2)}{=}\frac1L\int_0^Lg(x)\, dx
+	\\ &
+	a_n\stackrel{(3)}{=}\frac2L\int_0^Lf(x)\cos{\frac{n\pi}ax}\, dx ,
+	\\ &
+	a_n\cosh{\frac{n\pi}ab}+b_n\sinh{\frac{n\pi}ab}\stackrel{(4)}{=}\frac2L\int_0^Lg(x)\cos{\frac{n\pi}ax}\, dx
+\end{aligned}\]
+برای محاسبه‌ی ضرایب
+$a_n,n_0,a_0$
+و
+$b_n$
+ابتدا از معادله‌ی
+$(1)$،
+$b_0$
+را محاسبه و با جایگذاری در
+$(2)$،
+$a_0$
+را تعیین می‌کنیم. سپس
+$a_n$
+از رابطه‌ی
+$(3)$
+محاسبه می‌شود و با جایگذاری در
+$(4)$،
+$b_n$
+نیز در دست است.\\
+حال از تساوی
+$(5)$
+جواب مساله‌ی لاپلاس در دست است.\\
+مساله‌ی ۴)\\
+مساله‌ی لاپلاس را در مختصات قطبی در نظر می‌گیریم. ابتدا صورت معادله‌ی لاپلاس را در دستگاه قطبی ببینیم :
+\[\begin{aligned}
+	& u_{xx}+u_{yy}=0
+	\\ &
+	u_x=\frac{\partial u}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial u}{\partial\theta}\frac{\partial\theta}{\partial x} \qquad
+	\textcolor{red}{r=\sqrt{x^2+y^2}} \qquad
+	\textcolor{red}{\theta=\tan^{-1}\frac{y}{x}}
+	\\  &
+	u_x=u_r\frac{x}{\sqrt{x^2+y^2}}+u_\theta\frac{-\frac{y^2}{x^2}}{1+\frac{y^2}{x^2}}=u_r\cos\theta-u_\theta\frac{\sin\theta}r
+	\\ &
+	\begin{aligned}
+		u_{xx} & =
+		\pr{u_x}_r\cos\theta-\pr{u_x}_\theta\frac{\sin\theta}r
+		\\ &=\pr{
+		{u_{rr}\cos\theta}-{u_{r\theta}\frac{\sin\theta}r}+u_\theta\frac{\sin\theta}{r^2}
+		}\cos\theta
+		\\ & -
+		\pr{
+		u_{r\theta}\cos\theta-u_r\sin\theta-u_{\theta\theta}\frac{\sin\theta}r-u_\theta\frac{\cos\theta}r
+		}\frac{\sin\theta}r
+		\\ &
+		=\cos^2\theta u_{rr}-2\frac{\sin\theta\cos\theta}ru_{r\theta}+\frac{\sin^2\theta}{r^2}u_{\theta\theta}+\frac{\sin^2\theta}ru_r+2\frac{\sin\theta\cos\theta}{r^2}u_\theta
+	\end{aligned}
+	\\ &
+	\begin{aligned}
+		u_y& =u_r\frac{\partial r}{\partial 	y}+u_\theta\frac{\partial\theta}{\partial y}
+		\\ &
+		u_r\frac{y}{\sqrt{x^2+y^2}}+u_\theta\frac{\frac1x}{1+\frac{x^2}{y^2}}=u_r\sin\theta+u_\theta\frac{\cos\theta}r
+	\end{aligned}
+	\\ &
+	\begin{aligned}
+		u_{yy} &=
+		\pr{u_y}_r\sin\theta+\pr{u_y}_\theta\frac{\cos\theta}r
+		\\ &=
+		\pr{u_{rr}\sin\theta+u_{r\theta}\frac{\cos\theta}r-u_\theta\frac{\cos\theta}{r^2}}\sin\theta
+		\\ &+
+		\pr{u_{r\theta}\sin\theta+u_r\cos\theta+u_{\theta\theta}\frac{\cos\theta}r-u_\theta\frac{\sin\theta}r}\frac{\cos\theta}r
+		\\ &
+		=\sin^2\theta u_{rr}+2\frac{\sin\theta\cos\theta}ru_{r\theta}+\frac{\cos^2\theta}{r^2}u_{\theta\theta}+\frac{\cos^2\theta}ru_r-2\frac{\sin\theta\cos\theta}{r^2}u_\theta
+	\end{aligned}
+	\\ \Longrightarrow &
+	u_{xx}+u_{yy}=u_{rr}+\frac1{r^2}u_{\theta\theta}+\frac1ru_r=0
+\end{aligned}\]
+\\% start from 42:
+
 گام ۲) حل معادله ی
 $(1)$
 و تعیین علامت و مقدار 
@@ -4365,3 +4555,27 @@ $f(z)=z_0z$
 	\end{aligned}
 \end{aligned}\]
 %todo : pic
+۴ -
+$f(z)=exp(z)$\\
+۴-۱) خط قائم
+$x=a_0$
+\[\begin{aligned}
+	x=a+yi & \Rightarrow f(z)=e^a\pr{\cos y+i\sin y}=e^a\cos y+ie^a\sin y
+	\\ & 
+	\Rightarrow \begin{tabular}{l}
+		$u=e^a\cos y$
+		\\
+		$v=e^a\sin y$
+	\end{tabular}\Rightarrow
+	\pr{ \frac u{e^a}}^2+\pr{\frac v{e^a}}^2=\cos^2 y+\sin^2 y=1
+	\\ &
+	\Rightarrow
+	u^2+v^2=e^{2a}
+\end{aligned}\]
+%todo : pic
+۴-۲) خط افقی
+$y=b$
+\[\begin{aligned}
+	z=x+ib\Rightarrow f(z)=e^x\pr{\cos y+i\sin b}
+\end{aligned}\]
+%todo : make same shape
