@@ -5035,6 +5035,273 @@ $x=a_0$
 ۴-۲) خط افقی
 $y=b$
 \[\begin{aligned}
-	z=x+ib\Rightarrow f(z)=e^x\pr{\cos y+i\sin b}
+	z=x+ib& \Rightarrow f(z)=e^x\pr{\cos y+i\sin b}
+	\Rightarrow \begin{tabular}{l}
+		$u=e^x\cos b$
+		\\
+		$v=e^x\sin b$
+	\end{tabular}\\ & \Rightarrow \frac vu=\tan b\rightarrow\text
+{خط با شیب $\tan b$(زاویه خط با محور افقی $b=0$) و عرض از مبدا صفر}
 \end{aligned}\]
+$\star$
+توجه : 
+$u$
+هم علامت با
+$\cos b$
+و
+$v$
+هم علامت با
+$\sin b$
+است پس تصویر
+$f$
+یک نیم‌خط است.\\
 %todo : make same shape
+مثال-
+$y=\frac{3\pi}4$
+\[\begin{aligned}
+& \rightarrow v=\tan\pr{\frac{3\pi}4}u\rightarrow v=-u
+\\ &
+u=-\frac{\sqrt2}2e^x \ \ , \ \ v=\frac{\sqrt2}2e^x\Rightarrow u<0 \, , \, v>0
+\end{aligned}\]
+%todo : pic
+۵-
+$f(z)=Log\, z$\\
+توجه : برای نگاشت وارون پذیر
+$f$
+اگر ناحیه‌ی
+$A$
+تحت
+$f$
+به
+$B$
+تصویر شود، آنگاه
+$B$
+تحت
+$f^-1$
+به
+$A$
+تصویر می‌شود.\\
+%todo : pic
+۵-۱) دایره به مرکز مبدا و شعاع
+$r_0$\\
+روش ۱)
+\[
+\norm{z}=r_0 \quad z=r_0e^{i\theta}\rightarrow Log\, z=\ln {r_0}+i\theta
+\]
+در شاخه‌ی اصلی تابع لگاریتم داریم
+$-\pi<\theta\le\pi$.
+بنابراین تصویر شامل ناحیه‌ی
+\[
+\begin{tabular}{l}
+	$u=\ln {r_0}$
+	\\
+	$v=\theta \quad -\pi<v\le\pi$
+\end{tabular}
+\]
+است. یعنی\\
+%todo : pic
+روش ۲) تابع لگاریتم در ناحیه‌ی
+$-\pi<\theta\le\pi$
+وارون پذیر است و وارون آن برابر است با
+$\exp(z)$.
+پس کافی است بررسی کنیم که تصویر چه ناحیه‌ای تحت
+$\exp(z)$
+دایره به شعاع
+$r_0$
+است. طبق
+$(4-1)$
+تصویر خط
+$x=\ln{r_0}$
+تحت
+$\exp(z)$)
+دایره به شعاع
+$r_0$
+است که به منظور برقرار بودن فرض وارون پذیری و تک مقدار شدن تابع لگاریتم لازم است
+$\theta$
+را در محدوده
+$\left(-\pi,\pi\right]$
+در نظر بگیریم.\\
+۵-۲) خط
+$y=\alpha x$\\
+در شکل رو‌به‌رو خط
+$y=\alpha x$
+را به دو بخش تقسیم می‌کنیم :
+\[\begin{aligned}
+	& 1) \ \ x,y>0\rightarrow \theta=\theta_1
+	\\ &
+	2) \ \ x,y<0\rightarrow \theta=\theta_2
+\end{aligned}\]
+در حالت اول داریم
+\[\begin{aligned}
+	& f(z)=\ln r+i\theta_1\qquad0<r<\infty
+	\\ \rightarrow &
+	-\infty<u=\ln r<\infty \qquad v=\theta_1
+\end{aligned}\]
+و در حالت دوم به طور مشابه نتیجه می‌شود که
+\[\begin{aligned}
+	f(z)=\ln r+i\theta_2 \qquad -\infty<u<\infty \ \ , \ \ v=\theta_2
+\end{aligned}\]
+و بنابراین\\
+%todo : pic
+که در آن
+$\theta_1=\tan^{-1}\alpha$
+و
+$\theta_2=\theta_1+\pi$\\
+$\star$
+توجه : از
+$(4-2)$
+و اینکه
+$Log\, z$
+در ناحیه‌ی
+$-\pi<\theta\le\pi$
+وارون
+$\exp(z)$
+است، نتیجه مشابه بدست می‌آید :\\
+%todo : pic
+۶-
+$\sin t$\\
+۶-۱) خط قائم
+$x=a$\\
+%todo : pic
+\[\begin{aligned}
+	&f(z)=\sin z=\sin x\cosh y+i\cos x\sinh y=\sin a\cosh y+i\cos a\sinh y
+	\\ &
+	u=\sin a\cosh y \ \ , \ \ v=\cos a\sinh y
+	\\ &
+	\cosh^2 y-\sinh^2 y=1\rightarrow \pr{\frac u{\sin a}}^2-\pr{\frac v{\cos a}}^2=1 \qquad ,\text
+	{به شرط اینکه $\sin a,\cos a\ne0$}
+\end{aligned}\]
+%todo : pic
+حالت خاص
+$a=\frac{k\pi}2$\\
+۱)
+$a=k\pi$
+\[\begin{aligned}
+\sin a=0\rightarrow
+	\begin{tabular}{l}
+		$u=0$
+		\\
+		$v=\pm1\times\sinh y \quad -\infty<v<\infty$
+	\end{tabular}
+\end{aligned}\]
+%todo : pic
+۲)
+$a=k\pi+\frac\pi2$
+\[
+\cos a=0\rightarrow\begin{tabular}{l}
+	$u=\pm1\times\cosh y$
+	\\
+	$v=0$
+\end{tabular}
+\]
+اگر
+$k$
+زوج باشد، داریم
+$v=0 \ \ , \ \ u=\cosh y$،
+بنابراین تصویر شامل بخشی از خط
+$v=0$
+است که در آن
+$u\ge1$
+و اگر
+$k$
+فرد باشد داریم
+$v=0 \ \ , \ \ u=-\cosh y$
+و تصوی بخشی از خط
+$v=0$
+است که
+$u\le-1$
+است.\\
+%todo : pic
+۶-۲) خط افقی
+$y=b$\\
+%todo : pic
+\[\begin{aligned}
+	&
+	f(z)=\sin x\cosh y+i\cos x\sinh y=\sin x\cosh b+i\cos x\sinh b
+	\\ &
+	u=-\sin x\cosh b \ \ , \ \ v=\cos x\sinh b
+	\\ &
+	\cos^2x+\sin^2x=1\rightarrow
+	\pr{\frac u{\cosh b}}^2+\pr{\frac v{\sinh b}}^2=1 \qquad\text
+	{به‌شرط $b\ne0$}
+	\\ &
+	\cosh b=\frac{e^x+e^{-x}}2=\frac{e^x-e^{-x}}2+e^{-x}=\sinh x+e^{-x}>\sinh x
+\end{aligned}\]
+پس قطر افقی بزرگتر است و در نتیجه تصویر این تابع یک بیضی افقی است.\\
+%todo : pic
+حالت خاص
+$b=0$
+\[
+u=\sin x \ \ , \ \ v=0 \qquad -1\le u\le1 \quad v=0
+\]
+%todo : pic
+۷-
+$f(z)=\cos z$\\
+۷-۱) خط قائم
+$x=a$\\
+%todo : pic
+\[\begin{aligned}
+	&f(z)=\cos z=\cos x\cosh y-i\sin x\sinh y=\cos a\cosh y-i\sin a\sinh y
+	\\ &
+	u=\cos a\cosh y \ \ , \ \ v=-\sin a\sinh y
+	\rightarrow
+	\pr{\frac u{\cos a}}^2-\pr{\frac v{\sin a}}^2=1 \qquad ,\text{
+	به‌شرط اینکه $a\ne\frac{k\pi}2$
+}\end{aligned}\]
+%todo : pic
+حالت خاص
+$a=\frac{k\pi}2$\\
+۱)
+$a=k\pi$
+\[\begin{aligned}
+	\sin a=0\rightarrow
+	\begin{tabular}{l}
+		$v=0$
+		\\
+		$u=\cos a\cosh y=\pm1 \times\cosh y$
+	\end{tabular}
+\end{aligned}\]
+اگر
+$k$
+زوج باشد داریم
+$\begin{cases}
+	v=0\\ u=\cosh y
+\end{cases}$
+و اگر
+$k$
+فرد باشد داریم
+$\begin{cases}
+	v=0\\ u=-\cosh y
+\end{cases}$
+بنابراین
+%todo : pic
+۲)
+$a=k\pi+\frac\pi2$
+\[
+\cos a=0\rightarrow\begin{tabular}{l}
+	$u=0$
+	\\
+	$-\infty<v=\pm\sinh y<\infty$
+\end{tabular}
+\]
+%todo : pic
+۷-۲) خط افقی
+$y=b$\\
+%todo : pic
+\[\begin{aligned}
+\begin{tabular}{l}
+	$u=\cos x\cosh b$
+	\\
+	$v=-\sin x\sinh b$
+\end{tabular}\rightarrow
+\pr{\frac u{\cosh b}}^2+\pr{\frac v{\sinh b}}^2=1 \qquad,\text{
+به‌شرط
+$b\ne0$
+}
+\end{aligned}\]
+حالت خاص
+$b=0$
+\[
+u=\cos x \ \ , \ \ v=0
+\]
+%todo : pic
