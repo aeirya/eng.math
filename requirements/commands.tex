@@ -24,7 +24,10 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 \newcommand{\myover}[2]{
-\overset{\displaystyle #1}{\displaystyle #2}
+\overset{\displaystyle #2}{\displaystyle #1}
+}
+\newcommand{\myunder}[2]{
+	\underset{\displaystyle #2}{\displaystyle #1}
 }
 \def\doubleunderline#1{\underline{\underline{#1}}}
 \newcommand{\ubcolored}[4]{

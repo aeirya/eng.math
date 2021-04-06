@@ -1852,8 +1852,467 @@ $(5)$
 	\\ \Longrightarrow &
 	u_{xx}+u_{yy}=u_{rr}+\frac1{r^2}u_{\theta\theta}+\frac1ru_r=0
 \end{aligned}\]
-\\% start from 42:
-
+مساله‌ی لاپلاس در دایره، حلقه و قطاع دایره را حل می کنیم.\\
+۴.۱) معادله‌ی لاپلاس در دایره
+\[\begin{aligned}
+	& u_{rr}\frac1ru_r+\frac1{r^2}u_{\theta\theta}=0
+	\\ &
+	-\pi<\theta\le\pi,\qquad 0\le r\le R
+	\\ &
+	u(R,\theta)=f(\theta)
+\end{aligned}\]
+گام ۱) جایگذاری
+$u(r,\theta)=R(r)\Theta(\theta)$
+در PDE
+\[\begin{aligned}
+	& R^{\prime\prime}(r)\Theta(\theta)+\frac 1rR^\prime(r)\Theta(\theta)+\frac1{r^2}R(r)\Theta^{\prime\prime}(\theta)=0
+	\\
+	\xrightarrow{\div R(r)\Theta(\theta)}\ \ &
+	r^2\frac{R^{\prime\prime}}{R}+r\frac{R^\prime}{R}+\frac{\Theta^{\prime\prime}}{\Theta}\rightarrow\begin{cases}
+		r^2\frac{R^{\prime\prime}}{R}+r\frac{R^\prime}R=\alpha \quad & (2)\\
+		\frac{\Theta^{\prime\prime}}{\Theta}=-\alpha \quad & (1)
+	\end{cases}
+\end{aligned}\]
+گام ۲) حل معادله ی $(1)$ و تعیین علامت و مقدار ثابت
+$\alpha$\\
+توجه می‌کنیم که در این مساله شرایط همگن برای هیچ‌یک از توابع
+$R$،
+$\Theta$
+وجود ندارد، اما یک شرط تناوبی بودن در فیزیک مساله نهفته است که به تعیین
+$\alpha$
+کمک می کند. این شرط عبارت است از
+$u(r,\theta)=u(r,\theta+2\pi)$.
+بنابراین تابع
+$\Theta$
+باید در شرط
+\[
+\Theta(\theta)=\Theta(\theta+2\pi) \quad (3)
+\]
+صدق کند و این تنها وقتی ممکن است که
+$2\pi$
+ضریب صحیحی از دوره تناوب تابع
+$\Theta$
+باشد یعنی
+$2\pi=nT$.
+بنابراین دوره تناوب تابع
+$\Theta$
+باید
+$\frac{2\pi}n$
+باشد که
+$n$
+عددی طبیعی است. حال از معادله
+$(1)$
+داریم
+\[
+\frac{\Theta^{\prime\prime}}\Theta=-\alpha
+\]
+واضح است که اگر
+$\alpha<0$،
+جواب
+$\Theta$
+تناوبی نخواهد بود بنابراین
+$\alpha\ge0$
+و داریم
+$\alpha=\lambda^2$.
+پس
+\[\begin{aligned}
+	& \begin{aligned}
+		\circled1 \ \ & \alpha=0 \quad \Theta^{\prime\prime}=0\rightarrow \Theta(\theta)=a_0\theta+b_0
+		\\ &
+		\Theta(\theta+2\pi)=\Theta(\theta)\rightarrow \Theta_0(\theta)=1
+	\end{aligned}
+	\\ &
+	\begin{aligned}
+		\circled2 \ \ &
+		\alpha=\lambda^2 \quad \lambda\ne0
+		\\ &
+		\frac{\Theta^{\prime\prime}}\Theta=-\lambda^2\rightarrow \Theta(\theta)=a\cos{\lambda\theta}+b\sin{\lambda\theta}
+	\end{aligned}
+\end{aligned}\]
+و دوره تناوب تابع
+$\Theta$
+برابر است با
+$\frac{2\pi}{n}$.
+بنابراین از شرط
+$(3)$
+داریم
+\[
+2\pi=n\frac{2\pi}\lambda\rightarrow\begin{tabular}{l}
+	$\lambda_n=n$
+	\\
+	$\Theta_n(\theta)=a_n\cos{n\theta}+b_n\sin{n\theta}$
+\end{tabular}
+\]
+گام ۳) حل معادله‌ی دوم
+\[\begin{aligned}
+	& r^2\frac{R^{\prime\prime}}R+r\frac{R^\prime}{R}=\alpha
+	\\ & 
+	\begin{aligned}
+	\circled1 \ \ \alpha=0\rightarrow & r^2R^{\prime\prime}+rR^\prime=0 \quad s^2+\pr{1-1}s=0\rightarrow s_1=s_2=0
+	\\ &
+	R(r)=a_0+b_0\ln{r}
+	\end{aligned}
+\end{aligned}\]
+همچنین از فیزیک مساله بدیهی است که روی سطح دایره
+$u(r,\theta)<\infty$.
+بنابراین در
+$r\to0$
+داریم
+\[
+\lim_{r\to0} R(r)=\infty
+\]
+و شرط
+$\left|u(r,\theta)\right|<\infty$
+تنها زمانی برقرار است که
+$b_0=0$.
+پس به ازای
+$\alpha=0$
+تابع
+$\Theta_0(\theta)=1$
+و
+$R_0(r)=a_0$
+را داریم.
+\[\begin{aligned}
+	\circled2 \alpha=n^2 & \rightarrow r^2R^{\prime\prime}+rR^\prime-n^2R=0 \quad s^2-n^2=0\rightarrow s=\pm n
+	\\ & \rightarrow
+	R_n(r)=\tilde{a_n}r^n+\tilde{b_n}r^{-n}
+\end{aligned}\]
+دوباره متناهی بودن
+$u(r,\theta)$
+در
+$r\to0$
+نتیجه می دهد که
+$b_n=0$
+و بنابراین
+$R_n(r)=\tilde{a_n}r^n$
+و داریم
+\[
+u(r,\theta)=a_0+\sum\pr{A_n\cos{n\theta}+B_n\sin{n\theta}}r^n
+\]
+که در واقع
+$A_n=a_n\tilde{a_n}$
+و
+$B_n=b_n\tilde{a_n}$.\\
+گام ۴) محاسبه‌ی ضرایب
+$A_n,a_0$
+و
+$B_n$\\
+کافی است از شرط مرزی و روابط سری فوریه استفاده کنیم
+\[\begin{aligned}
+	& u(R,\theta)=a_0+\sum_{n=1}^\infty\pr{A_n\cos{n\theta}+B_n\sin{n\theta}}R^n=f(\theta)
+	\\ &
+	a_0=\frac1{2\pi}\int_{-\pi}^\pi f(\theta)\, d\theta
+	\\ &
+	A_nR^n=\frac1\pi\int_{-\pi}^\pi f(\theta)\cos{n\theta}\, d\theta\longrightarrow A_n=\frac1{\pi R^n}\int_{-\pi}^\pi f(\theta)\cos{n\theta}\, d\theta
+	\\ &
+	B_nR^n=\frac1\pi\int_{-\pi}^\pi f(\theta)\sin{n\theta}\, d\theta\longrightarrow B_n=\frac1{\pi R^n}\int_{-\pi}^\pi f(\theta)\sin{n\theta}\, d\theta
+\end{aligned}\]
+۴.۲) معادله‌ی لاپلاس در حلقه
+\[\begin{aligned}
+	& u_{rr}+\frac1r u_r+\frac1{r^2}u_{\theta\theta}=0
+	\\ &
+	R_1\le r \le R_2 \ \ , \ \ -\pi<\theta\le\pi
+	\\ &
+	u\pr{R_1,\theta}=f_1(\theta)
+	\\ &
+	u\pr{R_@,\theta}=f_2(\theta)
+\end{aligned}\]
+گام ۱) جایگذاری
+$u(r,\theta)=R(r)\Theta(\theta)$
+در PDE
+\[\begin{aligned}
+	& R^{\prime\prime}(r)\Theta(\theta)+\frac1r R^\prime(r)\Theta(\theta)+\frac1{r^2} R(r)\Theta^{\prime\prime}(\theta)=0
+	\\ \xrightarrow{\times \frac{r^2}{R(r)\Theta(\theta)}} \ \ &
+	r^2\frac{R^{\prime\prime}}R+r\frac{R^\prime}{R}=-\frac{\Theta^{\prime\prime}}\Theta\rightarrow\begin{cases}
+		\frac{\Theta^{\prime\prime}}\theta=-\alpha
+		\\
+		r^2\frac{R^{\prime\prime}}R+r\frac{R^\prime}R=\alpha
+	\end{cases}
+\end{aligned}\]
+گام ۲) حل معادله‌ی
+$\Theta$
+و تعیین مقدار و علامت
+$\alpha$
+\[
+u(r,\theta+2\pi)=u(r,\theta)
+\]
+گام ۲ هیچ تفاوتی با معادله‌ی لاپلاس در دایره ندارد و بنا به شرط تساوی
+$u$
+در
+$\theta$
+و
+$\theta+2\pi$
+نتیجه می‌شود که
+$2\pi$
+مضرب صحیح از دوره تناوب
+$\Theta$
+است و یکی از دو حالت زیر اتفاق می‌افتد :
+\[\begin{aligned}
+	& 1)\ \ \alpha=0 \quad &\ \Theta_0(\theta)=1\\
+	& 2) \ \ \alpha=n^2 \quad &\ \Theta_n(\theta)=a_n\cos{n\theta}+b_n\sin{n\theta}
+\end{aligned}\]
+گام ۳) حل معادله‌ی دوم\\
+برای محاسبه‌ی تابع
+$R(r)$
+داریم
+\[\begin{aligned}
+	&
+	1) \ \ \alpha=0 \quad r^2R^{\prime\prime}+rR^\prime=0\rightarrow R(r)=c_0+d_0\ln{r}
+	\\ &
+	2) \ \ \alpha=n^2\quad \Theta_n(\theta)=a_n\cos{n\theta}+b_n\sin{n\theta}
+\end{aligned}\]
+در این مساله با توجه به اینکه
+$r=0$
+در دامنه‌ی حل وجود ندارد نمی‌توان از متناهی بودن
+$u$
+در
+$r\to0$
+نتیجه گرفت که
+$d_0=0$
+یا
+$d_n=0$
+و داریم
+\[\begin{aligned}
+	& u(r,\theta)=c_0+d_0\ln r+\sum\pr{a_n\cos{n\theta}+b_n\sin{n\theta}}\pr{c_nr^n+d_nr^{-n}}
+	\\ &
+	\stackrel{(\star)}{=}c_0+d_0\ln r+\sum\pr{a_nc_nr^n+a_nd_nr^{-n}}\cos{n\theta}+\sum\pr{b_nc_nr^n+b_nd_nr^{-n}}\sin{n\theta}
+\end{aligned}\]
+گام ۴) محاسبه‌ی ضرایب از شرط‌های مرزی
+\[\begin{aligned}
+	& \begin{aligned}
+		@ r=R_1 \ \ u(R_1,\theta)=f_1(\theta)
+		=c_0+d_0\ln {R_1}& +\sum\pr{a_nc_n{R_1}^n+a_nd_n{R_1}^{-n}}\cos{n\theta}
+		\\ &
+		+\sum\pr{b_nc_n{R_1}^n+b_nd_n{R_1}^{-n}}\sin{n\theta}
+	\end{aligned}
+	\\ \Rightarrow &
+	c_0+d_0\ln{R_1}=\frac1{2\pi}\int_{-\pi}^\pi f_1(\theta)\,d\theta \quad (1)
+	\\ &
+	a_nc_nR_1^n+a_nd_nR_1^{-n}=\frac1\pi\int_{-\pi}^\pi f_1(\theta)\cos{n\theta}\,d\theta \quad (2)
+	\\ &
+	b_nc_nR_1^n+b_nd_nR_1^{-n}=\frac1\pi\int_{-\pi}^\pi f_1(\theta)\sin{n\theta}\,d\theta \quad (3)
+\end{aligned}\]
+همچنین در
+$r=R_2$
+داریم :
+\[\begin{aligned}
+	& \begin{aligned}
+		@ r=R_2 \ \ u(R_2,\theta)=f_2(\theta)
+		=c_0+d_0\ln {R_2}& +\sum\pr{a_nc_n{R_2}^n+a_nd_n{R_2}^{-n}}\cos{n\theta}
+		\\ &
+		+\sum\pr{b_nc_n{R_2}^n+b_nd_n{R_2}^{-n}}\sin{n\theta}
+	\end{aligned}
+	\\ \Rightarrow &
+	c_0+d_0\ln{R_2}=\frac1{2\pi}\int_{-\pi}^\pi f_2(\theta)\,d\theta \quad (4)
+	\\ &
+	a_nc_nR_2^n+a_nd_nR_2^{-n}=\frac1\pi\int_{-\pi}^\pi f_2(\theta)\cos{n\theta}\,d\theta \quad (5)
+	\\ &
+	b_nc_nR_2^n+b_nd_nR_2^{-n}=\frac1\pi\int_{-\pi}^\pi f_2(\theta)\sin{n\theta}\,d\theta \quad (6)
+\end{aligned}\]
+حال از روابط
+$(1)$
+و
+$(4)$،
+$c_0$
+و
+$d_0$
+محاسبه می‌شوند.\\
+همچنین از روابط
+$(2)$
+و
+$(5)$،
+$a_nd_n$
+و
+$a_nc_n$
+محاسبه می‌شوند و نهایت از روابط
+$(3)$
+و
+$(6)$،
+$b_nc_n$
+و
+$b_nd_n$
+به دست می‌آیند. با جایگذاری
+$b_nc_n,a_nd_n,a_nc_n,d_0,c_0$
+و
+$b_nd_n$
+در
+$(\star)$،
+$u(r,\theta)$
+جواب مساله‌ی لاپلاس در حلقه در دست است.\\
+توجه : از تقسیم روابط
+$(2)$
+و
+$(3)$
+و همچنین روابط
+$(5)$
+و
+$(6)$
+به ترتیب، داریم
+\[
+\frac{a_n}{b_n}=\frac{\int_{-\pi}^\pi f_1(\theta)\cos{n\theta}\,d\theta}{\int_{-\pi}^\pi f_1(\theta)\sin{n\theta}\,d\theta} \quad , \quad\frac{a_n}{b_n}=\frac{\int_{-\pi}^\pi f_2(\theta)\cos{n\theta}\,d\theta}{\int_{-\pi}^\pi f_2(\theta)\sin{n\theta}\,d\theta}
+\]
+و یک شرط لازم برای جواب داشتن معادله‌ی لاپلاس روی حلقه این است که
+\[
+\frac{\int_{-\pi}^\pi f_1(\theta)\cos{n\theta}\,d\theta}{\int_{-\pi}^\pi f_1(\theta)\sin{n\theta}\,d\theta}=\frac{\int_{-\pi}^\pi f_2(\theta)\cos{n\theta}\,d\theta}{\int_{-\pi}^\pi f_2(\theta)\sin{n\theta}\,d\theta}
+\]
+۴.۳) معادله‌ی لاپلاس در قطاع دایره
+\[\begin{aligned}
+	&
+	u_{rr}+\frac1ru_r+\frac1{r^2}u_{\theta\theta}=0
+	\\ &
+	0\le r\le R \ \ , \ \ 0\le\theta\le\frac{2\pi}3
+	\\ &
+	u_\theta(r,0)=0
+	\\ &
+	u_\theta\pr{r,\frac{2\pi}3}=0
+	\\ &
+	u(R,\theta)=f(\theta)
+\end{aligned}\]
+گام ۱) جایگذاری
+$u(r,\theta)=R(r)\Theta(\theta)$
+در PDE
+\[\begin{aligned}
+	& R^{\prime\prime}(r)\Theta(\theta)+\frac1r R^\prime(r)\Theta(\theta)+\frac1{r^2} R(r)\Theta^{\prime\prime}(\theta)=0
+	\\ \xrightarrow{\times \frac{r^2}{R(r)\Theta(\theta)}} \ \ &
+	r^2\frac{R^{\prime\prime}}R+r\frac{R^\prime}{R}=-\frac{\Theta^{\prime\prime}}\Theta\rightarrow\begin{cases}
+		\frac{\Theta^{\prime\prime}}\theta=-\alpha
+		\\
+		r^2\frac{R^{\prime\prime}}R+r\frac{R^\prime}R=\alpha
+	\end{cases}
+\end{aligned}\]
+گام ۲) حل معادله‌ی و تعیین علامت و مقدار
+$\alpha$
+\[\begin{aligned}
+	& \frac{\Theta^{\prime\prime}}\Theta=-\alpha
+	\\ &
+	u_\theta(r,0)=u_\theta\pr{r,\frac{2\pi}3}=0\rightarrow\Theta^\prime(0)=\Theta^\prime\pr{\frac{2\pi}3}=0
+	\\ & \begin{aligned}
+		\Rightarrow \quad & \circled1 \ \ \alpha=0 \quad \Theta_0(\theta)=1
+		\\ &
+		\circled2 \ \ \myunder{\alpha>0}{(\alpha=\lambda^2)} \quad \Theta^{\prime\prime}+\lambda^2\Theta=0\rightarrow\Theta(\theta)=a\cos{\lambda\theta}+b\sin{\lambda\theta}
+	\end{aligned}
+	\\ &
+	\Theta^\prime(0)=b\lambda=0\rightarrow b=0
+	\\ &
+	\begin{aligned}
+	\Theta^\prime\pr{\frac{2\pi}3}=-a\lambda\sin{\frac{2\pi}3\lambda}=0&\rightarrow\sin{\frac{2\pi}3\lambda}=0\rightarrow\sin{\frac{2\pi}3\lambda}=0\rightarrow\frac{2\cancel\pi}3\lambda=n\cancel\pi
+	\\ &
+	\rightarrow \lambda_n=\frac{3n}2\rightarrow\alpha=\frac{9n^2}4
+	\end{aligned}
+	\\ \Rightarrow &
+	\Theta_n(\theta)=\cos\frac{3n\theta}2
+\end{aligned}\]
+گام ۳) حل معادله‌ی دوم و تشکیل
+$u(r,\theta)$
+\[\begin{aligned}
+	& \circled1 \ \ \alpha=0 \quad r^2R^{\prime\prime}+rR^\prime=0\rightarrow R(r)=a_0+b_0\ln r
+	\\ &
+	\circled2 \ \ \alpha=\frac{9n^2}4\quad r^2R^{\prime\prime}+rR^\prime-\frac{9n^2}4R=0\rightarrow R(r)=a_nr^{\frac{3n}2}+b_nr^{-\frac{3n}2}
+\end{aligned}\]
+و با توجه به متناهی بدن
+$u(r,\theta)$
+در
+$r\to0$،
+$b_0$
+و
+$b_n$
+صفر هستند و داریم
+\[\begin{aligned}
+	& \circled1 \ \ \alpha=0 \quad \Theta_0(\theta)=1\quad R_0(r)=a_0
+	\\ &
+	\circled2 \alpha=\frac{9n^2}4\quad \Theta_n(\theta)=\cos\frac{2n\theta}2 \quad R_n(r)=a_nr^\frac{3n}2
+	\\ &
+	\rightarrow u(r,\theta)=a_0+\sum_{n=1}^\infty a_nr^\frac{3n}2\cos\frac{3n\theta}2 \quad (\star)
+\end{aligned}\]
+گام ۴) محاسبه‌ی ضرایب با استفاده از شرط مرزی
+\[
+u(R,theta)=f(\theta)=a_0+\sum_{n=1}^\infty a_nr^\frac{3n}2\cos\frac{3n\theta}2 \quad (\star)
+\]
+سری فوریه کسینوسی که بالا در بازه‌ی
+$\left[0,\frac{2\pi}3\right]$
+به
+$f(\theta)$
+همگراست.($L=\frac{2\pi}3$)
+\[\begin{aligned}
+	&a_0=\frac3{2\pi}\int_0^\frac{2\pi}3 f(\theta)\,d\theta
+	\\ &
+	a_nR^\frac{3n}2=\frac3\pi\int_0^\frac{2\pi}3f(\theta)\,d\theta
+	\rightarrow & \begin{cases}
+		a_0=\frac3{2\pi}\int_0^\frac{2\pi}3 f(\theta)\,d\theta
+		\\
+		a_n=\frac3{\pi R^\frac{3n}2}\int_0^\frac{2\pi}3f(\theta)\,d\theta
+	\end{cases}
+\end{aligned}\]
+با جایگذاری
+$a_0$
+و
+$a_n$
+در
+$(\star)$،
+$u(r,\theta)$
+در دست است.\\
+مساله‌ی ۵)\\
+مساله‌ی حرارت در یک صفحه‌ی دو بعدی را با صورت ریاضی زیر در نظر می‌گیریم :
+\[\begin{aligned}
+	& u_t=\alpha\pr{u_{xx}+u_{yy}}
+	\\ &
+	u(0,y,t)=u(a,y,t)=0
+	\\ &
+	u(x,0,t)=u(x,b,t)=0
+	\\ &
+	u(x,y,0)=f(x,y)
+\end{aligned}\]
+قبل از شروع حل دقت می‌کنیم که در مسائل قبلی
+$u$
+شامل دو متغیر مستقل بود، در حالی که در این مساله
+$u$
+تابع سه متغیر مستقل
+$x$
+و
+$y$،
+$t$
+است.\\
+بنابراین اگر
+$u$
+را به فرم ضربی جدا نسبت به متغیرهای مستقل بنویسیم داریم
+\[
+u(x,y,t)=X(x)Y(y)T(t)
+\]
+و بنابراین سه تابع
+$Y,X$
+و
+$T$
+باید در گام‌های الگوریتم محاسبه شوند.\\
+جزئیات محاسبات را ببینیم :\\
+گام ۱) جایگذاری
+$u(x,y,t)=X(x)Y(y)T(t)$
+در PDE
+\[\begin{aligned}
+	&
+	X(x)Y(y)T^\prime(t)=\alpha\pr{X^{\prime\prime}(x)Y(y)T(t)+X(x)Y^{\prime\prime}(y)T(t)}
+	\\ \\ &\xrightarrow{\div \alpha X(x)Y(y)T(t)} \ \ 
+	\underbrace{\frac1\alpha\frac{T^\prime}T}_{t \text{تابع }}=\underbrace{\frac{X^{\prime\prime}}X+\frac{Y^{\prime\prime}}Y}_{\text{تابع $x$ و $y$}}\rightarrow
+	\begin{cases}
+		\frac{X^{\prime\prime}}X+\frac{Y^{\prime\prime}}Y=c_1\rightarrow \underbrace{\frac{X^{\prime\prime}}X}_\text
+			{تابع 
+			$x$
+		}
+	=\underbrace{c_1-\frac{Y^{\prime\prime}}Y}_\text
+	{تابع 
+		$y$
+	}=c_2
+	\\
+	\frac1\alpha\frac{T^\prime}T=C_1
+	\end{cases}
+	\\ &
+	\Rightarrow\begin{cases}
+		\frac{X^{\prime\prime}}X=c_2\quad &(1)
+		\\
+		\frac{Y^{\prime\prime}}Y=c_1-c_2 \quad &(2)
+		\\
+		\frac1\alpha\frac{T^\prime}T=c_1 \quad &(3)
+	\end{cases}
+\end{aligned}\]
 گام ۲) حل معادله ی
 $(1)$
 و تعیین علامت و مقدار 
