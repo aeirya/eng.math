@@ -5305,3 +5305,298 @@ $b=0$
 u=\cos x \ \ , \ \ v=0
 \]
 %todo : pic
+۸)
+$f(z)=\frac1z$\\
+۸-۱) دایره به مرکز مبدا\\
+%todo : pic
+\[\begin{aligned}
+	& z=re^{i\theta} \quad 0<r\le1 \quad -\pi<\theta\le\pi
+	\\ &
+	f(z)=\frac1re^{-i\theta} \quad \frac1r\ge1\quad -\pi\le-\theta<\pi
+\end{aligned}\]
+نکته‌ی مهم : با توجه به اینکه وارون تابع
+$f(z)=\frac1z$
+برابر با خودش است
+\[
+w=\frac1z\rightarrow z=\frac1w\rightarrow f^{-1}(z)=\frac{1}{z}=f(z)
+\]
+و اینکه قبلا دیدم اگر ناحیه‌ی
+$A$
+با
+$f$
+به
+$B$
+تصویر شود، آنگاه ناحیه‌ی
+$B$
+با
+$f^{-1}$
+به
+$A$
+تصویر می شود. در مورد نگاشت
+$(f=f^{-1})$
+داریم :\\
+اگر
+$A$
+توسط
+$\underbrace{\frac1z}_{f}$
+به
+$B$
+تصویر شود آنگاه
+$B$
+توسط
+$\underbrace{\frac1z}_{f^{-1}}$
+به
+$A$
+تصویر می‌شود.\\
+بنابراین هر تبدیل که با
+$f(z)=\frac1z$
+انجام شود، برعکس آن نیز با همین نگاشت انجام می‌شود.\\
+۸-۲) خط قائم
+$x=a$\\
+%todo : pic
+\[\begin{aligned}
+	&
+	f(z)=\frac1z=\frac1{x+yi}=\frac{x-yi}{x^2+y^2}\longrightarrow
+	f(z)=\frac{a}{a^2+y^2}-\frac y{a^2+y^2}\, i
+	\\ \rightarrow &
+	u=\frac a{a^2+y^2} \, , \, v=-\frac y{a^2+y^2} \rightarrow
+	u^2+v^2=\frac1{a^2+y^2}=\frac ua \qquad,\text{با فرض $a\ne0$}
+	\\ \rightarrow &
+	u^2+v^2-\frac ua=0\rightarrow \underbrace{\pr{u-\frac 1{2a}}^2+v^2=\frac1{4a^2}}_{\text{
+دایره به مرکز
+$\pr{\frac1{2a},0}$
+و شعاع
+$\frac1{2a}$	
+}}
+\end{aligned}\]
+%todo : pic
+\\
+حالت خاص
+$a=0$
+\[
+\myunder{z=yi}{y\ne0}\rightarrow f(z)=\frac1{yi}=\frac{-i}{u}\rightarrow\begin{matrix}
+	u=0\\ v=-\frac1y
+\end{matrix}
+\]
+%todo : pic
+\\
+۸-۳) خط افقی
+$y=b$
+\[\begin{aligned}
+	f(z)&=\frac x{x^2+y^2}-\frac y{x^2+y^2}i=
+	\frac x{x^2+b^2}-\frac b{x^2+b^2}i\rightarrow\begin{matrix}
+		u=\frac x{x^2+b^2}\\ v=-\frac b{x^2+b^2}
+	\end{matrix}\Rightarrow u^2+v^2=-\frac vb
+	\\ & \rightarrow \underbrace{u^2+\pr{v+\frac1{2b}}^2=\frac1{4b^2}}_{\text{
+			دایره به مرکز
+			$\pr{0,\frac{-1}{2b}}$
+			و شعاع
+			$\frac1{2b}$	
+	}}
+\end{aligned}\]
+حالت خاص
+$b=0$
+\[
+\myunder{z=x}{x\ne0}\rightarrow f(z)=\frac1{x}\rightarrow\begin{matrix}
+	u=\frac 1x\\ v=0
+\end{matrix}
+\]
+%todo : pic
+\\
+۹) نگاشت هموگرافیک
+$f(z)=\frac{az+b}{z+c}$\\
+قضیه - نگاشت هموگرافیک یکتایی وجود دارد که نقاط دلخواه
+$z_2,z_1$
+و
+$z_3$
+را به ترتیب به
+$\omega_2,\omega_1$
+و
+$\omega_3$
+می‌نگارند. این نگاشت
+$\omega=\frac{az+b}{z+c}$
+از رابطه‌ی
+\[
+\frac{\pr{z-z_1}\pr{z_2-z_3}}{\pr{z-z_3}\pr{z_2-z_1}}=
+\frac{\pr{\omega-\omega_1}\pr{\omega_2-\omega_3}}{\pr{\omega-\omega_3}\pr{\omega_2-\omega_1}}
+\]
+به‌دست می‌آید.\\
+مثال ۱ - نگاشت هموگرافیک
+$P$
+را حساب کنید به طوری که نقاط
+$1,0$
+و
+$i$
+را به‌ترتیب به
+$-1,i$
+و
+$0$
+تصویر کند.
+\[\begin{aligned}
+	&\begin{matrix}
+		z_1=0 & \omega_1=i
+		\\
+		z_2=1 & \omega_2=-1
+		\\
+		z_3=i & \omega_3=0
+	\end{matrix}
+	\\ &
+	\frac{\pr{z-0}\pr{1-i}}{\pr{z-i}\pr{1-0}}=\frac{\pr{\omega_i}\pr{-1-0}}{\pr{\omega-0}\pr{-1-i}}\rightarrow\frac{z\pr{1-i}}{\pr{z-i}\pr{1}}=\frac{\pr{\omega-i}\pr{-1}}{\omega\pr{-1-i}}
+	\\
+	\rightarrow & \frac{z\pr{1-i}}{z-i}=\frac{\omega-i}{\omega\pr{1+i}}
+	\\ \rightarrow & 2z\omega=z\omega-i\omega-iz-1\rightarrow z\omega=-i\omega-iz-1
+	\\ \rightarrow &
+	\pr{z+i}\omega=-iz-1\rightarrow\omega=-\frac{iz+1}{z+1}
+\end{aligned}\]
+مثال ۲ - 
+$z_2=0\ \ \omega_2=i \, , \, z_3=\infty \ \ \omega_3=1$
+و
+$z_1=1\ \ \omega_1=\infty$
+\[\begin{aligned}
+	&
+	\frac{\pr{z-1}\pr{0-z_3}}{\pr{z-z_3}\pr{0-1}}=\frac{\pr{\omega-\omega_1}\pr{i-1}}{\pr{\omega-1}\pr{i-\omega_1}}
+	\\
+	&
+	\lim_{z_3\to\infty} \frac{-z_3}{z-z_3}=1 \qquad
+	\lim_{\omega_1\to\omega}\frac{\omega-\omega_1}{i-\omega_1}=1
+	\\
+	\Rightarrow &
+	\frac{z-1}{-1}=\frac{i-1}{\omega-1}\rightarrow\omega-1=\frac{1-i}{z-1}\rightarrow \omega=\frac{1-i}{z-i}+1=\frac{z-i}{z+1}
+\end{aligned}\]
+مثال ۳ -\\
+%todo : pic
+\[\begin{aligned}
+	& x=a \quad &\longrightarrow \quad & u^2+v^2=e^{2a}
+	\\ &
+	x=b \quad &\longrightarrow \quad & u^2+v^2=e^{2b}
+	\\ &
+	y=c \quad &\longrightarrow \quad & v=\pr{\tan c}u
+	\\ &
+	y=c \quad &\longrightarrow \quad & v=\pr{\tan d}u
+\end{aligned}\]
+%todo : pic
+\\
+مثال ۴ - نگاشتی معرفی کنید که ربع اول صفحه را به درون دایره‌ی واحد تصویر کند.\\
+%todo : pic
+توجه - نگاشت
+$f(z)=\dfrac{z-z_0}{z-\ol{z_0}}$
+محور
+$x$
+ها را به‌روی دایره‌ی واحد می‌نگارد(به ازای هر
+$z_0$
+دلخواه که\\
+$im\pr{z_0}\ne0$).\\
+اثبات -
+\[\begin{aligned}
+	&z=x\in\R\rightarrow d\pr{z,z_0}-d\pr{z,\ol{z_0}}\rightarrow \norm{z-z_0}=\norm{z-\ol{z_0}}
+	\\ \rightarrow&
+	\norm{f(z)}=\norm{\frac{z-z_0}{z-\ol{z_0}}}=1
+\end{aligned}\]
+%todo : pic
+مثال ۵ (نمونه سوال پایان‌ترم)\\
+%todo : pic
+\circled 1
+\[\begin{aligned}
+	&\frac1{2a}=1&\rightarrow\quad\begin{matrix}
+		a=\frac12\\ x=\frac12
+	\end{matrix}
+	\\ 
+	-&\frac1{2b}=-1&\rightarrow\quad\begin{matrix}
+		b=\frac12 \\ y=\frac12
+	\end{matrix}
+\end{aligned}\]
+تست نقطه :
+$$z^*=\epsilon\pr{1-i}\simeq\epsilon e^{-\frac{i\pi}4}\rightarrow \frac1{z^*}=\frac1\epsilon e^{\frac{i\pi}4}$$
+\circled2
+$$\omega=z-\frac{1+i}2\qquad \begin{matrix}
+	Re\pr{z}=-\frac12\\ im\pr{z}=-\frac12
+\end{matrix}$$
+\circled3
+\[
+\omega=z^2\qquad \begin{matrix}
+	z=re^{i\theta}\\ z^2=r^2e^{2i\theta}
+\end{matrix}\qquad
+\begin{matrix}
+	r\ge 0\\ r^2\ge0
+\end{matrix}\qquad
+\begin{matrix}
+	0\le\theta\le\frac\pi2\\0\le2\theta\le\pi
+\end{matrix}
+\]
+کاربرد نگاشت در حل برخی مسائل PDE\\
+فرض کنید بخواهیم جواب یک PDE را در ناحیه‌ی D به‌دست آوریم. اگر ناحیه‌ی D تحت یک نگاشت مختلط مانند
+$f(z)$،
+به ناحیه‌ی ساده‌تری مانند
+$\tilde{D}$
+نگاشته شود و اگر بتوان صورت جدید
+PDE
+را تحت این نگاشت
+$f$
+به‌دست آورد، آنگاه می‌توان
+PDE
+را تحت نگاشت به‌دست آورد، در فضای جدید
+$\tilde{D}$
+حل کرد و بعد جواب را با نگاشت
+$f^{-1}$
+به فضای‌اولیه بازگردانید.\\
+به‌عنوان نمونه معادله‌ی لاپلاس را تحت نگاشت
+$f(z)=e^z$
+ببینیم.
+\[\begin{aligned}
+	&
+	u_{xx}+u_{yy}=0
+	\\ &
+	f(z)=\underbrace{e^x\cos y}_{p}+i \underbrace{e^x\sin y}_{q}
+	\\ &
+	u_x=u_pp_x+u_qq_x=pu_p+qu_q
+	\\ &
+	\begin{aligned}
+		u_{xx} &= \pr{u_x}_pp_x+\pr{u_x}_qq_x=\pr{pu_{pp}}=\pr{pu_{pp}+u_p+qu_{pq}}p+\pr{pu_{pq}+qu_{qq}+u_{q}}q
+		\\ &
+		=p^2u_{pp}+pu_p+qu_q+2pqu_{pq}+q^2u_{qq}
+	\end{aligned}
+	\\ &
+	u_y=u_pp_y+u_qq_y=-qu_p+pu_q
+	\\ &\begin{aligned}
+		u_{yy}&=\pr{u_y}_pp_y+\pr{u_y}_qq_y=-q\pr{-qu_{pp}+u_q+pu_{pq}}+p\pr{-u_p-qu_{pq}+pu_{qq}}
+		\\ &=q^2u_{pp}-qu_q-2pqu_{pq}-pu_p+p^2u_{qq}
+	\end{aligned}
+\rightarrow &
+u_{xx}+u_{yy}=\pr{p^2+q^2}u_{pp}+\pr{p^2+q^2}u_{qq}=0\rightarrow u_{pp}+u_{qq}=0
+\end{aligned}\]
+بنابراین صورت معادله‌ی لاپلاس بر حسب تغییر متغیر‌های
+$p=e^x\cos y$
+و
+$q=e^x\sin y$
+به عنوان متغیر‌های مستثل تغییری نمی‌کند. بنابراین با تعریف
+$f(z)=e^z$،
+جواب معادله‌ی لاپلاس در ناحیه‌ی
+$D$
+به این ترتیب محاسبه می‌شود که\\
+- ابتدا جواب معادله‌ی لاپلاس را در ناحیه‌ی
+$f(D)$
+به‌دست می‌آوریم($u(p,q)$)\\
+- سپس جواب در ناحیه‌ی
+$D$
+برابر است با
+$f^{-1}\pr{u\pr{p,q}}$.
+\[
+\begin{matrix}
+	u_{\tilde x\tilde x}+u_{\tilde y\tilde y}=0\\
+	{\tilde x}^2+{\tilde y}^2\le1 \, , \, 0\le \theta \le \frac\pi2
+\end{matrix}\qquad\qquad\begin{matrix}
+u_{xx}+u_{yy}=0\\
+x\le0 \, , \, 0\le y\le \frac\pi2
+\end{matrix}
+\]
+%todo : pic
+\[\begin{aligned}
+&f^{-1}\pr{z}=Log\, z=\ln r+i\theta=\frac12\ln\pr{x^2+y^2}+i\tan^{-1}\frac yx
+\\ &
+f(z)=\tilde x+i\tilde y\rightarrow\begin{cases}
+	x=\frac12\ln\pr{{\tilde x}^2+{\tilde y}^2}\\
+	y=\tan^{-1}\frac{\tilde y}{\tilde x}
+\end{cases}
+\\ \longrightarrow &
+u\pr{\tilde x,\tilde y}=\frac14\pr{\ln\pr{{\tilde x}^2+{\tilde y}^2}}^2-\pr{\tan^{-1}\pr{\frac{\tilde y}{\tilde x}}}^2
+\end{aligned}\]
