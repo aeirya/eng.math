@@ -5561,7 +5561,7 @@ $f(z)=e^z$
 		u_{yy}&=\pr{u_y}_pp_y+\pr{u_y}_qq_y=-q\pr{-qu_{pp}+u_q+pu_{pq}}+p\pr{-u_p-qu_{pq}+pu_{qq}}
 		\\ &=q^2u_{pp}-qu_q-2pqu_{pq}-pu_p+p^2u_{qq}
 	\end{aligned}
-\rightarrow &
+\\ \longrightarrow &
 u_{xx}+u_{yy}=\pr{p^2+q^2}u_{pp}+\pr{p^2+q^2}u_{qq}=0\rightarrow u_{pp}+u_{qq}=0
 \end{aligned}\]
 بنابراین صورت معادله‌ی لاپلاس بر حسب تغییر متغیر‌های
@@ -5600,3 +5600,738 @@ f(z)=\tilde x+i\tilde y\rightarrow\begin{cases}
 \\ \longrightarrow &
 u\pr{\tilde x,\tilde y}=\frac14\pr{\ln\pr{{\tilde x}^2+{\tilde y}^2}}^2-\pr{\tan^{-1}\pr{\frac{\tilde y}{\tilde x}}}^2
 \end{aligned}\]
+* انتگرال مختلط\\
+تعریف ۱ - خم
+$C$
+را در صفحه مختلط($x-y$) با ابتدای $A$ و انتهای $B$ به‌صورت\\
+%todo : pic
+در نظر می‌گیریم. فرم پارامتری خم $C$ به‌صورت
+\[
+C \, : \,  z(t)=x(t)+iy(t) \quad a\le t \le b
+\]
+تعریف می‌شود، اگر با شروع از
+$t=a$
+و ادامه تا
+$t=b$،
+$z(t)$
+نقاط خم
+$C$
+از
+$A$
+به
+$B$
+را طی کند.\\
+مثال ۱ - فرم پارامتری خم
+$C_1$
+را بیابید.
+%todo : pic
+\[
+C_1 : z(t)=t+it \quad 0\le t\le1
+\]
+مثال ۲ - فرم پارامتری خم
+$C_2$
+را بیابید.
+%todo : pic
+\[\begin{aligned}
+C_2=C_2^{(1)}\cup C_2^{(2)}\\
+C_2^{(1)} : z(t)=-t+i \quad -2\le t\le-1\\
+C_2^{(2)} : z(t)=-t\pr{1+i}\quad -1\le t\le0
+\end{aligned}\]
+توجه - به‌طور کلی اگر
+$\myunder{z(t)=x(t)+iy(t)}{a\le t\le b}$
+فرم پارامتری خم
+$C$
+باشد،
+$\myunder{z(-t)}{-b\le t\le-a}$
+فرم پارامتری خم
+$-C$(خم $C$ با جهت برعکس)
+است.\\
+مثال ۳ - فرم پارامتری خم
+$C_3$
+را به‌دست آورید.
+%todo : pic
+\[
+C_3 : z(t)=Re^{it} \quad 0\le t\le2\pi
+\]
+تعریف ۲ - تابع
+$f(z):\CC\to\CC$
+را در نظر می‌گیریم. همچنین فرض می‌کنیم
+$C$
+خمی با فرم پارامتری
+$\myunder{C:Z(t)=x(t)+iy(t)}{a\le t\le b}$
+است. در این‌صورت انتگرال
+$f$
+روی خم
+$C$
+به‌صورت
+\[
+\int_C f(z)\,dz=\int_a^bf\pr{z\pr{t}}z^{\prime}\pr{z}\,dt
+\]
+تعریف می‌شود.\\
+مثال ۱ - \hfill
+$I_1 = \int_{C_1}z\,dz=? \qquad C_1 : z(t)=t\pr{i+1}\quad 0\le t\le1$
+\[\begin{aligned}
+	& z^{\prime}(t)=x^\prime(t)+i^\prime(t)=1+i
+	\\ &
+	I_1=\int_0^1 t\pr{1+i}\pr{1+i}\,dt=\int_0^12it\,dt=\left.{it^2}\right]_0^1=1
+\end{aligned}\]
+مثال ۲ - \hfill
+$I_2=\int_e^z\,dz=?\qquad C_2 : \myunder{\pr{-t+i}}{-2\le t\le-1}\cup\,\myunder{\pr{-t\pr{1+i}}}{-1\le t\le0}$
+\[\begin{aligned}
+	I_2&=
+	\int_{-2}^{-1}e^{-t+1}\pr{-1}\,dt+\int_{-1}^0\pr{-\pr{1+i}}\,dt
+	\\ & =
+	\left.{e^ie^{-t}}\right]_{-2}^{-1}+\left.{e^{-t\pr{1+i}}}\right]_{-1}^0
+	\\ &=
+	e^i\pr{e-e^2}+1-e^{1+i}=1-e^{2+i}
+\end{aligned}\]
+مثال ۳ - \hfill
+$I_3=\oint\lim\limits_{C_3}z^2\,dz\qquad C_3 : z(t)=Re^{it} \quad 0\le t\le2\pi$
+\[\begin{aligned}\
+	I_4 & = \int_0^{2\pi}R^2e^{2it}Rie^{it}\,dt=iR^3\int_0^{2\pi}e^{3it}\,dt
+	\\ &=
+	\left.{\frac{R^3}3e^{3it}}\right]_0^{2\pi}=\frac{R^3}3\pr{1-1}=0
+\end{aligned}\]
+قضیه ۱ : اگر تابع $f$ در ناحیه‌ی $D$ شامل خم بسته‌ی $C$ تحلیلی باشد آنگاه داریم
+$\oint\limits_Cf(z)\,dz=0$(به مثال ۴ توجه کنید).\\
+قضیه ۲ : اگر تابع
+$f$
+در ناحیه‌ی ساده‌ی
+$D$
+شامل خم بسته‌ی
+$C$
+تحلیلی باشد و نقطه
+$z_0$(که $f\pr{z_0}\ne0$ باشد)
+نقطه‌ی درون خم
+$C$
+باشد داریم(خم بسته‌ی $C$ دارای جهت مثبث مثلثاتی فرض شده است)
+\[
+\oint\limits_C\frac{f(z)}{z-z_0}\,dz=2\pi if\pr{z_0}
+\]
+مثال ۱ - \hfill
+$I_1=\oint\limits_C\frac{z^2}{z-1}\,dz$
+%todo : pic
+\[\begin{gathered}
+	z_0=1\quad f(z)=z^2\\
+	I_1=2\pi i\times1=2\pi i
+\end{gathered}\]
+توجه - مقدار انتگرال روی خم
+$C$
+با تغییر جهت قرینه می‌شود :
+\[
+\int_C=f(z)\,dz=-\int_{-C}f(z)\,dz
+\]
+\[\begin{aligned}
+	& C : z(t) \quad a\le t\le c \qquad\text{و}\qquad -C : z(-t) \quad -b\le t\le-a\\
+	&\begin{aligned}
+		\int_{-C}f(z)\,dz &=-\int_{-b}^{-a}f\pr{z\pr{-t}}z^\prime\pr{-t}\pr{-1}\,dt \quad \tilde t=-t
+		\\ &=
+		\int_b^a f\pr{z\pr{\tilde t}}z^\prime\pr{\tilde t}\,d\tilde t=-\int_a^bf\pr{z\pr{\tilde t}}z^\prime\pr{\tilde t}\,d\tilde=-\int_C f(z)\,dz
+	\end{aligned}
+\end{aligned}\]
+نتیجه : اگر ناحیه‌ی ساده‌ی
+$D$
+شامل خم بسته‌ی
+$C$
+با جهت منقی مثلثاتی تحلیلی بوده و نقطه‌ی
+$z_0$
+درون خم
+$C$
+باشد و
+$f\pr{z_0}\ne0$
+داریم
+\[
+\oint\limits_C\frac{f(z)}{z-z_0}=-2\pi if\pr{z_0}
+\]
+مثال ۲ - \hfill
+$I_2=\oint\limits_{C_2}\frac{dz}{z-i}\qquad C_2 : \norm{z-i}=1$
+%todo : pic
+\[\begin{gathered}
+	z_i=i\quad f(z)=1\\
+	I_2=2\pi i\times 1=2\pi i
+\end{gathered}\]
+%todo : pic
+\[\begin{gathered}
+	\tilde{I_2}=\oint\limits_{-C_2}\frac{dz}{z-i}=-2\pi i
+\end{gathered}\]
+قضیه ۳ : اگر تابع
+$f$
+در ناحیه‌ی ساده‌ی
+$D$
+شامل خم
+$C$
+با ابتدا و انتهای
+$z_1$
+و
+$z_2$،
+تحلیلی باشد داریم
+\[
+\int_C f(z)dz=F\pr{z_2}-F\pr{z_1}\qquad \text{که}\qquad F^\prime\pr{z}=f\pr{z}
+\]
+اثبات -
+\[\begin{aligned}
+	& \int_C f(z)\,dz=\int_a^b f\pr{z\pr{t}}z^\prime\pr{t}\,dt
+	\\ &  F^\prime(z)=f(z)
+	\\ \rightarrow & \pr{F\pr{z\pr{t}}}^\prime=z^\prime(t)f\pr{z\pr{t}}
+	\\ \rightarrow &
+	\int_C f\pr z\,dz=\left.{F\pr{z\pr t}}\right]_a^b=F\pr{z\pr b}-F\pr{Z\pr a}=F\pr{z_2}-F\pr{z_1}
+\end{aligned}\]
+* نتیجه‌ی مهم : اگر تابع
+$f$
+در ناحیه‌ی
+$D$
+تحلیلی باشد، انتگرال
+$\int_Cf(z)\,dz$
+به ازای هر خم
+$C$
+در ناحیه‌ی
+$D$
+با ابتدا و انتهای
+$z_1$
+و
+$z_2$
+یکسان است(وابسته به مسیر نیست).
+%todo : pic
+\[
+\int_{C_1}f(z)\,dz=\int_{C_2}f(z)\,dz=F\pr{z_2}-F\pr{z_1} \qquad(F^\prime=f)
+\]
+نکته - تغییر جهت خم : طبق قضیه‌ی ۱
+\[
+\oint\lim\limits_{C\cup\pr{-C}}f(z)\,dz=0\rightarrow\int_Cf(z)\,dz+\int_{-C}f(z)\,dz=0
+\]
+قضیه‌ی ۴ - فرمول کوشی تعمیم یافته : اگر
+$f$
+در ناحیه‌ی
+$D$
+شامل خم بسته‌ی
+$C$
+با جهت مثبت مثلثاتی تحلیلی باشد و
+$z_0$
+نقطه ای درون
+$C$
+باشد، داریم
+\[
+\oint\limits_C\frac{f\pr z}{\pr{z-z_0}^{n+1}}\,dz=2\pi i\frac{f^{(n)\pr{z_0}}}{n!}
+\]
+قضیه‌ی ۵ :‌ اگر
+$f$
+در ناحیه‌ی درون خم
+$C$
+به جز تعداد شمارا نقطه‌ی
+$z_k,\dots,z_1$
+تحلیلی باشد، آنگاه اگر خم بسته‌ی
+$C$
+را با جهت مثبت مثلثاتی فرض کنیم و حول هر یک از نقاط
+$z_k,\dots,z_1$
+یک خم کوچک بسته با جهت مثبت به نام های
+$c_k,\dots,c_1$
+رسم کنیم به طوری که هر
+$C_i$
+فقط شامل
+$z_i$
+باشد، داریم
+\[
+\oint\limits_Cf(z)\,dz=\sum_{i=1}^k \oint\limits_{C_i}f(z)\,dz
+\]
+در این حالت،
+%todo : pic
+ در ناحیه‌ی
+$D$
+شامل خم های
+$L,C_1,C$
+و
+$-L$
+تابع
+$f$
+تحلیلی و انتگرال آن صفر است :
+\[\begin{aligned}
+&\int_Cf(z)\,dz+\cancel{\int_Lf(z)\,dz}+\int_{-C_1}f(z)\,dz+\cancel{\int_{-L}f(z)\,dz}=0
+\\ \rightarrow&
+\int_C+\underbrace{\int_{-C_1}f(z)\,dz}_{-\int_{C_1}f(z)\,dz}=0\rightarrow\int_{C}f(z)\,dz=\int_{C_1}f(z)\,dz
+\end{aligned}\]
+%todo : pic
+\[\begin{aligned}
+	&\int_Cf(z)\,dz+\cancel{\int_{L_1}f(z)\,dz}-\int_{P_1}f(z)\,dz+
+	\bcancel{\int_{L_2}f(z)\,dz}
+	\\ -&
+	\int_{C_1}f(z)\,dz-\bcancel{\int_{L_2}f(z)\,dz}-\int_{P_2}f(z)\,dz-\cancel{\int_{L_1}f(z)\,dz}=0
+	\\ &
+	\textcolor{red}{\int_{P_1\cup P_2}f(z)\,dz=\int_{C_2}f(z)\,dz=\int_{P_1}f(z)\,dz+\int_{P_2}f(z)\,dz}
+	\\ \Rightarrow &
+	\int_C f(z)\,dz-\int_{C_2}f(z)\,dz-\int_{C_1}f(z)\,dz=0
+	\\ \Rightarrow &
+	\int_C f(z)\,dz=\int_{C_2}f(z)\,dz+\int_{C_1}f(z)\,dz
+\end{aligned}\]
+خلاصه‌ی نتایج انتگرال :\\
+۱) محاسبه‌ی مستقیم \hfill
+$C : z(t)=x(t)+iy(t) \quad a\le t \le b$
+$$\int_Cf(z)\,dz=\int_a^bf\pr{z\pr t}z^\prime\pr t\,dt$$
+۲) تابع تحلیلی، ابتدا و انتهای
+$z_1$
+و
+$z_2$
+\[
+\int_Cf(z)\,dz=F\pr{Z_2}-F\pr{z_1}\qquad(F^\prime=f)
+\]
+۳) تابع تحلیلی، خم بسته \hfill
+$\oint\limits_Cf(z)\,dz=0$
+۴) فرمول کوشی(P تحلیلی) (c با جهت مثبت) ($z_0$ درون c)
+\[
+\oint\limits_C\frac{f(z)}{\pr{z-z_0}^{n+1}}\,dz=2\pi i\frac{f^{(n)\pr{z_0}}}{n!}
+\]
+۵) f روی c و درون c تحلیلی به جز در نقاط
+$z_k,...,z_1$
+%todo : pic
+\[
+\oint\limits_Cf(z)\,dz=\sum_{i=1}^k\oint\limits_{C_i}f(z)\,dz\qquad(\text{c و $c_i$ ها هم‌جهت})
+\]
+مثال ۱
+%todo : pic
+\[
+\int_Cz^2\,dz=?
+\]
+\[\begin{aligned}
+	f(z)=z^2\rightarrow F(z)=\frac{Z^3}{3}
+	\\
+	\int_Cz^2\,dz=F\pr{1+i}-F\pr{-1}=\frac{\pr{1+i}^3}{3}-\frac{\pr{-1}^3}{3}=\frac{-2+2i}3+\frac13=\frac13+\frac23i
+\end{aligned}\]
+مثال ۲
+%todo : pic
+\[
+\oint\limits_Ce^z\,dz=0
+\]
+مثال ۳
+\hfill
+$C : z(t)=0.1\,e^{it}$
+%todo : pic
+\[
+\oint\limits_C\frac{\cos z}z\,dz=2\pi i\cos\pr{0}=2\pi i \qquad
+(
+\text{
+فرمول کوشی
+$n=0$
+و
+$z_0=0$
+و
+$f(z)=\cos z$})
+\]
+مثال ۴
+\hfill
+$\oint_C\frac{\cos z}{z^2}\,dz=\left.{2\pi i\pr{\cos z}^\prime}\right|_{z=0}=2\pi i\times0=0$
+فرمول کوشی
+$n=1$
+و
+$z_0=0$
+و
+$f(t)=\cos z$\\
+مثال ۵
+\hfill
+$\oint\limits_C\frac{dz}{\pr{z-1}\pr{z-2}}\qquad C : z(t)=3e^{it}$\\
+قضیه‌ی ۵
+%todo : pic
+\[
+\oint\limits_C=\oint\limits_{C_1}+\oint\limits_{C_2}
+\]
+\[
+\oint\limits_{C_1}\frac{dz}{\pr{z-1}\pr{z-2}}=\oint\limits_{C_1}\frac{\frac{dz}{z-2}}{z-1}=2\pi f\pr{z_0}=2\pi i\frac 1{1-2}=-2\pi i
+\]
+فرمول کوشی
+$n=0$
+و
+$z_0=1$
+و
+$f(z)=\frac1{z-2}$
+\[
+\oint\limits_{C_2}\frac{dz}{\pr{z-1}\pr{z-2}}=\oint\limits_{C_2}\frac{\frac{dz}{z-1}}{z-2}=2\pi \tilde{f}\pr{\tilde{z_0}}=2\pi i\frac 1{2-1}=2\pi i
+\]
+فرمول کوشی
+$n=0$
+و
+$\tilde{z_0}=2$
+و
+$f(z)=\frac1{z-1}$
+\[
+\Longrightarrow \oint\limits_C\frac{dz}{\pr{z-1}\pr{z-2}}=\oint\limits_{C_1}+\oint\limits_{C_2}=-2\pi i+2\pi i=0
+\]
+* سری‌های مختلط\\
+۱) سری تیلور : اگر تابع f در همسایگی
+$\norm{z-z_0}<S$
+تحلیلی باشد، ضرایب
+$a_j$،
+$j=0,...$
+موجودتد به طوری که به ازای هر
+$z\in B_\delta\pr{z_0}$
+داریم
+\[
+f\pr z=\sum_{j=0}^\infty a_j\pr{z-z_0}^j
+\]
+همچنین داریم
+\[
+a_j=\frac{f^{(j)}\pr{z_0}}{j!}=\frac1{2\pi i}\oint\limits_C\frac{f(z)}{\pr{z-z_0}^{j+1}\,dz}
+\]
+که در آن
+$C : \norm{z-z_0}=S$.\\
+مثال - سری تیلور همگرا به
+$f(z)=\sin z$
+را به دست آورید(حول $z_0=0$)
+\[\begin{aligned}
+	& a_j=\frac{f^{(j)}\pr 0}{j!}
+	\\ &
+	f^\prime\pr z=\cos z\quad f^{\prime\prime}\pr z=-\sin z \quad f^{\prime\prime\prime}\pr z=-\cos z \quad
+	f^{\prime\prime\prime\prime}\pr z=\sin z
+	\\ \Rightarrow &
+	f^{(2k)}\pr 0=0
+	\\ &
+	f^{(2k+1)}\pr 0=\begin{cases}
+		-1 \qquad &\text{k فرد}
+		\\
+		+1 \qquad &\text{k زوج}
+	\end{cases}
+	\\ \longrightarrow \sin z=\sum_{j=0}^\infty \frac{f^{(j)}\pr 0}{j!}z^j=\sum_{k=0}^\infty \frac{f^{(2k)}\pr 0}{\pr{2k}!}z^{2k}+\sum_{k=0}^\infty \frac{f^{(2k+1)}\pr 0}{\pr{2k}!}z^{2k+1}
+	\\ \longrightarrow &
+	\sin z=\sum_{k=0}^\infty \frac{\pr{-1}^k}{\pr{2k+1}!}z^{2k+1}
+\end{aligned}\]
+سری‌های تیلور معروف :
+\[\begin{aligned}
+	&1) \ \ \sin z=\sum_{k=0}^\infty \frac{\pr{-1}^k}{\pr{2k+1}!}z^{2k+1} \qquad &z\in\CC
+	\\
+	&2) \ \ \cos z=\sum_{k=0}^\infty \frac{\pr{-1}^k}{\pr{2k}!}z^{2k} \qquad &z\in\CC
+	\\
+	&3) \ \ e^z=\sum_{k=0}^\infty \qquad & z\in\CC
+	\\
+	&4) \ \ \frac{1}{1-z}=\sum_{k=0}^\infty z^k \qquad & \norm{z}<1
+	\\
+	&5) \ \ \log\pr{1-z}=-\sum_{k=0}^\infty \frac{z^{k+1}}{k+1}\qquad &\norm{z}<1
+\end{aligned}\]
+توجه - برای محاسبه‌ی شعاع همگرایی یک سری تیلور با فرم کلی
+$\sum_{n=0}^\infty a_n\pr{z-z_0^n}$
+داریم
+\[\begin{aligned}
+	& \lim_{n\to\infty}\norm{\frac{a_{n+1}\pr{z-z_0}^{n+1}}a_n\pr{z-z_0}^n}<1
+	\\ \rightarrow &
+	\lim_{n\to\infty} \norm{\frac{a_{n+1}}{a_n}}\norm{z-z_0}<1\Rightarrow \norm{z-z_0}<\frac1{\lim_{n\to\infty}\norm{\frac{a_{n+1}}{a_n}}}=\textcolor{red}{R}
+\end{aligned}\]
+توجه - به شرط مشتق(انتگرال) پذیر بودن تابع f، می‌توان از طرفین سری تیلور متناظر با تابع
+$f$
+مشتق (انتگرال گرفت).\\
+مثال ۱
+\hfill
+$f(z)=\frac1{z-2}\qquad\norm{z}<2$
+\[
+f(z)=-\frac12\frac1{1-\frac z2}=\frac12\sum_{k=0}^\infty \pr{\frac z2}^k \qquad \norm z<2\rightarrow \norm{\frac z2}<1
+\]
+مثال ۲
+\[\begin{aligned}
+	& f(z)=\tan^{-1}\pr z \qquad(\tan z=\frac{\sin z}{\cos z}\, , \, \omega=\tan z \, \longrightarrow \, z=\tan^{-1}\pr{\omega})
+	\\ &
+	f^\prime\pr z=\frac1{1+z^2}
+	\\ &
+	(\norm z<1)\longrightarrow f^\prime\pr z=\sum_{k=0}^\infty \pr{-z^2}^k=\sum_{k=0}^\infty \pr{-1}^k z^{2k}
+	\\ \Longrightarrow &
+	f\pr z=\sum_{k=0}^\infty \frac{\pr{-1}^k}{2k+1}z^{2k+1}
+\end{aligned}\]
+مثال ۳
+\[\begin{aligned}
+	&
+	f\pr z=\frac1{z-2}\qquad\norm{z-1}<1
+	\\ &
+	z-1=r\longrightarrow f\pr z=\frac1{t-1}=\frac{-1}{1-t}=-\sum_{k=0}^\infty t^k \qquad \norm{t}=\norm{z-1}<1
+	\\ \Longrightarrow & f\pr z=\sum_{k=0}^\infty \pr{z-1}^k
+\end{aligned}\]
+۲) سری اوران : اگر تابع $f$ در همسایگی محذوف
+$0<\norm{z-z_0}<\delta$
+تحلیلی باشد، ضرایب
+$\myunder{a_k}{k=0,1,2,\dots}$
+و
+$\myunder{ذ_k}{k=0,1,2,\dots}$
+موجودند به طوری که به ازای هر
+$z$
+در این همسایگی داریم
+\[
+f\pr z=\sum_{k=0}^\infty a_k\pr{z-z_0}^k+\sum_{k=1}^\infty \frac{b_k}{\pr{z-z_0}^k} \qquad(\star)
+\]
+به‌علاوه داریم
+\[\begin{aligned}
+	&
+	a_k=\frac{f^{(k)}\pr{z_0}}{k!}=\frac1{2\pi i}\oint\limits_C\frac{f\pr z}{\pr{z-z_0}^{k+1}}\,dz
+	\\ &
+	b_k=\frac1{2\pi i}\oint\limits_Cf\pr z\pr{z-z_0}^{k-1}\, dz
+\end{aligned}\]
+به سری
+$(\star)$،
+سری لوران تابع
+$f$
+حول
+$z_0$
+می‌گوییم.\\
+نتیجه - از تعریف
+$b_k$
+داریم : \hfill
+$b_1=\frac1{2\pi i}\oint\limits_C f\pr{z}\, dz\longrightarrow \oint\limits_Cf\pr z\,dz=2\pi ib_1$
+\\
+بنابراین اگر سری لوران
+$f$
+حول $z_0$ موجود باشد، انتگرال
+$\oint\limits_C$
+با
+$C : \norm{z-z_0}=\epsilon$
+قابل محاسبه است و برابر است با
+$2\pi i$($C$
+خم بسته با جهت مثبت شامل تنها نقطه‌ی غیرتحلیلی
+$z_0$
+است).\\
+مثال ۱)\hfill
+$f\pr z=\frac1{z\pr{z-1}}\qquad\norm z<1$\\
+\[\begin{aligned}
+	&\frac1{1-z}=1+z+z^2+\dots
+	\\ &
+	\frac1{z\pr{z-1}}=\frac{-1}{1-z}\times\frac1z=-\frac1z-1-z-z^2-\dots=-\sum_{n=-1}^\infty z^n \qquad b_1=-1
+\end{aligned}\]
+مثال ۲)\hfill
+$f\pr z=\frac1{z\pr{z-1}}\qquad\norm z>1$\\
+$\star$
+برای
+$t$
+می‌توان از سری هندسی استفاده کرد\hfill
+$t=\frac1z\qquad \norm{\frac1z}<1$
+\[\begin{aligned}
+	f\pr z=\frac{1}{z\pr{z-1}}=\frac1z\frac1{z-1}=\frac1{z^2}\frac1{1-\frac1z}=t^2\frac1{1-t}=t^2\sum_{n=0}^\infty t^n
+	=t^2+t^3+\dots=\myunder{\sum_{n=2}^\infty\pr{\frac1z}^n}{
+\myunder{\Downarrow}{b_1=0}	
+}
+\end{aligned}\]
+مثال ۳)\hfill
+$f\pr z=\frac1{\pr{z-1}\pr{z-2}}$\\
+حالت اول :
+$\norm z<1$\hfill
+$f\pr z=\frac1{z-2}-\frac1{z-1}$\\
+\[\begin{aligned}
+	\norm z<1\rightarrow\begin{cases}
+		\frac1{z-1}=\frac{-1}{1-z}=-\sum_{n=0}^\infty z^n
+		\\
+		\frac1{z-2}=-\frac12\frac1{1-\frac z2}=-\frac12\sum_{n=0}^\infty \pr{\frac z2}^n
+	\end{cases}
+\\ &
+f\pr z=-\sum_{n=0}^\infty \frac{z^n}{2^{n+1}}
++\sum_{n=0}^\infty z^n=\sum_{n=0}^\infty z^n\pr{1-\frac1{2^{n+1}}}
+\end{aligned}\]
+حالت دوم : 
+$1<\norm z<2$
+\[\begin{aligned}
+	&
+	\norm z>1\Rightarrow \norm{\frac1z}<1
+	\\ &
+	\frac1{z-1}=\frac1z\frac1{1-\frac1z}=\frac1z\sum_{n=0}^\infty\pr{\frac1z}^n=\sum_{n=0}^\infty\frac1{z^{n+1}}
+	\\ &
+	\norm{z}<2\Rightarrow \norm{\frac z2}<1
+	\\ &
+	\frac1{z-2}=\frac12\frac1{1-\frac z2}=-\frac12\sum_{n=0}^\infty\pr{\frac z2}^n
+	\\ \longrightarrow &
+	f\pr z=\frac1{z-2}-\frac1{z-1}=-\frac12\sum_{n=0}^\infty\pr{\frac z2}^n-\sum_{n=0}^\infty \frac 1{z^{n+1}}\qquad b_1=-1
+\end{aligned}\]
+حالت سوم :
+$\norm z>2$
+\[\begin{aligned}
+	&
+	\norm z>1\Rightarrow \norm{\frac 1z}<1
+	\\ &
+	\frac1{z-1}=\dots=\sum_{n=0}^\infty
+	\\ &
+	\norm z>2\Rightarrow\norm{\frac2z}<1
+	\\ &
+	\frac1{z-2}=\frac1z\frac1{1-\frac2z}=\frac1z\sum_{n=0}^\infty\pr{\frac2z}^n=\sum_{n=0}^\infty\frac{2^n}{z^{n+1}}
+	\\ &
+	f\pr{z}=-\frac1{z-2}-\frac1{z-1}=\sum_{n=0}^\infty-\sum_{n=0}^\infty\frac1{z^{n+1}}=\sum_{n=0}^\infty\frac{2^n-1}{z^{n+1}}
+\end{aligned}\]
+تعریف - ضریب $b_1$ را در سری لوران تابع
+$f$
+حول
+$z_0$
+مانده‌ی
+$f$
+در
+$z_0$
+می‌نامیم و به‌صورت
+$\myunder{Res\, f\pr z}{z=z_0}$
+نمایش می‌دهیم\\
+قضیه - اگر تابع
+$f$
+در ناحیه‌ی
+$D$
+شامل خم بسته‌ی
+$C$
+با جهت مثبت تحلیلی باشد به جز در نقاط
+$z_k,\dots,z_1$
+که درون خم
+$C$
+قراردارند، داریم
+\[\begin{aligned}
+\oint\limits_Cf\pr z\,dz &(=\sum_{j=1}^k\oint\limits_{C_j}f\pr z\,dz)
+\\ &
+=2\pi i\sum_{j=1}^k \myunder{Res f\pr z}{z=z_j}
+\end{aligned}\]
+محاسبه‌ی مانده\\
+تعریف اگر تابع
+$f$
+در همسایگی محذوف
+$0<\norm{z-z_0}<\delta$
+تحلیلی باشد و
+$f\pr{z}\pr{z-z_0}^k$
+در
+$\norm{z-z_0}<\delta$
+تحلیلی باشد در حالی که
+$f\pr z\pr{z-z_0}^{k-1}$
+در این همسایگی
+$\norm{z-z_0}<\delta$
+تحلیلی نیست، می‌گوییم
+$z_0$
+یک قطب مرتبه‌ی
+$k$
+برای تابع
+$f$
+است.\\
+مثال - \hfill
+$f\pr z=\frac{\cos z}{z^3}\qquad z_0=0\quad k=3$\\
+حالت اول - قطب مرتبه‌ی
+$k$
+متناهی\\
+۱) قطب مرتبه‌ی
+$k$،
+$k<\infty$
+و سری لوران در دست است.
+\[
+\myunder{Res f\pr z}{z=z_0}=b_1
+\]
+۲) قطب مرتبه‌ی
+$k$،
+$k<\infty$
+و سری لوران در دست نیست
+\[\begin{aligned}
+	&
+	\begin{rcases}
+		f\pr z\pr{z-z_0}^k\qquad\text{تحلیلی}
+		\\
+		f\pr z=\sum_{j=0}^\infty a_j\pr{z-z_0}^j+\sum_{j=1}^\infty\frac{b_j}{\pr{z-z_0}^j}
+	\end{rcases}\longrightarrow j\le k
+\\ &
+f\pr z=\sum_{j=0}/^\infty a_j\pr{z-z_0}^j+\sum_{j=1}^k\frac{b_j}{\pr{z-z_0}^j}
+\qquad b_1=?
+\\ &
+f\pr z\pr{z-z_0}^k=\sum_{j=0}^\infty a_j\pr{z-z_0}^{j+k}+b_1\pr{z-z_0}^{k-1}+\dots+b_{j-1}\pr{z-z_0}+b_j
+\\ &
+\pr{f\pr z\pr{z-z_0}^k}^{(k-1)}=\sum_{j=0}^\infty \tilde{a_j}\pr{z-z_0}^{j+1}+b_1\pr{k-1}!+0+\dots+0
+\\ \Rightarrow &
+\left.{\pr{f\pr z\pr{z-z_0}^k}^{(k-1)}}\right|_{z=z_0}=0+b_1\pr{k-1}!+0
+\\ \Rightarrow &
+b_1=\myunder{Res f\pr z}{z=z_0}\left.{\frac1{\pr{k-1}!}\pr{f\pr z\pr{z-z_0}^k}^{(k-1)}}\right|_{z=z_0}
+\end{aligned}\]
+حالت دوم - قطب مرتبه‌ی
+$\infty$
+(قطب اساسی)
+در حالتی که قطب مرتبه‌ی نامتناهی باشد، یعنی تا
+$j\to\infty$
+برخی ضرایب
+$b_j$
+ناصفر باشد، تنها راه محاسبه‌ی مانده در دست داشتن سری لوران و تعیین
+$b_1$
+از سری است.\\
+مثال ۱
+%todo : pic
+\[\begin{aligned}
+	&
+	I=\oint\limits_{\norm z=2}\frac{e^z}{z\pr{z-1}}\,dz
+	\\ &
+	I=2\pi i\pr{\myunder{Res f\pr z}{z_1=0}+\myunder{Res f\pr z}{z_2=1}}
+	\\ &
+	z_1=0 \ \ \frac{\frac{e^z}{z-1}}z\qquad & \text{
+قطب مرتبه‌ی ۱	
+}
+	\\ &
+z_2=1 \ \ \frac{\frac{e^z}{z}}{z-1}\qquad & \text{
+	قطب مرتبه‌ی ۱	
+}
+\\ &
+\myunder{Res f\pr z}{\myunder{z_1=0}{k=1}}=\frac1{0!}\left.{\pr{\frac{e^z}{z-1}}}\right|_{z_1=0}=\frac{e^0}{0-1}=-1
+\\ &
+\myunder{Res f\pr z}{\myunder{z_2=1}{k=1}}=\frac1{0!}\left.{\pr{\frac{e^z}{z}}}\right|_{z_2=1}=\frac{e}{1}=e
+\\ \Rightarrow &
+I=2\pi i\pr{-1+e}
+\end{aligned}\]
+مثال ۲ \hfill
+$I=\oint\limits_{\norm z=1}\frac{e^z}{z^3}\,dz$\\
+روش اول
+\[\begin{aligned}
+	&
+	I=2\pi i \myunder{Res f\pr z}{z_1=0}
+	\\ &
+	z_1=0 \quad k=3 \qquad \myunder{Res f\pr z}{z_1=0}=\left.{\frac1{2!}\pr{e^z}^{\prime\prime}}\right|_{z=0}=\frac{e^0}2=\frac12
+	\\ \Rightarrow &
+	I=2\pi\times\frac12=\pi i
+\end{aligned}\]
+روش دوم \hfill
+\[\begin{aligned}
+	&
+	e^z=1+z+\frac{z^2}2+\frac{z^3}6+\dots
+	\\ &
+	\frac{e^z}{z^3}=\frac1{z^3}+\frac1{z^2}+\myunder{\frac1{2z}}{\myunder{\Downarrow}{b_1=\frac12}}+\frac16+\dots
+	\\ \Rightarrow &
+	I=2\pi i\times \frac 12=\pi i
+\end{aligned}\]
+مثال ۳
+%todo
+\[\begin{aligned}
+	&
+	I=\oint\limits_{\norm{z+\frac12}=1}\frac{dz}{\pr{z+1}^2z\pr{z-2}^2}=2\pi i\pr{\myunder{Res f\pr z}{z=-1}+myunder{Res f\pr z}{z=0}}
+	\\ &
+	\myunder{Res f\pr z}{z=-1}=\left.{
+		\frac11\pr{\frac1{z\pr{z-2}^2}}^\prime}\right|_{z=-1}=\left.{
+	-\frac
+	{\pr{z-2}^2+2z\pr{z-2}}
+	{z^2\pr{z-2}^2}	
+}\right|_{z=-1}=-\frac{15}{81}-\frac5{27}
+\\ &
+\myunder{Res f\pr z}{z=0}=\left.{\frac11\pr{\frac1{\pr{z+1}^2\pr{z-2}^2}}}\right|_{z=0}=\frac1{1\times 4}=\frac14
+\\ \Rightarrow &
+I=2\pi i\pr{-\frac5{27}+\frac14}=\frac{7\pi i}{54}
+\end{aligned}\]
+مثال ۴ \hfill
+$I=\oint\limits_{\norm z=-1}\frac{e^{\frac1z}}z$
+\[\begin{aligned}
+	&e^{\frac1z}=1+\frac1z+\frac1{2z^2}+\dots \qquad \text{قطب اساسی}
+	\\ &
+	\frac{e^{\frac1z}}z=\myunder{\frac1z}{\myunder{\Downarrow}{b_1=1}}+\frac1{z^2}+\frac1{2z^3}+\dots
+\end{aligned}\]
+مثال ۵ \hfill
+$I=\oint\limits_{\norm z=\frac12}\frac{e^{\frac1z}}{1+z^2}\,dz$
+\[\begin{aligned}
+&\begin{aligned}
+	\frac{e^{\frac1z}}{1+z^2} & =
+	\pr{1+\frac 1z+\frac1{2z^2+\frac1{6z^3}+\dots}}\pr{1-z^2+z^4-z^6+\dots}
+	\\ & =
+	1\times \frac1z-z^2\times\frac1{6z^3}+z^4\times\frac1{5!z^5}-z^6\times\frac1{7!z^7}+\dots
+	\\ & =
+	\frac1z\pr{\underbrace{1-\frac1{3!}+\frac1{5!}-\frac1{7!}+\dots}_{b_1}}\Rightarrow U=2\pi i\pr{1-\frac1{3!}+\frac1{5!}-\frac1{7!}+\dots}
+\end{aligned}\
+\\ &
+\sin z=\sum_{k=0}^\infty \frac{\pr{-1}^kz^{2k+1}}{\pr{2k+1}!}\rightarrow b_1=\sin 1\Rightarrow I=2\pi i\sin 1
+\end{aligned}\]
+مثال ۶ \hfill
+$I=\oint\limits_{\norm z=\frac12}\frac{\sin{\frac 1z}}{z-1}\,dz$
+\[\begin{aligned}
+	&\sin{\frac 1z}=\frac 1z-\frac1{3! z^3}+\frac1{5!z^5}-\dots
+	\\ &
+	\frac1{z-1}=\frac{-1}{1-z}=-\pr{1+z+z^2+\dots}
+	\Rightarrow & \begin{aligned}
+		\frac{\sin{\frac1z}}{z-1} & =
+		-\pr{1\times \frac1z+z^2\frac{-1}{3!z^3}+z^4\frac{+1}{5!z^5}+z^6\frac{-1}{7!z^7}-\dots}+\dots
+		\\ &=
+		\underbrace{-\pr{1-\frac1{3!}+\frac1{5!-\frac1{7!}+\dots}}}_{b_1}+\dots
+	\end{aligned}
+	\\ \Longrightarrow & \myunder{Res f\pr z}{z=0}=-\pr{1-\frac1{3!}+\frac1{5!}-\dots}=-\sin 1
+	\\ &
+	I=-2\pi i \sin 1
+\end{aligned}\]
+نکته :
+\[
+\norm{\int_C f\pr z\, dz}\le ML \quad , \quad M=\max_{\text{on} C}\norm f \quad , \quad L=\text{length}\pr C
+\]
