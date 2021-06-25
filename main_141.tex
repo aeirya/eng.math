@@ -1,0 +1,439 @@
+
+\subsection{محسابه برخی انتگرال‌های ناسره با کمک انتگرال‌های مختلط}
+
+\paragraph{1)}
+$
+	\int_{-\infty}^{\infty} \frac{p(x)}{q(x)} dx
+$،
+$p$
+و
+$q$
+دو چند جمله‌ای با اختلاف درجه بیش از یک
+$(deg q - deg p > 1)$
+
+\example
+
+\begin{equation*}
+I = \int_{-\infty}^{\infty} \frac{dx}{x^2+1}
+\end{equation*}
+
+\begin{enumerate}
+	\item تعریف خم مختلط 
+	{
+		%todo: semicircle picture here
+		
+		$C = C_R \cup (-R,R)$
+	}
+	\item تعریف انتگرال مختلط متناظر
+	{
+	\begin{equation*}
+		f(z) = \frac{1}{z^2+1}
+	\end{equation*}
+	\begin{align*}
+		\oint f(z)dz &= \underset{C_R}{\int} f(z)dz + \underset{(-R,R)}{\int} f(z)dz
+		\\&= 2 \pi i \sum_{j=1}^{k} \underset{z=z_j}{Res} f(z) = 2 \pi i  \underset{z=i}{Res} f(z)
+	\end{align*}
+	\begin{align*}
+		&\underset{z = i}{Res}f(z) = (f(z)(z-i))\vert_{z = i} = \frac{1}{z+i} \vert_{z=i} = \frac{1}{2i}
+		\\& \Rightarrow
+		\underset{C_R}{\ointctrclockwise} f(z)dz + \underset{(-R,R)}{\int} f(z)dz = 2\pi i \frac {1}{2i} = \pi
+	\end{align*}
+		}
+	\item {
+	کران برای 
+	$\underset{C_R}{\int}$
+	و بررسی حالت حدی
+	$R \rightarrow \infty $
+	\\
+	}
+	\begin{equation*}
+	\left\|\underset{C_R}{\int}} f(z) d z\right\| \leqslant M L	
+	\end{equation*}
+	\[
+	\begin{align*}
+M=\underset{\|z\|=R}{\max}\|f(z)\|=&\underset{\|z\|=R}{\max}\left\|\frac{1}{z^{2}+1}\right\| \leqslant \frac{1}{R^{2}-1}
+\\
+&\|a+b\| \geqslant\|a\|-\|b\|
+	\end{align*}
+	
+\[
+\begin{aligned}
+	$L = \pi R \rightarrow$
+$\left\|\int_{C_{R}} f(z) d z\right\| \leqslant \frac{\pi R}{R^{2}-1}$
+\end{aligned}
+\]
+و در 
+$\ R \rightarrow \infty$
+داریم 
+$$\int_{C_{R}} f(z) d z+\int_{(-R,R)} f(z) d z = \pi$$
+
+\begin{latin}
+\begin{rcases}
+&\int_{C_{\infty}} f(z) d z+\int_{-\infty}^{\infty} f(x) d x=\pi
+\\
+&\| \int_{C \infty} f(z) d z \| \leqslant \lim _{R \rightarrow \infty} \frac{\pi R}{R^{2}-1}=0 \Rightarrow 
+	\underset{\underset{R\rightarrow \infty}{C_R}}{\int}
+ f(z) d z=0
+\end{rcases}
+} \rightarrow  \int_{-\infty}^{\infty} \frac {dx}{x^2+1} =\pi
+\end{latin}
+\end{enumerate}
+
+\example
+(مخرج ریشه حقیقی دارد)
+\begin{equation*}
+I=\int_{-\infty}^{\infty} \frac{d x}{x^{3}+1}\left(=\int_{-\infty}^{-1^-} \frac{d x}{x^{3}+1}+\int_{-1^+}^{+\infty} \frac{d x}{x^{3}+1}\right)
+\end{equation*}
+\\
+\begin{equation*}
+f(z)=\frac{1}{z^{3}+1}
+\end{equation*}
+\begin{equation*}
+z^{3}+1=0  \ \ \ \ , \ \ \  z_{1}=-1 \quad,\quad
+ z_{2}, z_{3}=\frac{1 \pm \sqrt{3 i}}{2}=\frac{1}{2} \pm \frac{\sqrt{3}}{2}
+\end{equation*}
+
+\begin{latin}
+
+$
+\underbrace{
+\int_{C_{\infty}} f(z) d z}_{(1)}
++
+\underbrace{\int_{C_{p}} f(z) d z}_{(2)}
++I=
+\underbrace{2 \pi i \operatorname{Res_{z=z_2}} f(z)}_{(3)}
+ \ \ \star$
+\\
+(1) \quad $\left\|\int_{C_{R}} f(z) d z\right\| \leqslant \frac{\pi R}{R^{3}-1} \rightarrow \int_{C_{\infty}} f(z) d x=0$
+\\
+(2) \quad $\int_{C_{p}} f(z) d z=$ ?
+
+\end{latin}
+
+\paragraph{قضیه}
+اگر 
+$z_0$
+قطب ساده‌ 
+$f$
+باشد و 
+$f$
+در ناحیه‌
+$D$
+شام خم
+$$c_{p} : z(t) = z_{0} + pe^{it}    \ \ \  \ \ 0\leq t \leq \pi$$
+تحیلی باشد، داریم 
+$$\int_{C_{p}} f(z) d z= \pi i \operatorname{Res_{z=z_0}} f(z)$$
+
+\paragraph{اثبات}
+\begin{equation*}
+f(z) = \sum_{n=0}^{\infty} a_{n} (z-z_{0} ) + \frac {b_{1}}{z-z_{0}}
+\end{equation*}
+%image here
+%page 144
+\begin{center}
+\begin{align*}
+&\int_{C_{p}} f(z) d z=\int_{0}^{\pi} f\left(z_{0}+\rho e^{i t}\right)i \rho e^{i t} d t
+\\
+=&\int_{0}^{\pi} i \rho e^{i t}\left(\sum a_{n} P^{n} e^{i n t}+\frac{b_{1}}{\rho e^{ i t}}\right) d t
+\\
+=&\int_{0}^{\pi} ( a_{0}i \rho e^{i  t} + a_{1}i \rho^{2} e^{2i  t} + a_{2} \rho^{3} e^{3i  t} + ... + b_{1} i )dt
+\\
+&\Rightarrow lim_{\rho \rightarrow 0} \int_{c_{p}} f(z)dz = b_{1}\pi i = \pi i Res_{z=z_{0}} f(z)
+\end{align*}
+\end{center}
+\par{(2)}
+%image
+\begin{equation*}
+\int_{c_{p}} f(z)dz =-\int_{- c_{p}} f(z)dz=- \pi i Res_{z=-1} f(z)=- \pi i \frac {1}{z^{2}-z+1} |_{z=-1}=-\frac {\pi i}{3}
+\end{equation*}
+\par{(3)}
+\begin{center}
+\begin{align*}
+ & Res_{ z=z_{2}}f(z) =\frac{1}{(z+1)(z-\frac{1}{2}+\frac { \sqrt{3} }{2})} |_{z=\frac{1}{2}+\frac { \sqrt{3} i}{2}}
+=\frac {1}{(\frac{3}{2}+\frac { \sqrt{3} i}{2} )\sqrt{3} i}
+\\
+\overset{\start}{\Rightarrow}
+ & 0-\frac{\pi i}{3}+I=\frac{2 \pi i}{\left(\frac{3}{2}+\frac{\sqrt{3}}{2} i\right) \sqrt{3} i}=\frac{4 \pi}{3 \sqrt{3}+3 i}
+\\
+\rightarrow & I=\frac{\pi i}{3}+\frac{4 \pi(3 \sqrt{3}-3 i)}{27+9}=\frac{\pi i}{3}+\frac{\pi \sqrt{3}}{3}-\frac{\pi i}{3}=\frac{\pi \sqrt{3}}{3}
+\end{align*}
+\end{center}
+%page 145
+\newpage
+\paragraph{2)}
+\begin{equation*}
+	\int_{-\infty}^{\infty} \frac {p(x) \sin ax }{q(x)} dx  \ \ \ , \ \int_{-\infty}^{\infty} \frac {p(x) \cos ax }{q(x)} dx \quad
+(deg\ q - deg\ p \geq 1)
+\end{equation*}
+$p$ 
+و 
+$q$ 
+دو چندجمله‌ای با اختلاف درجه بیش از یک
+
+\paragraph{مثال}
+%image
+\begin{align*}
+&I= \ \int_{-\infty}^{\infty} \frac {p(x) \cos ax }{x^{2}+x+1} dx \\
+&f(z) = \frac {ze^{iz}}{z^{2}+z+1}
+\end{align*}
+\begin{align*}
+	\int_{C_{R}}f(z)dz &+\int_{-R}^{R} f(z)dz = 2\pi i\ Res_{z=z_{0}} f(z) \\
+\underbrace{\int_{C_{\infty}}f(z)dz}_{(1)} &+\int_{-R}^{R} f(x)dx \overset{\star}{=} \underbrace{2\pi i\ Res f(z)}_{(2)}
+\end{align*}
+\begin{align*}
+(1) \  \ &\int_{C_{R}}f(z)dz=? \\
+\| &\int_{C_{R}}f(z)dz \| \leq ML
+\quad \quad 
+\begin{aligned}
+&L=\pi R \\
+&M=\underset{C_R}{max}\|f(z)\|
+\end{aligned}
+\end{align*}
+\begin{equation*}
+	\|f(z)\| = \| \frac{ze^{iz}}{z^{2}+z+1}\| \leq \frac{R}{R^{2}-R+1}\|e^{iz}\|
+\end{equation*}
+\begin{equation*}
+	z=\underset{
+	\begin{aligned}
+	0 \leq \theta \leq\pi \\
+	\sin \theta \geq 0	
+	\end{aligned}
+	}{R \cos \theta +iR \sin \theta}\rightarrow e^{iz}=e^{iR \cos \theta}e^{-R \sin \theta} \rightarrow  \|e^{iz}\|=e^{-R \sin \theta}
+\end{equation*}
+\begin{align*}
+	\Rightarrow \|f(z)\|_{on\ c_{R}} \leq  \frac{Re^{-R \sin \theta}}{R^{2}-R+1} \Rightarrow \|\int_{c_{R}} f(z)dz\| \leq  \frac{\pi R^{2}e^{-R \sin \theta}}{R^{2}-R+1}
+\end{align*}
+%page 146
+\begin{equation*}
+\rightarrow \underset{\underset{R\rightarrow \infty}{C_R}}{\int} \frac{ze^{-iz}}{z^{2}-z+1}dz=0	
+\end{equation*}
+\begin{align*}
+	(2) \ \ Res_{z=z_{0}} f(z) =\frac{ze^{-iz}}{z+\frac{1}{2}  +\frac{\sqrt{3} i}{2}} |_{z_{0}=-\frac{1}{2}  +\frac{\sqrt{3} i}{2}} = \frac {(-\frac{1}{2}  +\frac{\sqrt{3} i}{2})e^{-\frac{1}{2}  -\frac{\sqrt{3} i}{2}}}{\sqrt{3} i} \\
+	\overset{\star}{\Rightarrow} 0+ \int_{-\infty}^{\infty} \frac{xe^{ix}}{x^{2}+x+1}dx=2\pi i \frac {(-\frac{1}{2}  +\frac{\sqrt{3} i}{2})e^{-\frac{1}{2}  -\frac{\sqrt{3} i}{2}}}{\sqrt{3} i}z \\
+=\frac{2 \pi}{\sqrt{3}}(-\frac{1}{2}  +\frac{\sqrt{3} i}{2}){(e^{-\frac{\sqrt{3}}{2}})(\cos \frac {1}{2} - i \sin \frac {1}{2}}) \\
+=\frac{2 \pi}{\sqrt{3} e^{\frac{\sqrt{3}}{2}}}(- \frac{\cos \frac {1}{2}}{2} +\frac{\sqrt{3} \sin \frac {1}{2}}{2} \cos \frac {1}{2}+ (\frac{1}{2}\sin \frac {1}{2}   + \frac{\sqrt{3}}{2}\cos \frac {1}{2})i) = \alpha +\beta i
+\end{align*} 
+\begin{equation*}
+\begin{split}
+\Rightarrow Re( \int_{-\infty}^{\infty} \frac{xe^{ix}}{x^{2}+x+1}dx)=Re( \alpha +\beta i) =  \alpha =\int_{-\infty}^{\infty} \frac{x \cos x}{x^{2}+x+1}dx \\
+\Rightarrow Im( \int_{-\infty}^{\infty} \frac{xe^{ix}}{x^{2}+x+1}dx)=Im( \alpha +\beta i) =  \beta =\int_{-\infty}^{\infty} \frac{x \sin x}{x^{2}+x+1}dx
+\end{split}
+\end{equation*}
+
+%page 147
+\paragraph{3)}
+\begin{equation*}
+\int_0^{2\pi} f(\cos \theta, \sin \theta) d\theta 	
+\end{equation*}
+
+\[
+\begin{aligned}
+z=e^{i \theta} = \cos \theta + i \sin \theta \\
+\frac {1}{z}=e^{-i \theta} = \cos \theta - i \sin \theta
+\end{aligned}
+\Rightarrow 
+\begin{cases}
+\cos \theta=\frac {(z+\frac {1}{z})}{2} \\
+\sin \theta=\frac {(z-\frac {1}{z})}{2i}
+\end{cases}
+\]
+\begin{equation*}
+	z=e^{i \theta} \rightarrow dz=i e^{i\theta} d \theta \rightarrow d \theta=\frac{d z}{i e^{i \theta}}=\frac{d z}{i z}
+\end{equation*}
+\begin{equation*}
+	c:\| z \|=1
+\end{equation*}
+
+\example
+\[
+\begin{aligned} I &=\int_{0}^{2 \pi} \frac{d \theta}{1+a^{2}-2 a \cos \theta} \ \ \ \ \ \  \ \ \ \ \|a\| \neq 1 \\ &=\oint_{\|z\|=1} \frac{d z / i z}{1+a^{2}- 2 a \frac{z+1 / z}{2}}=\oint_{\|z\|=1} \frac{d z / i z}{\frac {\left(1+a^{2}\right) z-a z^{2}-a}{z}} 
+\\&=\oint_{\|z\|=1} \frac{d z} {i(\left(1+a^{2}\right) z-a z^{2}-a)} \end{aligned}
+\]
+
+\begin{equation*}
+\begin{split}
+a z^{2} - (1+a^{2})z+a = 0  \Rightarrow (az-1)(z-a)= 0	
+\quad
+z_{1}=\frac {1}{a} \\ z_{2} = a
+\end{split}
+\end{equation*}
+
+فرض
+$\|a\|>1$
+%image here
+\[
+\rightarrow I = 2\pi i \underset{z = \frac{1}{a}}{\text{ Res }} g(z) 
+\]
+
+\begin{equation*}
+	g(z) = \frac {1}{i(\left(1+a^{2}\right) z-a z^{2}-a)}= \frac {1}{i(az-1)(a-z)}
+\end{equation*}
+\begin{equation*}
+	Res_{z=\frac{1}{a}} = \frac{1}{i(a-\frac{1}{a})a}=\frac{1}{i(a^{2}-1)} \rightarrow I=2\pi i \frac{1}{i(a^{2}-1)}=\frac{2\pi}{(a^{2}-1)}
+\end{equation*}
+
+%page 148
+\example (مثال ۲)
+\begin{equation*}
+I=\int_{0}^{2 \pi} \frac{\cos \theta}{13-12 \cos 2 \theta} d \theta
+\end{equation*}
+
+\[
+z=e^{i \theta}
+\rightarrow z^{2}=e^{2 \theta i}=\cos 2 \theta+i \sin 2 \theta
+\Rightarrow 
+\begin{cases}
+\cos 2 \theta=\frac{z^{2}+\frac{1}{z^{2}}}{2} \\ 
+\sin 2 \theta=\frac{z^{2}-\frac{1}{z^{2}}}{2}
+\end{cases}
+\]
+\begin{center}
+\begin{equation*}
+	\begin{split}
+		C :\|z\|=1 \\ 
+		dz=ie^{i \theta} d \theta \rightarrow d\theta = \frac{dz}{iz}
+	\end{split}
+\end{equation*}
+\end{center}
+\begin{align*}
+	I&=\oint_{C} \frac{\frac{z+\frac{1}{z}}{2}}{13-12 \frac{z^{2}+\frac{1}{z^{2}}}{2}} \frac{dz}{iz} \\
+	&=\oint_{c} \frac{\frac{z^{2}+1}{2 i z^{2}}}{13-6 z^{2}-\frac{6}{z^{2}}} d z=\oint_{c} \frac{1}{2 i} \frac{z^{2}+1}{13 z^{2}-6 z^{4}-6} d z
+\end{align*}
+
+\begin{equation*}
+	\begin{split}
+		6 z^{4}-13 z^{2}+6=0 \longrightarrow\left(3 z^{2}-2\right)\left(2 z^{2}-3\right)=0	 \\
+		z_{1}, z_{2}=\pm \sqrt{\frac{2}{3}} \quad , \quad z_{3}, z_{4}=\pm \sqrt{\frac{3} {2}}	
+	\end{split}
+\end{equation*}
+% circle image here
+
+\[
+\Rightarrow I=2\pi i(Res_{z=\sqrt{\frac{2}{3}}} g(z) +Res_{z=-\sqrt{\frac{3}{2}}}+g(z) \quad\quad g(z) = \frac{1}{2 i} \frac{z^{2}+1}{13 z^{2}-6 z^{4}-6}
+\]
+
+\begin{align*}
+&\operatorname{Res_{z=\sqrt{\frac{2}{3}}}} g(z)=\left.\frac{1}{2 i} \frac{z^{2}+1}{\left(3-2 z^{2}\right)(\sqrt{3} z+\sqrt{2})}\right|_{z=\sqrt{\frac{2}{3}}}  \frac{1}{2 i} \frac{5 / 3}{\frac{5}{3} \times 2 \sqrt{2}} \\
+&\operatorname{Res_{z=-\sqrt{\frac{2}{3}}}} g(z)=\left.\frac{1}{2 i} \frac{z^{2}+1}{\left(3-2 z^{2}\right)(\sqrt{3} z-\sqrt{2})}\right|_{z=-\sqrt{\frac{2}{3}}}=\frac{5 / 3}{\frac{5}{3}(-2 \sqrt{2})} \times \frac{1}{2 i} \\
+&\Rightarrow I=0
+\end{align*}
+
+%page 149
+\example (مثال ۲)
+\begin{align*}
+	I&=\int_{0}^{\infty} \frac{\cos 2x}{(x^{2}+1)^{2}} dx \\
+	I&=\frac{1}{2} \int_{-\infty}^{\infty} \frac{\cos 2x}{(x^{2}+1)^{2}} dx \\
+	\hat I&= \int_{-\infty}^{\infty} \frac{\cos 2x}{(x^{2}+1)^{2}} dx \\
+	f(z) &= \frac{e^{2zi}}{(z^{2}+1)^{2}}
+\end{align*}
+\begin{equation*}
+	\underbrace{
+	\int_{\underset{R\rightarrow \infty}{C_R}}
+	f(z) d(z)}_{(1)}
+	 + \underset{R\rightarrow \infty}{\int_{-R}^{R}} f(x) d(x) 
+	 \overset{\star}{=}
+	 \underbrace{
+	  2\pi i Res_{z=i} f(z)}_{(2)}
+\end{equation*}
+
+\begin{align*}
+	(1) \quad 
+	&\|\int_{C_{R}} f(z) d(z) \| \leq ML \\
+	&L=\pi R \\ 
+	&M=max_{c_{R}}\|f(z)\| =max_{\|z\|=R}\| \frac {e^{2zi}}{(z^{2}+1)^{2}}\| \\
+	&z=R \cos \theta+i R \sin \theta \quad 0 \leqslant \theta \leqslant \pi
+\end{align*}
+\begin{equation*}
+\begin{split}
+	M=\max \left\|\frac{e^{2 R \cos \theta i-2 R \sin \theta}}{\left(z^{2}+1\right)^{2}}\right\|&=\max \frac{e^{-2 R \operatorname{Sin} \theta}}{\| R^{2}+1\|^{2}}\leqslant \frac{e^{-2 R \operatorname{Sin} \theta}}{( R^{2}-1)^{2}} \quad \sin \theta>0 \\
+	&\Rightarrow \| \int_{C_{R}} f(z) d(z) \| \leq \frac{\pi Re^{-2 R \operatorname{Sin} \theta}}{( R^{2}-1)^{2}} \\
+	&\Rightarrow 
+		@R \rightarrow\infty \quad \| \int_{C_{\infty}} f(z) d(z) \|=0
+	\end{split}
+\end{equation*}
+
+%page 150
+\begin{equation*}
+	\begin{split}
+		(2) \quad &Res_{z=i}f(z) =? \\
+&f(z)=\frac{e^{2zi}}{( z^{2}-i)^{2}( z^{2}+i)^{2}} \quad \quad(k=2)
+	\end{split}
+\end{equation*}
+\begin{align*}
+	\rightarrow Res_{z=i}f(z) &=(\frac{e^{2zi}}{( z^{2}+i)^{2}})'|_{z=i}\\
+	&=\frac{2i e^{2zi}(z+i)^{2}-2e^{2zi}(z+i)}{(z+i)^{4}}|_{z=i} \\
+	&=\frac{2i e^{-2}(-4)-2e^{-2}(2i)}{16} \\
+	&=-\frac{3i}{4e^{2}}
+\end{align*}
+\begin{align*}
+\overset{\star}{\rightarrow} & 0+\int_{-\infty}^{\infty} f(x) d x=2 \pi i \frac{-3 i}{4 e^{2}}=\frac{3 \pi}{2 e^{2}} \\
+\rightarrow &\int_{-\infty}^{\infty} \frac{e^{2 x_{1}}}{\left(x^{2}+1\right)^{2}} d x=\int_{-\infty}^{\infty} \frac{\cos 2 x+i \sin 2 x}{\left(x^{2}+1\right)^{2}} d x=\frac{3 \pi}{2 e^{2}} \\
+\rightarrow& \int_{-\infty}^{\infty} \frac{\cos 2 x}{\left(x^{2}+1\right)^{2}} d x=\frac{3 \pi}{2 e^{2}}\rightarrow  \int_{0}^{\infty} \frac{\cos 2 x}{\left(x^{2}+1\right)^{2}} d x=\frac{3 \pi}{4 e^{2}} \\
+	&\int_{-\infty}^{\infty} \frac{\sin 2 x}{\left(x^{2}+1\right)^{2}} d x=0
+\end{align*}
+
+%page 151
+\par{4) شاخه‌ی لگاریتم}
+% image
+\begin{equation*}
+\begin{split}
+I&=  \int_{0}^{\infty} \frac{x^{\frac{1}{3}}}{\left(x^{2}+1\right)^{2}} d x \\
+f(z)&=\frac{z^{\frac{1}{3}}}{ 1+z^{2}}=\frac{e^{\frac{1}{3} \log z}}{ 1+z^{2}}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\underbrace{
+	\int_{C_{R}}f(z)dz}_{(1)}+
+\underbrace{\int_{C_{1}}f(z)dz}_{(2)}+
+\underbrace{\int_{C_{2}}f(z)dz}_{(3)}+
+\underbrace{\int_{C_{\rho}}f(z)dz}_{(4)}
+=^{\star} 
+\underbrace{2\pi i(Res_{z=i} f(z) +Res_{z=-i}f(z))}_{(5)}
+\end{equation*}
+
+\begin{align*}
+(1) \quad \quad & \| \int_{C_{R}}f(z)dz\| \leq ML \\
+&M=max\|\frac{z^{\frac{1}{3}}}{z^{2}+1}\| \leq \frac{R^{\frac{1}{3}}}{R^{2}-1} \\
+&L=\pi R \Rightarrow \| \int_{C_{R}}f(z)dz\| \leq \frac{\pi R^{\frac{4}{3}}}{R^{2}-1} \\
+&\Rightarrow \lim \int_{
+\underset{R \rightarrow \infty}{C_R}}
+f(z)dz =0
+\end{align*}
+\begin{align*}
+	(2) \quad \quad &\int_{c_{1}} f(z) d z =?\quad \quad C_{1}:z=t e^{\pi i} \quad \quad t: \infty \rightarrow 0 \\ 
+	&\begin{aligned} \int_{c_{1}} f(z) d z &=\int_{\infty}^{0} \frac{e^{\frac{1}{3}(\ln t+i \pi)}}{1+t^{2}}(-d t) \\ &=\int_{0}^{\infty} \frac{t^{\frac{1}{3}}}{1+t^{2}} e^{\frac{i \pi}{3}} d t=e^{\frac{i \pi}{3}} I \end{aligned}
+\end{align*}
+
+% 152
+\begin{equation*}
+(3) \quad \quad \int_{c_{2}} f(z) d z =?\quad \quad C_{2}:z=t e^{-\pi i} \quad \quad 0\leq t < \infty	
+\end{equation*}
+\begin{equation*}
+	\begin{aligned} \int_{c_{2}} f(z) d z &=\int_{0}^{\infty} \frac{e^{\frac{1}{3}(\ln t-i \pi)}}{1+t^{2}}(-d t) \\ &=-\int_{0}^{\infty} \frac{t^{\frac{1}{3}}}{1+t^{2}} e^{-\frac{i \pi}{3}} d t=-e^{-\frac{i \pi}{3}} I \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+(4) \quad \quad \int_{c_{\rho}} f(z) d z=?  \quad \quad  z=-\rho e^{it} \quad \quad 0\leq t \leq 2\pi	
+\end{equation*}
+\begin{equation*}
+		z = -\rho e^{it} \quad , \quad
+	0 \leq t \leq 2\pi
+\end{equation*}
+\begin{align*}
+&\int_{c_{\rho}} f(z) d z=-\int_{0}^{2\pi} \frac{e^{\frac{1}{3}(\ln \rho +it)}}{\rho^{2}e^{2ti}+1}(d t)	 \\
+	&\|\int_{c_{\rho}} f(z) d z\|\leq \frac{\rho^{\frac{1}{3}}}{-\rho^{2}+1}\times\pi \rho=\frac{\pi \rho^{\frac{4}{3}}}{-\rho^{2}+1} \\
+\Rightarrow & \lim \int_{\underset{\rho \rightarrow \infty}{C_R}}f(z)dz =0
+\end{align*}
+\begin{equation*}
+\begin{split}
+(5) \quad\quad \operatorname{Res_{z=i}} f(z)&=\left.\frac{z^{\frac{1}{3}}}{z+i}\right|_{z=i}=\frac{i^{\frac{1}{3}}}{2 i}=\frac{e^{\frac{1}{3} (\frac{i\pi}{2})}}{2 i}=\frac{e^{\frac{i\pi}{6}}}{2 i}	\\
+\operatorname{Res_{z= -i}} f(z)&=\left.\frac{z^{\frac{1}{3}}}{z-i}\right|_{z=-i}=\frac{(-i)^{\frac{1}{3}}}{-2 i}=\frac{e^{\frac{1}{3}\left(-i \frac{\pi}{2}\right)}}{-2 i}=\frac{e^{-\frac{i\pi}{6}}}{-2 i}
+\end{split}
+\end{equation*}
+\begin{align*}
+	\rightarrow^{\star} \quad & 0+e^{i \frac{\pi}{3}} I-e^{-i \frac{\pi}{3}} I+0=2 \pi i\left(\frac{e^{\frac{\pi}{6} i}-e^{-\frac{\pi}{6}i}}{2 i}\right) \\
+		&\left(e^{\frac{\pi}{3} i}-e^{-\frac{n}{3} i}\right) I=\left(e^{\frac{\pi}{6} i}-e^{-\frac{\pi}{6} i}\right) \pi \\
+		\rightarrow \quad & 2i \sin \frac{\pi}{3} I=2i \sin \frac{\pi}{6} \pi \rightarrow I=\frac{\pi \sin \frac{\pi}{6}}{\sin \frac{\pi}{3}}=\frac{\frac{\pi}{2}}{\frac{\sqrt{3}}{2}} \\
+		\rightarrow \quad &I= \frac{\pi}{\sqrt{3}}
+\end{align*}
