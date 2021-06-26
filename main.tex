@@ -6440,14 +6440,14 @@ $
 \underbrace{
 \int_{C_{\infty}} f(z) d z}_{(1)}
 +
-\underbrace{\int_{C_{p}} f(z) d z}_{(2)}
+\underbrace{\int_{C_{\rho}} f(z) d z}_{(2)}
 +I=
 \underbrace{2 \pi i \operatorname{Res_{z=z_2}} f(z)}_{(3)}
  \ \ \star$
 \\
 (1) \quad $\left\|\int_{C_{R}} f(z) d z\right\| \leqslant \frac{\pi R}{R^{3}-1} \rightarrow \int_{C_{\infty}} f(z) d x=0$
 \\
-(2) \quad $\int_{C_{p}} f(z) d z=$ ?
+(2) \quad $\int_{C_{\rho}} f(z) d z=$ ?
 
 \end{latin}
 
@@ -6461,9 +6461,9 @@ $f$
 در ناحیه‌
 $D$
 شام خم
-$$c_{p} : z(t) = z_{0} + pe^{it}    \ \ \  \ \ 0\leq t \leq \pi$$
+$$c_{\rho} : z(t) = z_{0} + \rho e^{it}    \ \ \  \ \ 0\leq t \leq \pi$$
 تحیلی باشد، داریم 
-$$\int_{C_{p}} f(z) d z= \pi i \operatorname{Res_{z=z_0}} f(z)$$
+$$\int_{C_{\rho}} f(z) d z= \pi i \operatorname{Res_{z=z_0}} f(z)$$
 
 \paragraph{اثبات}
 \begin{equation*}
@@ -6473,19 +6473,19 @@ f(z) = \sum_{n=0}^{\infty} a_{n} (z-z_{0} ) + \frac {b_{1}}{z-z_{0}}
 %page 144
 \begin{center}
 \begin{align*}
-&\int_{C_{p}} f(z) d z=\int_{0}^{\pi} f\left(z_{0}+\rho e^{i t}\right)i \rho e^{i t} d t
+&\int_{C_{\rho}} f(z) d z=\int_{0}^{\pi} f\left(z_{0}+\rho e^{i t}\right)i \rho e^{i t} d t
 \\
-=&\int_{0}^{\pi} i \rho e^{i t}\left(\sum a_{n} P^{n} e^{i n t}+\frac{b_{1}}{\rho e^{ i t}}\right) d t
+=&\int_{0}^{\pi} i \rho e^{i t}\left(\sum a_{n} \rho^{n} e^{i n t}+\frac{b_{1}}{\rho e^{ i t}}\right) d t
 \\
 =&\int_{0}^{\pi} ( a_{0}i \rho e^{i  t} + a_{1}i \rho^{2} e^{2i  t} + a_{2} \rho^{3} e^{3i  t} + ... + b_{1} i )dt
 \\
-&\Rightarrow lim_{\rho \rightarrow 0} \int_{c_{p}} f(z)dz = b_{1}\pi i = \pi i Res_{z=z_{0}} f(z)
+&\Rightarrow lim_{\rho \rightarrow 0} \int_{c_{\rho}} f(z)dz = b_{1}\pi i = \pi i Res_{z=z_{0}} f(z)
 \end{align*}
 \end{center}
 \par{(2)}
 %image
 \begin{equation*}
-\int_{c_{p}} f(z)dz =-\int_{- c_{p}} f(z)dz=- \pi i Res_{z=-1} f(z)=- \pi i \frac {1}{z^{2}-z+1} |_{z=-1}=-\frac {\pi i}{3}
+\int_{c_{\rho}} f(z)dz =-\int_{- c_{\rho}} f(z)dz=- \pi i Res_{z=-1} f(z)=- \pi i \frac {1}{z^{2}-z+1} |_{z=-1}=-\frac {\pi i}{3}
 \end{equation*}
 \par{(3)}
 \begin{center}
